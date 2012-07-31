@@ -1,26 +1,41 @@
-=== WP e-Commerce Grid View  ===
+=== WP e-Commerce Predictive Search  ===
 Contributors: a3rev, A3 Revolution Software Development team
-Tags: WP e-Commerce Grid View, WP e-Commerce, WP e-Commerce Product Pages, e-commerce,  wordpress ecommerce
+Tags: WP e-Commerce Predictive Search, WP e-Commerce, Predictive Search, Live Search, e-commerce,  wordpress ecommerce
 Requires at least: 3.3
 Tested up to: 3.4.1
 Stable tag: 1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Use WP e-Commerce Grid View to create a beautifully attractive and easy to browse grid view product display on all your Products pages and product category pages.
-  
+Super charge you site with WP e-Commerce Predictive Products Search. Delivers stunning results as you type. Searches your entire WP e-Commerce product database.  
+ 
 == Description ==
 
-Install WP e-Commerce Grid View to showcase your products <strong>using a grid view layout</strong>. Grid view gives your front end user a greatly enhanced browsing and shopping experience on your site. The plugin automatically activates grid view functionality on WP e-Commerce when installed and activate.
+WP e-Commerce Predictive Search queries <strong>your entire product database</strong> while you type. Delivers users a stunning visual results display in the widget dropdown and on the All results search page. 
 
-[youtube http://www.youtube.com/watch?v=ujEclHWN8vo]
+[youtube http://www.youtube.com/watch?v=j71wxGGxrds]
+ 
+= Key Features =
 
-* WP e-Commerce Grid View has no settings, just install and activated.
-* Works with any theme (well ... all the ones we have tested it on)
+* Searches your entire product database for the product titles that match what is being typed.
+* Shows the results beautifully in the widget dropdown and on the All results search page.
+* Add search box to any widgetized area on your site.
+* Results search page features endless scroll feature - no pagination.   
 
-[Home Page](http://a3rev.com/products-page/wp-e-commerce/wp-e-commerce-grid-view/) |
-[Documentation](http://a3rev.com/products-page/wp-e-commerce/wp-e-commerce-grid-view/) |
-[Support](http://a3rev.com/products-page/wp-e-commerce/wp-e-commerce-grid-view/#help)
+= Pro Version Upgrade =
+
+For WP e-Commerce store owners who want an even more powerful search feature.
+
+* 'Smart Search'. An intuitive technology that auto detects what product group the user is looking at and delivers fast and accurate results from that group.
+* Set "Smart Search' or Global search from every search widget.
+* Predictive Search shortcodes - Insert and configure the Search box into any page or post via shortcode.
+* Configure the All results search page to show Product Categories, tags, prices with results. 
+* Manually add and configure Predictive Search to any part of a theme e.g header.
+ 
+
+[Home Page](http://a3rev.com/products-page/wp-e-commerce/wpec-predictive-search-pro/) |
+[Documentation](http://a3rev.com/products-page/wp-e-commerce/wpec-predictive-search-pro/) |
+[Support](http://a3rev.com/products-page/wp-e-commerce/wpec-predictive-search-pro/#help)
 
 
 == Installation ==
@@ -33,9 +48,9 @@ Install WP e-Commerce Grid View to showcase your products <strong>using a grid v
  
 = Automatic installation =
 
-Automatic installation is the easiest option as WordPress handles the file transfers itself and you don't even need to leave your web browser. To do an automatic install of WP e-Commerce Grid View, log in to your WordPress admin panel, navigate to the Plugins menu and click Add New. 
+Automatic installation is the easiest option as WordPress handles the file transfers itself and you don't even need to leave your web browser. To do an automatic install of WP e-Commerce Predictive Search, log in to your WordPress admin panel, navigate to the Plugins menu and click Add New. 
 
-In the search field type "WP e-Commerce Grid View" and click Search Plugins. Once you have found our plugin you can install it by simply clicking Install Now. After clicking that link you will be asked if you are sure you want to install the plugin. Click yes and WordPress will automatically complete the installation. 
+In the search field type "WP e-Commerce Predictive Search" and click Search Plugins. Once you have found our plugin you can install it by simply clicking Install Now. After clicking that link you will be asked if you are sure you want to install the plugin. Click yes and WordPress will automatically complete the installation. 
 
 = Manual installation =
 
@@ -45,23 +60,27 @@ The manual installation method involves downloading our plugin and uploading it 
 2. Using an FTP program, or your hosting control panel, upload the unzipped plugin folder to your WordPress installations wp-content/plugins/ directory.
 3. Activate the plugin from the Plugins menu within the WordPress admin.
 
+= Localization =
+* English (default) - always include.
+* .po file (wpscps.po) in languages folder for translations.
+* Your translation? Please do yours and [send it to us](http://www.a3rev.com/contact/) We'll acknowledge your work and link to your site.
+Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a translation or an update.
 
 == Screenshots ==
 
-1. WP e-Commerce Product Page default view v's the same presentation in WP e-Commerce Grid View
-2. WP c-Commerce grid view has no settings.
- 
+
+
 == Usage ==
 
-1. Install and activate the plugin
+1. WP admin > Settings > Store > Predictive Search
 
-2. Go to Settings > Store > Presentation tab > Product page Settings
+2. Appearance > Widgets
 
-3. Select Grid View and your Grid View Settings.
+3. Locate WP e-Commerce Predictive Search widget and drag it into the sidebar where you want it to show. 
+
+4.Give the widget a Title and click SAVE.
  
-5. Save your changes.
-
-6. Have fun.
+5. Enjoy.
 
 == Frequently Asked Questions ==
 
@@ -71,11 +90,11 @@ You can use this plugin only when you have installed the WP e-Commerce plugin.
  
 == Support ==
 
-Support and access to this plugin documents are available from the [HELP tab](http://a3rev.com/products-page/wp-e-commerce/wp-e-commerce-grid-view/#help) on the Pro Versions Home page.
+Support and access to this plugin documents are available from the [HELP tab](http://a3rev.com/products-page/wp-e-commerce/wpec-predictive-search-pro/#help) on the Pro Versions Home page.
 
 == Changelog ==
 
-= 1.0 - 2012/07/23 =
+= 1.0 - 2012/07/30 =
 * Initial release.
 
   
