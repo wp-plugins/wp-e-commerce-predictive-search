@@ -14,14 +14,57 @@
  */
 class WPSC_Predictive_Search{
 	function wpscps_get_product_thumbnail( $post_id, $size = 'product-thumbnails', $placeholder_width = 0, $placeholder_height = 0  ) {
-		global $post, $ecommerce;
+		global $ecommerce;
+		$mediumSRC = '';
 		if ( $placeholder_width == 0 )
 			$placeholder_width = $ecommerce->get_image_size( 'product_image_width' );
 		if ( $placeholder_height == 0 )
 			$placeholder_height = $ecommerce->get_image_size( 'product_image_height' );
 		
-		if ( has_post_thumbnail($post_id) )
-			return get_the_post_thumbnail( $post_id, $size ); else return '<img src="'. WPSC_CORE_THEME_URL . 'wpsc-images/noimage.png" alt="Placeholder" width="' . $placeholder_width . '" height="' . $placeholder_height . '" />';
+		if ( has_post_thumbnail($post_id) ) {
+			return get_the_post_thumbnail( $post_id, $size ); 
+		}
+		
+		if (trim($mediumSRC == '')) {
+			$args = array( 'post_parent' => $post_id ,'numberposts' => 1, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'DESC', 'orderby' => 'ID', 'post_status' => null); 
+			$attachments = get_posts($args);
+			if ($attachments) {
+				foreach ( $attachments as $attachment ) {
+					$mediumSRC = wp_get_attachment_image( $attachment->ID, $size, true );
+					break;
+				}
+			}
+		}
+		
+		if (trim($mediumSRC == '')) {
+			// Load the product
+			$product = get_post( $post_id );
+			
+			// Get ID of parent product if one exists
+			if ( !empty( $product->post_parent ) )
+				$post_id = $product->post_parent;
+				
+			if (has_post_thumbnail($post_id)) {
+				return get_the_post_thumbnail( $post_id, $size ); 
+			}
+			
+			if (trim($mediumSRC == '')) {
+				$args = array( 'post_parent' => $post_id ,'numberposts' => 1, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'DESC', 'orderby' => 'ID', 'post_status' => null); 
+				$attachments = get_posts($args);
+				if ($attachments) {
+					foreach ( $attachments as $attachment ) {
+						$mediumSRC = wp_get_attachment_image( $attachment->ID, $size, true );
+						break;
+					}
+				}
+			}
+		}
+		
+		if (trim($mediumSRC != '')) {
+			return $mediumSRC;
+		} else {
+			return '<img src="'. WPSC_CORE_THEME_URL . 'wpsc-images/noimage.png" alt="Placeholder" width="' . $placeholder_width . '" height="' . $placeholder_height . '" />';
+		}
 	}
 	
 	function wpscps_limit_words($str='',$len=100,$more=true) {
