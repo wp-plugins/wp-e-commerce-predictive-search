@@ -33,7 +33,9 @@ function register_widget_wpscps_predictive_search() {
 
 // Add language
 add_action('init', 'wpscps_init');
-	
+
+// Add text on right of Visit the plugin on Plugin manager page
+add_filter( 'plugin_row_meta', array('WPSC_Predictive_Search_Hook_Filter', 'plugin_extra_links'), 10, 2 );
 // Add Predictive Search tab into Store settings 	
 add_filter( 'wpsc_settings_tabs', array('WPSC_Predictive_Search_Hook_Filter', 'add_wpsc_settings_tabs') );
 

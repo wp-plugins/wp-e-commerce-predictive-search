@@ -14,21 +14,7 @@
  * wpscps_get_result_search_page()
  */
 class WPSC_Predictive_Search_Shortcodes {
-	public static function parse_shortcode_search_widget($attributes) {
-		extract(shortcode_atts(array(
-			 'items' => 6,
-			 'character_max' => 100,
-			 'style' => '',
-			 'wrap'	=> 'false'
-        ), $attributes));
-		
-		$widget_id = rand(100, 10000);
-		
-		$wrap_div = '';
-		if ($wrap == 'true') $wrap_div = '<div style="clear:both;"></div>';
-		
-		return WPSC_Predictive_Search_Widgets::wpscps_results_search_form($widget_id, $items, $character_max, $style, 1).$wrap_div;
-	}
+	public static function parse_shortcode_search_widget($attributes) {}
 	
 	function add_search_widget_icon($context){
 		$image_btn = WPSC_PS_IMAGES_URL . "/ps_icon.png";
@@ -93,83 +79,15 @@ class WPSC_Predictive_Search_Shortcodes {
     	return WPSC_Predictive_Search_Shortcodes::wpscps_display_search();	
     }
 	
-	function get_product_price($product_id, $show_price=true) {
-		$product_price_output = '';
-		if ($show_price) {
-			$variable_price = WPSC_Predictive_Search::get_product_variation_price_available($product_id);
-			if ($variable_price > 0) {
-				$variable_price = apply_filters( 'wpsc_do_convert_price', $variable_price );
-				$args = array(
-						'display_as_html' => false,
-						'display_decimal_point' => true
-				);
-				$product_price_output = '<div class="rs_rs_price">'.__('Priced from', 'wpscps').': ';
-				$product_price_output .= '<span class="currentprice pricedisplay">'.wpsc_currency_display( $variable_price, $args ).'</span></div>';
-			} else {
-				$price = $full_price = get_post_meta( $product_id, '_wpsc_price', true );
-		
-				$special_price = get_post_meta( $product_id, '_wpsc_special_price', true );
-			
-				if ( ( $full_price > $special_price ) && ( $special_price > 0 ) )
-					$price = $special_price;
-			
-				$price = apply_filters( 'wpsc_do_convert_price', $price );
-				$full_price = apply_filters( 'wpsc_do_convert_price', $full_price );
-				$args = array(
-						'display_as_html' => false,
-						'display_decimal_point' => true
-				);
-				if($price > 0){
-					$product_price_output = '<div class="rs_rs_price">'.__('Price', 'wpscps').': ';
-					if ( ( $full_price > $special_price ) && ( $special_price > 0 ) )
-						$product_price_output .= '<span class="oldprice">'.wpsc_currency_display( $full_price, $args ).'</span> ';
-					$product_price_output .= '<span class="currentprice pricedisplay">'.wpsc_currency_display( $price, $args ).'</span></div>';
-				}
-			}
-		}
-		
-		return $product_price_output;
-	}
+	function get_product_price($product_id, $show_price=true) {}
 	
-	function get_product_categories($product_id, $show_categories=true) {
-		$product_cats_output = '';
-		if ($show_categories) {
-			$product_cats = wp_get_object_terms( $product_id, 'wpsc_product_category' );
-						
-			if ( $product_cats && ! is_wp_error( $product_cats ) ) {
-				$product_cat_links = array();
-				foreach ( $product_cats as $product_cat ) {
-					$product_cat_links[] = '<a href="' .get_term_link($product_cat->slug, 'wpsc_product_category') .'">'.$product_cat->name.'</a>';
-				}
-				if (count($product_cat_links) > 0)
-					$product_cats_output = '<div class="rs_rs_cat posted_in">'.__('Category', 'wpscps').': '.join( ", ", $product_cat_links ).'</div>';
-			}
-		}
-		
-		return $product_cats_output;
-	}
+	function get_product_categories($product_id, $show_categories=true) {}
 	
-	function get_product_tags($product_id, $show_tags=true) {
-		$product_tags_output = '';
-		if ($show_tags) {
-			$product_tags = get_the_terms( $product_id, 'product_tag' );
-						
-			if ( $product_tags && ! is_wp_error( $product_tags ) ) {
-				$product_tag_links = array();
-				foreach ( $product_tags as $product_tag ) {
-					$product_tag_links[] = '<a href="' .get_term_link($product_tag->slug, 'product_tag') .'">'.$product_tag->name.'</a>';
-				}
-				if (count($product_tag_links) > 0)
-					$product_tags_output = '<div class="rs_rs_tag tagged_as">'.__('Tags', 'wpscps').': '.join( ", ", $product_tag_links ).'</div>';
-			}
-		}
-		
-		return $product_tags_output;
-	}
+	function get_product_tags($product_id, $show_tags=true) {}
 	
 	function wpscps_display_search() {
 		$p = 0;
-		$row = 10;
+		$row = 5;
 		$search_keyword = '';
 		$cat_slug = '';
 		$tag_slug = '';
@@ -184,13 +102,6 @@ class WPSC_Predictive_Search_Shortcodes {
 				
 		if ($search_keyword != '') {
 			$args = array( 's' => $search_keyword, 'numberposts' => $row+1, 'offset'=> $start, 'orderby' => 'title', 'order' => 'ASC', 'post_type' => 'wpsc-product', 'post_status' => 'publish');
-			if ($cat_slug != '') {
-				$args['tax_query'] = array( array('taxonomy' => 'wpsc_product_category', 'field' => 'slug', 'terms' => $cat_slug) );
-				$extra_parameter .= '&scat='.$cat_slug;
-			} elseif($tag_slug != '') {
-				$args['tax_query'] = array( array('taxonomy' => 'product_tag', 'field' => 'slug', 'terms' => $tag_slug) );
-				$extra_parameter .= '&stag='.$tag_slug;
-			}
 			
 			$total_args = $args;
 			$total_args['numberposts'] = -1;
@@ -211,7 +122,7 @@ class WPSC_Predictive_Search_Shortcodes {
 				.rs_date{color:#777;font-size:small;}
 				.rs_result_row{width:100%;float:left;margin:0px 0 10px;padding :0px 0 10px; 6px;border-bottom:1px solid #c2c2c2;}
 				.rs_result_row:hover{opacity:1;}
-				.rs_rs_avatar{width:64px;margin-right:10px;overflow: hidden;float:left; text-align:center}
+				.rs_rs_avatar{width:64px;margin-right:10px;overflow: hidden;float:left;text-align:center}
 				.rs_rs_avatar img{width:100%;height:auto; padding:0 !important; margin:0 !important; border: none !important;}
 				.rs_rs_name{margin-left:0px;}
 				.rs_content{margin-left:74px;}
@@ -274,7 +185,7 @@ class WPSC_Predictive_Search_Shortcodes {
 	function wpscps_get_result_search_page() {
 		check_ajax_referer( 'wpscps-get-result-search-page', 'security' );
 		$p = 1;
-		$row = 10;
+		$row = 5;
 		$search_keyword = '';
 		$cat_slug = '';
 		$tag_slug = '';
@@ -294,13 +205,6 @@ class WPSC_Predictive_Search_Shortcodes {
 		
 		if ($search_keyword != '') {
 			$args = array( 's' => $search_keyword, 'numberposts' => $row+1, 'offset'=> $start, 'orderby' => 'title', 'order' => 'ASC', 'post_type' => 'wpsc-product', 'post_status' => 'publish');
-			if ($cat_slug != '') {
-				$args['tax_query'] = array( array('taxonomy' => 'wpsc_product_category', 'field' => 'slug', 'terms' => $cat_slug) );
-				$extra_parameter .= '&scat='.$cat_slug;
-			} elseif($tag_slug != '') {
-				$args['tax_query'] = array( array('taxonomy' => 'product_tag', 'field' => 'slug', 'terms' => $tag_slug) );
-				$extra_parameter .= '&stag='.$tag_slug;
-			}
 			
 			$total_args = $args;
 			$total_args['numberposts'] = -1;

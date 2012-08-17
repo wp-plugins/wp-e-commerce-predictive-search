@@ -91,7 +91,7 @@ class WPSC_Predictive_Search{
 	
 	function wpscps_get_result_popup() {
 		check_ajax_referer( 'wpscps-get-result-popup', 'security' );
-		$row = 6;
+		$row = 5;
 		$text_lenght = 100;
 		$search_keyword = '';
 		$cat_slug = '';
@@ -103,13 +103,7 @@ class WPSC_Predictive_Search{
 		
 		if ($search_keyword != '') {
 			$args = array( 's' => $search_keyword, 'numberposts' => $row+1, 'offset'=> 0, 'orderby' => 'title', 'order' => 'ASC', 'post_type' => 'wpsc-product', 'post_status' => 'publish');
-			if ($cat_slug != '') {
-				$args['tax_query'] = array( array('taxonomy' => 'wpsc_product_category', 'field' => 'slug', 'terms' => $cat_slug) );
-				$extra_parameter .= '&scat='.$cat_slug;
-			} elseif($tag_slug != '') {
-				$args['tax_query'] = array( array('taxonomy' => 'product_tag', 'field' => 'slug', 'terms' => $tag_slug) );
-				$extra_parameter .= '&stag='.$tag_slug;
-			}
+			
 			$total_args = $args;
 			$total_args['numberposts'] = -1;
 			

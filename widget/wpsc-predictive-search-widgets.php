@@ -20,7 +20,7 @@ class WPSC_Predictive_Search_Widgets extends WP_Widget {
 	function widget( $args, $instance ) {
 		extract($args);
 		$title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
-		if(empty($instance['number_items']) || $instance['number_items'] <= 0) $number_items = 6; 
+		if(empty($instance['number_items']) || $instance['number_items'] <= 0) $number_items = 5; 
 		else $number_items = $instance['number_items'];
 		if(empty($instance['text_lenght']) || $instance['text_lenght'] < 0) $text_lenght = 100; 
 		else $text_lenght = $instance['text_lenght'];
@@ -33,7 +33,7 @@ class WPSC_Predictive_Search_Widgets extends WP_Widget {
 		echo $after_widget;
 	}
 	
-	function wpscps_results_search_form($widget_id, $number_items=6, $text_lenght=100, $style='', $search_global = 0){
+	function wpscps_results_search_form($widget_id, $number_items=5, $text_lenght=100, $style='', $search_global = 0){
 		
 		// Add ajax search box script and style at footer
 		add_action('wp_footer',array('WPSC_Predictive_Search_Hook_Filter','wpscps_add_frontend_script'));
@@ -105,14 +105,14 @@ class WPSC_Predictive_Search_Widgets extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
-		$instance['number_items'] = 6;
+		$instance['number_items'] = 5;
 		$instance['text_lenght'] = 100;
 		$instance['search_global'] = 1;
 		return $instance;
 	}
 
 	function form( $instance ) {
-		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'number_items' => 6, 'text_lenght' => 100, 'search_global' => 0) );
+		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'number_items' => 5, 'text_lenght' => 100, 'search_global' => 1) );
 		$title = strip_tags($instance['title']);
 		$number_items = strip_tags($instance['number_items']);
 		$text_lenght = strip_tags($instance['text_lenght']);
@@ -124,9 +124,11 @@ class WPSC_Predictive_Search_Widgets extends WP_Widget {
 		</style>
 			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'wpscps'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
             <fieldset id="wpsc_predictive_upgrade_area"><legend><?php _e('Upgrade to Pro to activate', 'wpscps'); ?></legend>
-                <p><label for="<?php echo $this->get_field_id('number_items'); ?>"><?php _e('Number of results to show:', 'wpscps'); ?></label> <input disabled="disabled" class="widefat" id="<?php echo $this->get_field_id('number_items'); ?>" name="<?php echo $this->get_field_name('number_items'); ?>" type="text" value="6" /></p>
+                <p><label for="<?php echo $this->get_field_id('number_items'); ?>"><?php _e('Number of results to show:', 'wpscps'); ?></label> <input disabled="disabled" class="widefat" id="<?php echo $this->get_field_id('number_items'); ?>" name="<?php echo $this->get_field_name('number_items'); ?>" type="text" value="5" /></p>
                 <p><label for="<?php echo $this->get_field_id('text_lenght'); ?>"><?php _e(' Results description character count:', 'wpscps'); ?></label> <input disabled="disabled" class="widefat" id="<?php echo $this->get_field_id('text_lenght'); ?>" name="<?php echo $this->get_field_name('text_lenght'); ?>" type="text" value="100" /></p>
-                <p><input disabled="disabled" type="checkbox" id="<?php echo $this->get_field_id('search_global'); ?>" name="<?php echo $this->get_field_name('search_global'); ?>" value="1" checked="checked"  /> <label for="<?php echo $this->get_field_id('search_global'); ?>"><?php _e('Search all products.', 'wpscps'); ?></label></p>
+                <p><input disabled="disabled" type="radio" id="<?php echo $this->get_field_id('search_global'); ?>_1" name="<?php echo $this->get_field_name('search_global'); ?>" value="1" checked="checked" /> <label for="<?php echo $this->get_field_id('search_global'); ?>_1"><?php _e('Search All Products', 'wpscps'); ?></label><br />
+                <input disabled="disabled" type="radio" id="<?php echo $this->get_field_id('search_global'); ?>_2" name="<?php echo $this->get_field_name('search_global'); ?>" value="0"  /> <label for="<?php echo $this->get_field_id('search_global'); ?>_2"><?php _e('Smart Search', 'wpscps'); ?></label>
+                </p>
 			</fieldset>
 <?php
 	}

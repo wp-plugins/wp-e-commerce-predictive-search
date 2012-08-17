@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP e-Commerce Predictive Search, WP e-Commerce, Predictive Search, Live Search, e-commerce,  wordpress ecommerce
 Requires at least: 3.3
 Tested up to: 3.4.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -20,7 +20,7 @@ WP e-Commerce Predictive Search queries <strong>your entire product database</st
 * Searches your entire product database for the product titles that match what is being typed.
 * Shows the results beautifully in the widget dropdown and on the All results search page.
 * Add search box to any widgetized area on your site.
-* Results search page features endless scroll feature - no pagination.   
+* All Results search page features endless scroll - no pagination.   
 
 = Pro Version Upgrade =
 
@@ -34,7 +34,7 @@ For WP e-Commerce store owners who want an even more powerful search feature.
  
 
 [Home Page](http://a3rev.com/products-page/wp-e-commerce/wpec-predictive-search-pro/) |
-[Documentation](http://a3rev.com/products-page/wp-e-commerce/wpec-predictive-search-pro/) |
+[Documentation](http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/) |
 [Support](http://a3rev.com/products-page/wp-e-commerce/wpec-predictive-search-pro/#help)
 
 
@@ -94,8 +94,15 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 == Changelog ==
 
+= 1.0.2 - 2012/08/17 =
+* Fix - Fixed styling for sidebar widget search box so it shows correctly.
+* Tweak - Change localization file path from actual to base path
+* Tweak - Added checkbox to select 'Smart Search' in sidebar widget
+* Tweak - Added Support and Documentation links to plugins description.
+* Documentation - Added comprehensive extension documentation to the [a3rev wiki](ttp://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/)
+
 = 1.0.1 - 2012/08/03 =
-* Fix: Show the 6 results with 100 characters of product description by default when no value is present Â in Widget control and Admin panel
+* Fix: Show the 6 results with 100 characters of product description by default when no value is present Â in Widget control and Admin panel
 * Fix: Change z-index for search box from 1001 to 99 so that themes nav bar dropdowns slide over it instead of behind the search box
 * Feature: Hide the description when enter 0 as the number of description characters in the sidebar widget and Admin panel.
 * Feature: Show first thumb image in product gallery if the product does not have feature image.

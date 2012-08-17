@@ -34,7 +34,7 @@ class WPSC_Settings_Tab_Ps_Settings {
 			foreach($request as $key=>$value){
 				update_option($key,$value);
 			}
-			update_option('ecommerce_search_result_items', 10);
+			update_option('ecommerce_search_result_items', 5);
 			update_option('ecommerce_search_text_lenght', 100);
 			update_option('ecommerce_search_price_enable', 0);
 			update_option('ecommerce_search_categories_enable', 0);
@@ -85,7 +85,7 @@ class WPSC_Settings_Tab_Ps_Settings {
           <tr valign="top">
 		    <th class="titledesc" scope="row"><label for="ecommerce_search_result_items"><?php _e('Results', 'wpscps');?>	</label></th>
 		    <td class="forminp">
-              <input disabled="disabled" type="text" value="10" size="6" id="ecommerce_search_result_items" name="ecommerce_search_result_items" />
+              <input disabled="disabled" type="text" value="5" size="6" id="ecommerce_search_result_items" name="ecommerce_search_result_items" />
               <span class="description"><?php _e('The number of results to show before endless scroll click to see more results.', 'wpscps');?></span>
             </td>
 		  </tr>

@@ -9,6 +9,7 @@
  * wpscps_add_settings_search()
  * wpscps_add_frontend_script()
  * wpscps_search_by_title_only()
+ * plugin_extra_links()
  */
 class WPSC_Predictive_Search_Hook_Filter {
 	
@@ -51,6 +52,15 @@ class WPSC_Predictive_Search_Hook_Filter {
 			$search = " AND ({$search}) ";
 		}
 		return $search;
+	}
+	
+	function plugin_extra_links($links, $plugin_name) {
+		if ( $plugin_name != WPSC_PS_NAME) {
+			return $links;
+		}
+		$links[] = '<a href="http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/" target="_blank">'.__('Documentation', 'wpec_cp').'</a>';
+		$links[] = '<a href="http://a3rev.com/products-page/wp-e-commerce/wpec-predictive-search-pro/#help" target="_blank">'.__('Support', 'wpec_cp').'</a>';
+		return $links;
 	}
 }
 ?>
