@@ -63,7 +63,7 @@ class WPSC_Predictive_Search_Widgets extends WP_Widget {
 				inputClass: "ac_input_<?php echo $id; ?>",
 				resultsClass: "ac_results_<?php echo $id; ?>",
 				loadingClass: "predictive_loading",
-				highlight : false,
+				highlight : false
             });
             jQuery("#pp_course_<?php echo $id;?>").result(function(event, data, formatted) {
 				if(data[2] != ''){

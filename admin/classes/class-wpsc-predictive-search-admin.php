@@ -137,13 +137,13 @@ class WPSC_Settings_Tab_Ps_Settings {
 	
 	function predictive_extension() {
 		$html = '';
-		$html .= '<div id="wpsc_predictive_extensions">'.__("Activate 'Smart Search', sidebar widget controls and the advance search results page features with our limited", 'wpscps').' <strong>$10</strong> <a target="_blank" href="'.WPSC_PS_AUTHOR_URI.'">'.__('WP e-Commerce Predictive Search Pro', 'wpscps').'</a> '.__('upgrade offer.', 'wpscps').' '.__('Hurry only limited numbers at this price.', 'wpscps').'</div>';
+		$html .= '<div id="wpsc_predictive_extensions">'.__("Like what you see so far? Upgrade to the", 'wpscps').' <a target="_blank" href="'.WPSC_PS_AUTHOR_URI.'">'.__('Pro Version', 'wpscps').'</a> '.__("to unleash these truly awesome Predictive Search advanced features -  'Smart Search', per widget controls, search box shortcodes on pages and posts, plus the All search results page settings and function features that you see below.", 'wpscps').'</div>';
 		return $html;	
 	}
 	
 	function predictive_extension_shortcode() {
 		$html = '';
-		$html .= '<div id="wpsc_predictive_extensions">'.__("Please upgrade to the Pro version to activate this shortcode feature. Upgrade now with our limited", 'wpscps').' <strong>$10</strong> <a target="_blank" href="'.WPSC_PS_AUTHOR_URI.'">'.__('WP e-Commerce Predictive Search Pro', 'wpscps').'</a> '.__('upgrade offer.', 'wpscps').' '.__('Hurry only limited numbers at this price.', 'wpscps').'</div>';
+		$html .= '<div id="wpsc_predictive_extensions">'.__("Yes you'll love the Predictive Search shortcode feature. Upgrading to the", 'wpscps').' <a target="_blank" href="'.WPSC_PS_AUTHOR_URI.'">'.__('Pro Version', 'wpscps').'</a> '.__("activates this shortcode feature as well as the awesome 'Smart Search' feature, per widget controls, the All Search Results page customization settings and function features.", 'wpscps').'</div>';
 		return $html;	
 	}
 }

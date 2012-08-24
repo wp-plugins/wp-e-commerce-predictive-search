@@ -6,7 +6,7 @@
 .ac_over {background-color: #6D84B4;color: white;}
 .widget_products_predictive_search{position:relative;z-index:99;}
 
-.ctr_search{width:95%;float:left;border:1px solid #c2c2c2;background:#FFF;position:relative;height:27px; padding:0 2% !important;}
+.ctr_search{width:95%;float:left;border:1px solid #c2c2c2;background:#FFF;position:relative;padding:0 2% !important;}
 .livesearch{width:99.5%;float:left;margin-top:-1px;background:#FFF;position:absolute;top:0;z-index:1000 !important;}
 .fr_search_widget{margin:0 0 0 0;padding:0;width:100%;float:left;}
 		
