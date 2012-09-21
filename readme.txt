@@ -3,35 +3,53 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP e-Commerce Predictive Search, WP e-Commerce, Predictive Search, Live Search, e-commerce,  wordpress ecommerce
 Requires at least: 3.3
 Tested up to: 3.4.1
-Stable tag: 1.0.2
+Stable tag: 1.1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Super charge you site with WP e-Commerce Predictive Products Search. Delivers stunning results as you type. Searches your entire WP e-Commerce product database.  
- 
+WP e-Commerce Predictive Search gives your customers an awesome search experience delivering stunning 'live' product search results.
+
 == Description ==
 
-WP e-Commerce Predictive Search queries <strong>your entire product database</strong> while you type. Delivers users a stunning visual results display in the widget dropdown and on the All results search page. 
+WP e-Commerce Predictive Search queries <strong>your entire product database</strong> while you type. It delivers users instant and changing results as they type in the dropdown which shows the product thumbnail, product title and description. Users can click through from the drop down to the 'All Results Search Page' that features endless scroll. 
+  
 
-[youtube http://www.youtube.com/watch?v=j71wxGGxrds]
- 
 = Key Features =
 
-* Searches your entire product database for the product titles that match what is being typed.
-* Shows the results beautifully in the widget dropdown and on the All results search page.
+* Searches your entire WP e-Commerce product database for the product titles that match what is being typed.
+* Shows the results beautifully in the widget drop-down with Product Thumbnail, Title and description text.
+* Set the number of Product results to show in the dropdown.
+* Set the number of characters of the product description text to show with each search result. 
+* Click through from the Widget drop down to the 'All Results Search Page'.
+* 'All Results Search Page' shows products thumbnail, Title as a clickable link to the product and product text description.
+* 'All Results Search Page' features endless scroll - allows the page to load quickly and show 'infinite' number of results. 
 * Add search box to any widgetized area on your site.
-* All Results search page features endless scroll - no pagination.   
 
+= Set-Up =
+
+Find detailed step-by-step set up and configuration instructions with pretty pictures to guide you in the [plugins documents](http://docs.a3rev.com/user-guides/woocommerce/woo-predictive-search/) on the a3rev wiki.  
+ 
 = Pro Version Upgrade =
 
-For WP e-Commerce store owners who want an even more powerful search feature.
+WP e-Commerce Predictive Search is the upgrade for those WP e-Commerce store owners who want a truly awesome search feature on their site. You will see all of the available upgrade features on the plugins widgets, admin panel and shortcode poup. Upgrading activates all of these advanced features.
 
-* 'Smart Search'. An intuitive technology that auto detects what product group the user is looking at and delivers fast and accurate results from that group.
-* Set "Smart Search' or Global search from every search widget.
-* Predictive Search shortcodes - Insert and configure the Search box into any page or post via shortcode.
-* Configure the All results search page to show Product Categories, tags, prices with results. 
-* Manually add and configure Predictive Search to any part of a theme e.g header.
- 
+* Configure each widget to search all 'types' 
+- Products (Lite version does these), 
+- Product Categories, 
+- Product Tags, 
+- Posts, - 
+- Pages 
+- or any combination of the above
+
+* Set the number of each search 'type' eg "Product Category" results to show in the search box drop down.
+* Use drag and drop in the widget to set the search 'type' order that the results show in the drop down.
+* User can configure the All Results Search Page for each result to show Product Categories, Product Tags, Product Prices including 'special' pricing with each result just like the single product pages.
+* User can set the number of results to show before 'endless scroll' bar.
+* WP e-Commerce Predictive Search shortcodes - Insert and configure the Search box into any page or post via shortcode.
+* 'Smart Search' is an intuitive technology that auto detects what product category, product tag, post category, post tag  the user is looking at and delivers fast and accurate results from that taxonomy any child categories, tags, post categories and tags.
+* Configure "Smart Search' or All Products Search from every search widget.
+* Function and Parameters activated to allow users to manually add and configure Predictive Search to any part of their theme e.g header.
+* Priority same day support.
 
 [Home Page](http://a3rev.com/products-page/wp-e-commerce/wpec-predictive-search-pro/) |
 [Documentation](http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/) |
@@ -68,6 +86,13 @@ Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a tr
 
 == Screenshots ==
 
+1. Set up WP e-Commerce Predictive Search Widget. Set Title that show on the front end. Set the number of results to show in the dropdown. Set the number of characters of the description text to show with each result. Link to the All Search Results Page shows at the bottom of the widget. 
+
+2. All Search Results Page with Endless Scroll. Please note the image shows results with Prices, Product Categories and Product Tags - these are Pro Version features that are NOT activated on the Lite Version.
+
+3. The plugin adds a Predictive Search tab to your WP e-Commerce Settings. It also auto creates a WP e-Commerce Predictive Search page on your site with the predictive search shortcode embedded. This is for the 'All Results Search Page' creation. You can change the pages location if you know what you are doing.
+
+4. The plugin auto adds a Predictive search Shortcode icon to all of your pages and posts visual editors. Note: Shortcodes are not a supported feature on the lite version.
 
 
 == Usage ==
@@ -94,16 +119,28 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 == Changelog ==
 
+= 1.1.0 - 2012/09/21 =
+
+* Feature: Activated the ability in Lite version to set the number of search results that show in the widget search box drop down. 
+* Feature: Activated the ability in Lite version to set the number of description characters that show in the widget search box drop down.
+* Feature: Added Documentation and Support Links to plugins description.
+* Feature: Added Plugin Documents to the a3rev wiki.
+* Tweak: Added screenshots to the wordpress.org listing.
+* Tweak: Updated Predictive Search WP e-Commerce Tab with links to other A3 WP e-Commerce plugins on wordpress.org for ease of navigation.
+* Tweak: UI changes to Widget to accommodate the new Pro Major Update features.
+
 = 1.0.2 - 2012/08/17 =
-* Fix - Fixed styling for sidebar widget search box so it shows correctly.
-* Tweak - Change localization file path from actual to base path
-* Tweak - Added checkbox to select 'Smart Search' in sidebar widget
-* Tweak - Added Support and Documentation links to plugins description.
-* Documentation - Added comprehensive extension documentation to the [a3rev wiki](ttp://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/)
+
+* Fixed: Fixed styling for sidebar widget search box so it shows correctly.
+* Tweak: Change localization file path from actual to base path
+* Tweak: Added checkbox to select 'Smart Search' in sidebar widget
+* Tweak: Added Support and Documentation links to plugins description.
+* Documentation: Added comprehensive extension documentation to the [a3rev wiki](ttp://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/)
 
 = 1.0.1 - 2012/08/03 =
-* Fix: Show the 6 results with 100 characters of product description by default when no value is present Â in Widget control and Admin panel
-* Fix: Change z-index for search box from 1001 to 99 so that themes nav bar dropdowns slide over it instead of behind the search box
+
+* Fixed: Show the 6 results with 100 characters of product description by default when no value is present Â in Widget control and Admin panel
+* Fixed: Change z-index for search box from 1001 to 99 so that themes nav bar dropdowns slide over it instead of behind the search box
 * Feature: Hide the description when enter 0 as the number of description characters in the sidebar widget and Admin panel.
 * Feature: Show first thumb image in product gallery if the product does not have feature image.
 

@@ -24,6 +24,7 @@ class WPSC_Predictive_Search_Shortcodes {
 	
 	//Action target that displays the popup to insert a form to a post/page
 	function add_search_widget_mce_popup(){
+		$items_search_default = WPSC_Predictive_Search_Widgets::get_items_search();
 		?>
 		<script type="text/javascript">
 			function alert_upgrade(text) {
@@ -40,16 +41,17 @@ class WPSC_Predictive_Search_Shortcodes {
 		<style type="text/css">
 		#TB_ajaxContent{width:auto !important;}
 		.field_content {
-			padding:0 0 0 40px;
+			padding:2px 0;	
+			margin:6px 0;
 		}
 		.field_content label{
 			width:150px;
 			float:left;
 			text-align:left;
 		}
-		#wpsc_predictive_upgrade_area { border:2px solid #FF0;-webkit-border-radius:10px;-moz-border-radius:10px;-o-border-radius:10px; border-radius: 10px; padding:0; position:relative}
+		#wpsc_predictive_upgrade_area { border:2px solid #E6DB55;-webkit-border-radius:10px;-moz-border-radius:10px;-o-border-radius:10px; border-radius: 10px; padding:0; position:relative}
 	  	#wpsc_predictive_upgrade_area h3{ margin-left:10px;}
-	   	#wpsc_predictive_extensions { background: url("<?php echo WPSC_PS_IMAGES_URL; ?>/logo_a3blue.png") no-repeat scroll 4px 6px #FFFBCC; -webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px; border-radius: 4px 4px 4px 4px; color: #555555; float: right; margin: 0px; padding: 4px 8px 4px 38px; position: absolute; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); width: 260px; right:10px; top:140px; border:1px solid #E6DB55}
+	   	#wpsc_predictive_extensions { background: url("<?php echo WPSC_PS_IMAGES_URL; ?>/logo_a3blue.png") no-repeat scroll 4px 6px #FFFBCC; -webkit-border-radius:10px 10px 0 0;-moz-border-radius:10px 10px 0 0;-o-border-radius:10px 10px 0 0; border-radius: 10px 10px 0 0; color: #555555; margin: 0px; padding: 4px 8px 4px 38px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);}
 		</style>
 		<div id="search_widget_shortcode" style="display:none;">
 		  <div class="">
@@ -57,14 +59,18 @@ class WPSC_Predictive_Search_Shortcodes {
 			<div style="clear:both"></div>
             <div id="wpsc_predictive_upgrade_area"><?php echo WPSC_Settings_Tab_Ps_Settings::predictive_extension_shortcode(); ?>
 			<div class="field_content">
-            	<p><label for="wpsc_search_number_items"><?php _e('Results', 'wpscps'); ?>:</label> <input disabled="disabled" style="width:100px;" size="10" id="wpsc_search_number_items" name="wpsc_search_number_items" type="text" value="6" /> <span class="description"><?php _e('Number of results to show in dropdown', 'wpscps'); ?></span></p>
+            	<?php foreach ($items_search_default as $key => $data) { ?>
+                <p><label for="wpsc_search_<?php echo $key ?>_items"><?php echo $data['name']; ?>:</label> <input disabled="disabled" style="width:100px;" size="10" id="wpsc_search_<?php echo $key ?>_items" name="wpsc_search_<?php echo $key ?>_items" type="text" value="<?php echo $data['number'] ?>" /> <span class="description"><?php _e('Number of', 'wpscps'); echo ' '.$data['name'].' '; _e('results to show in dropdown', 'wpscps'); ?></span></p> 
+                <?php } ?>
             	<p><label for="wpsc_search_text_lenght"><?php _e('Characters', 'wpscps'); ?>:</label> <input disabled="disabled" style="width:100px;" size="10" id="wpsc_search_text_lenght" name="wpsc_search_text_lenght" type="text" value="100" /> <span class="description"><?php _e('Number of product description characters', 'wpscps'); ?></span></p>
                 <p><label for="wpsc_search_align"><?php _e('Alignment', 'wpscps'); ?>:</label> <select disabled="disabled" style="width:100px" id="wpsc_search_align" name="wpsc_search_align"><option value="none" selected="selected"><?php _e('None', 'wpscps'); ?></option><option value="left-wrap"><?php _e('Left - wrap', 'wpscps'); ?></option><option value="left"><?php _e('Left - no wrap', 'wpscps'); ?></option><option value="center"><?php _e('Center', 'wpscps'); ?></option><option value="right-wrap"><?php _e('Right - wrap', 'wpscps'); ?></option><option value="right"><?php _e('Right - no wrap', 'wpscps'); ?></option></select> <span class="description"><?php _e('Horizontal aliginment of search box', 'wpscps'); ?></span></p>
-                <p><label for="wpsc_search_width"><?php _e('Search box width', 'wpscps'); ?>:</label> <input disabled="disabled" style="width:100px;" size="10" id="wpsc_search_width" name="wpsc_search_width" type="text" value="200" /> px</p>
-                <p><label for="wpsc_search_padding_top"><?php _e('Padding - Above', 'wpscps'); ?>:</label> <input disabled="disabled" style="width:100px;" size="10" id="wpsc_search_padding_top" name="wpsc_search_padding_top" type="text" value="10" /> px</p>
-                <p><label for="wpsc_search_padding_bottom"><?php _e('Padding - Below', 'wpscps'); ?>:</label> <input disabled="disabled" style="width:100px;" size="10" id="wpsc_search_padding_bottom" name="wpsc_search_padding_bottom" type="text" value="10" /> px</p>
-                <p><label for="wpsc_search_padding_left"><?php _e('Padding - Left', 'wpscps'); ?>:</label> <input disabled="disabled" style="width:100px;" size="10" id="wpsc_search_padding_left" name="wpsc_search_padding_left" type="text" value="0" /> px</p>
-                <p><label for="wpsc_search_padding_right"><?php _e('Padding - Right', 'wpscps'); ?>:</label> <input disabled="disabled" style="width:100px;" size="10" id="wpsc_search_padding_right" name="wpsc_search_padding_right" type="text" value="0" /> px</p>
+                <p><label for="wpsc_search_width"><?php _e('Search box width', 'wpscps'); ?>:</label> <input disabled="disabled" style="width:100px;" size="10" id="wpsc_search_width" name="wpsc_search_width" type="text" value="200" />px</p>
+                <p><label for="wpsc_search_padding"><strong><?php _e('Padding', 'wpscps'); ?></strong>:</label><br /> 
+				<label for="wpsc_search_padding_top" style="width:auto; float:none"><?php _e('Above', 'wpscps'); ?>:</label><input disabled="disabled" style="width:50px;" size="10" id="wpsc_search_padding_top" name="wpsc_search_padding_top" type="text" value="10" />px &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="wpsc_search_padding_bottom" style="width:auto; float:none"><?php _e('Below', 'wpscps'); ?>:</label> <input disabled="disabled" style="width:50px;" size="10" id="wpsc_search_padding_bottom" name="wpsc_search_padding_bottom" type="text" value="10" />px &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="wpsc_search_padding_left" style="width:auto; float:none"><?php _e('Left', 'wpscps'); ?>:</label> <input disabled="disabled" style="width:50px;" size="10" id="wpsc_search_padding_left" name="wpsc_search_padding_left" type="text" value="0" />px &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="wpsc_search_padding_right" style="width:auto; float:none"><?php _e('Right', 'wpscps'); ?>:</label> <input disabled="disabled" style="width:50px;" size="10" id="wpsc_search_padding_right" name="wpsc_search_padding_right" type="text" value="0" />px
+                </p>
 			</div>
             <p>&nbsp;&nbsp;<input disabled="disabled" type="button" class="button-primary" value="<?php _e('Insert Shortcode', 'wpscps'); ?>" onclick="return alert_upgrade('<?php _e('Please upgrade to the Pro Version to activate Smart Search, sidebar widget controls and the advance search results page features with our limited', 'wpscps' ); ?>');"/>&nbsp;&nbsp;&nbsp;
             <a class="button" style="" href="#" onclick="tb_remove(); return false;"><?php _e('Cancel', 'wpscps'); ?></a>

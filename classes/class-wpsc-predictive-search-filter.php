@@ -23,7 +23,7 @@ class WPSC_Predictive_Search_Hook_Filter {
 	*/
 	function wpscps_add_frontend_script() {
 		wp_enqueue_style( 'ajax-wpsc-autocomplete-style', WPSC_PS_JS_URL . '/ajax-autocomplete/jquery.autocomplete.css' );
-		wp_enqueue_script( 'ajax-wpsc-autocomplete-script', WPSC_PS_JS_URL . '/ajax-autocomplete/jquery.autocomplete.js' );
+		wp_enqueue_script( 'ajax-wpsc-autocomplete-script', WPSC_PS_JS_URL . '/ajax-autocomplete/jquery.autocomplete.js', array(), false, true );
 	}
 	
 	function wpscps_search_by_title_only1( $search, &$wp_query ) {
@@ -58,8 +58,8 @@ class WPSC_Predictive_Search_Hook_Filter {
 		if ( $plugin_name != WPSC_PS_NAME) {
 			return $links;
 		}
-		$links[] = '<a href="http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/" target="_blank">'.__('Documentation', 'wpec_cp').'</a>';
-		$links[] = '<a href="http://a3rev.com/products-page/wp-e-commerce/wpec-predictive-search-pro/#help" target="_blank">'.__('Support', 'wpec_cp').'</a>';
+		$links[] = '<a href="http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/" target="_blank">'.__('Documentation', 'wpscps').'</a>';
+		$links[] = '<a href="http://a3rev.com/products-page/wp-e-commerce/wpec-predictive-search-pro/#help" target="_blank">'.__('Support', 'wpscps').'</a>';
 		return $links;
 	}
 }
