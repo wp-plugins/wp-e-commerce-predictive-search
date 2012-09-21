@@ -27,7 +27,7 @@ WP e-Commerce Predictive Search queries <strong>your entire product database</st
 
 = Set-Up =
 
-Find detailed step-by-step set up and configuration instructions with pretty pictures to guide you in the [plugins documents](http://docs.a3rev.com/user-guides/woocommerce/woo-predictive-search/) on the a3rev wiki.  
+Find detailed step-by-step set up and configuration instructions with pretty pictures to guide you in the [plugins documents](http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/) on the a3rev wiki.  
  
 = Pro Version Upgrade =
 
@@ -135,7 +135,7 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 * Tweak: Change localization file path from actual to base path
 * Tweak: Added checkbox to select 'Smart Search' in sidebar widget
 * Tweak: Added Support and Documentation links to plugins description.
-* Documentation: Added comprehensive extension documentation to the [a3rev wiki](ttp://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/)
+* Documentation: Added comprehensive extension documentation to the [a3rev wiki](http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/)
 
 = 1.0.1 - 2012/08/03 =
 
