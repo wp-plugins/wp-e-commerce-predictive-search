@@ -146,7 +146,7 @@ class WPSC_Settings_Tab_Ps_Settings {
 		$html .= '<div id="wpsc_predictive_extensions">';
 		$html .= '<h3>'.__('No Donations Accepted', 'wpscps').'</h3>';
 		$html .= '<img src="'.WPSC_PS_IMAGES_URL.'/btn_donate.png" />';
-		$html .= '<h3>'.__('Upgrade to the Pro version for Just', '').' $18 '.__('to', 'wpscps').'</h3>';
+		$html .= '<h3>'.__('Upgrade to the Pro version for Just', '').' $20 '.__('to', 'wpscps').'</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
 		$html .= '<li>1. '.__('Activate the search results pages settings in this yellow border.', 'wpscps').'</li>';
