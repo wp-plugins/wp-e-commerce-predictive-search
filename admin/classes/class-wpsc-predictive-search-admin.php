@@ -81,7 +81,47 @@ class WPSC_Settings_Tab_Ps_Settings {
             </td>
 		  </tr>
 		</table>
+        <h3><?php _e('Exclude From Predictive Search', 'wpscps'); ?></h3>
+        <table class="form-table">
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_exclude_products"><?php _e('Exclude Products', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input type="text" value="<?php esc_attr_e( stripslashes( get_option('ecommerce_search_exclude_products') ) );?>" id="ecommerce_search_exclude_products" name="ecommerce_search_exclude_products" style="min-width:300px;" />
+              <span class="description"><?php _e("Enter Product ID's comma separated", 'wpscps');?></span>
+            </td>
+		  </tr>
+        </table>
         <table class="form-table"><tr valign="top"><td style="padding:0;"><div id="wpsc_predictive_upgrade_area"><?php echo WPSC_Settings_Tab_Ps_Settings::predictive_extension(); ?><div id="wpsc_predictive_upgrade_inner">
+        <table class="form-table">
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_exclude_p_categories"><?php _e('Exclude Product Categories', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="text" value="" id="ecommerce_search_exclude_p_categories" name="ecommerce_search_exclude_p_categories" style="min-width:300px;" />
+              <p class="description"><?php _e("Enter Product Category ID's comma separated", 'wpscps');?></p>
+            </td>
+		  </tr>
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_exclude_p_tags"><?php _e('Exclude Product Tags', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="text" value="" id="ecommerce_search_exclude_p_tags" name="ecommerce_search_exclude_p_tags" style="min-width:300px;" />
+              <p class="description"><?php _e("Enter Product Tag ID's comma separated", 'wpscps');?></p>
+            </td>
+		  </tr>
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_exclude_posts"><?php _e('Exclude Posts', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="text" value="" id="ecommerce_search_exclude_posts" name="ecommerce_search_exclude_posts" style="min-width:300px;" />
+              <p class="description"><?php _e("Enter Post ID's comma separated", 'wpscps');?></p>
+            </td>
+		  </tr>
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_exclude_pages"><?php _e('Exclude Pages', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="text" value="" id="ecommerce_search_exclude_pages" name="ecommerce_search_exclude_pages" style="min-width:300px;" />
+              <p class="description"><?php _e("Enter Page ID's comma separated", 'wpscps');?></p>
+            </td>
+		  </tr>
+        </table>
         <h3 style="margin-top:0; padding-top:10px;"><?php _e('Search results page settings', 'wpscps'); ?></h3>
         <table class="form-table">
           <tr valign="top">
@@ -117,25 +157,115 @@ class WPSC_Settings_Tab_Ps_Settings {
             </td>
 		  </tr>
         </table>
-        <h3><?php _e('Code', 'wpscps'); ?></h3>
+        <h3><?php _e('Predictive Search Function', 'wpscps'); ?></h3>
 		<table class="form-table">
           <tr valign="top">
 		    <td class="forminp" colspan="2">
-            <?php _e('Use this function to place the Predictive Search feature anywhere in your theme.', 'wpscps');?>
-            <br /><code>&lt;?php if(function_exists('wpsc_search_widget')) wpsc_search_widget($product_items, $product_category_items, $product_tag_items, $post_items, $page_items, $character_max, $style, $global_search); ?&gt;</code>
-            <br /><br />
-            <p><?php _e('Parameters', 'wpscps');?> :
-            <br /><code>$product_items (int)</code> : <?php _e('Number of Products to show in search field drop-down. Default value is "6".', 'wpscps');?>
-            <br /><code>$product_category_items (int)</code> : <?php _e('Number of Product Categories to show in search field drop-down. Default value is "0".', 'wpscps');?>
-            <br /><code>$product_tag_items (int)</code> : <?php _e('Number of Product Tags to show in search field drop-down. Default value is "0".', 'wpscps');?>
-            <br /><code>$post_items (int)</code> : <?php _e('Number of Posts to show in search field drop-down. Default value is "0".', 'wpscps');?>
-            <br /><code>$page_items (int)</code> : <?php _e('Number of Pages to show in search field drop-down. Default value is "0".', 'wpscps');?>
-            <br /><code>$character_max (int)</code> : <?php _e('Number of characters from product description to show in search field drop-down. Default value is "100".', 'wpscps');?>
-            <br /><code>$style (string)</code> : <?php _e('Use to create a custom style for the Predictive search box | Example: ', 'wpscps');?><code>"padding-top:10px;padding-bottom:10px;padding-left:0px;padding-right:0px;"</code>
-            <br /><code>$global_search (bool)</code> : <?php _e('Set global search or search in current product category or current product tag. Default value is "true", global search.', 'wpscps');?>
-            </p>
+            <?php _e('Copy and paste this global function into your themes header.php file to replace any existing search function. (Be sure to delete the existing WordPress, WP e-Commerce or Theme search function)', 'wpscps');?>
+            <br /><code>&lt;?php if(function_exists('wpsc_search_widget')) wpsc_search_widget(); ?&gt;</code>
+            </td>
+		  </tr>
+        </table>
+		 <h3><?php _e('Customize Search Function values', 'wpscps');?> :</h3>
+         <table class="form-table">
+          <tr valign="top">
+		    <td class="forminp" colspan="2">
+            <?php _e("The values you set here will be shown when you add the global search function to your header.php file. After adding the global function to your header.php file you can change the values here and 'Update' and they will be auto updated in the function.", "wpscps"); ?>
             </td>
           </tr>
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_product_items"><?php _e('Product name', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_product_items" name="ecommerce_search_product_items" />
+              <span class="description"><?php _e('Number of Product Name to show in search field drop-down. Leave &lt;empty&gt; for not activated', 'wpscps');?></span>
+            </td>
+		  </tr>
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_p_sku_items"><?php _e('Product SKU', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_p_sku_items" name="ecommerce_search_p_sku_items" />
+              <span class="description"><?php _e('Number of Product SKU to show in search field drop-down. Leave &lt;empty&gt; for not activated', 'wpscps');?></span>
+            </td>
+		  </tr>
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_p_cat_items"><?php _e('Product category', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_p_cat_items" name="ecommerce_search_p_cat_items" />
+              <span class="description"><?php _e('Number of Product Categories to show in search field drop-down. Leave &lt;empty&gt; for not activated', 'wpscps');?></span>
+            </td>
+		  </tr>
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_p_tag_items"><?php _e('Product tag', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_p_tag_items" name="ecommerce_search_p_tag_items" />
+              <span class="description"><?php _e('Number of Product Tags to show in search field drop-down. Leave &lt;empty&gt; for not activated', 'wpscps');?></span>
+            </td>
+		  </tr>
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_post_items"><?php _e('Post', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_post_items" name="ecommerce_search_post_items" />
+              <span class="description"><?php _e('Number of Posts to show in search field drop-down. Leave &lt;empty&gt; for not activated', 'wpscps');?></span>
+            </td>
+		  </tr>
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_page_items"><?php _e('Page', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_page_items" name="ecommerce_search_page_items" />
+              <span class="description"><?php _e('Number of Pages to show in search field drop-down. Leave &lt;empty&gt; for not activated', 'wpscps');?></span>
+            </td>
+		  </tr>
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_character_max"><?php _e('Description Characters', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_character_max" name="ecommerce_search_character_max" />
+              <span class="description"><?php _e('Number of characters from product description to show in search field drop-down. Default value is "100".', 'wpscps');?></span>
+            </td>
+		  </tr>
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_width"><?php _e('Width', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_width" name="ecommerce_search_width" />px
+              <span class="description"><?php _e('Leave &lt;empty&gt; for 100% wide', 'wpscps');?></span>
+            </td>
+		  </tr>
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_padding_top"><?php _e('Padding top', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_padding_top" name="ecommerce_search_padding_top" />px
+            </td>
+		  </tr>
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_padding_bottom"><?php _e('Padding bottom', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_padding_bottom" name="ecommerce_search_padding_bottom" />px
+            </td>
+		  </tr>
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_padding_left"><?php _e('Padding left', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_padding_left" name="ecommerce_search_padding_left" />px
+            </td>
+		  </tr>
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_padding_right"><?php _e('Padding right', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_padding_right" name="ecommerce_search_padding_right" />px
+            </td>
+		  </tr>
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_custom_style"><?php _e('Custom style', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="text" value="" id="ecommerce_search_custom_style" name="ecommerce_search_custom_style" style="min-width:300px;" />
+              <p class="description"><?php _e('Put other custom style for the Predictive search box', 'wpscps');?></p>
+            </td>
+		  </tr>
+          <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_global_search"><?php _e('Global search', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="checkbox" checked="checked" value="1" id="ecommerce_search_global_search" name="ecommerce_search_global_search" /> <span class="description"><label for="ecommerce_search_global_search"><?php _e('Set global search or search in current product category or current product tag. "Checked" to activate global search.', 'wpscps');?></label></span>
+            </td>
+		  </tr>
         </table>
         </div></div></td></tr></table>
 		<?php

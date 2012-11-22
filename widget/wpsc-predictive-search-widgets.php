@@ -15,7 +15,8 @@ class WPSC_Predictive_Search_Widgets extends WP_Widget {
 	
 	function get_items_search() {
 		$items_search = array(
-				'product'				=> array( 'number' => 6, 'name' => __('Products', 'wpscps') ),
+				'product'				=> array( 'number' => 6, 'name' => __('Product Name', 'wpscps') ),
+				'p_sku'					=> array( 'number' => 0, 'name' => __('Product SKU', 'wpscps') ),
 				'p_cat'					=> array( 'number' => 0, 'name' => __('Product Categories', 'wpscps') ),
 				'p_tag'					=> array( 'number' => 0, 'name' => __('Product Tags', 'wpscps') ),
 				'post'					=> array( 'number' => 0, 'name' => __('Posts', 'wpscps') ),
@@ -33,7 +34,7 @@ class WPSC_Predictive_Search_Widgets extends WP_Widget {
 	function widget( $args, $instance ) {
 		extract($args);
 		$title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
-		if(empty($instance['number_items']) || $instance['number_items'] <= 0) $number_items = 5; 
+		if(empty($instance['number_items']) || is_array($instance['number_items']) || $instance['number_items'] <= 0) $number_items = 5; 
 		else $number_items = $instance['number_items'];
 		if(empty($instance['text_lenght']) || $instance['text_lenght'] < 0) $text_lenght = 100; 
 		else $text_lenght = $instance['text_lenght'];
@@ -129,7 +130,8 @@ class WPSC_Predictive_Search_Widgets extends WP_Widget {
 		
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'number_items' => 5, 'text_lenght' => 100, 'search_global' => 1) );
 		$title = strip_tags($instance['title']);
-		$number_items = strip_tags($instance['number_items']);
+		if (empty($number_items) || is_array($number_items) ) $number_items = 5;
+		else $number_items = strip_tags($instance['number_items']);
 		$text_lenght = strip_tags($instance['text_lenght']);
 		$search_global = $instance['search_global'];
 ?>		

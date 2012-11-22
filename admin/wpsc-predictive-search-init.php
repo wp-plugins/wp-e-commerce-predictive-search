@@ -6,21 +6,7 @@ update_option('wpsc_predictive_search_plugin', 'wpsc_predictive_search');
 function wpsc_predictive_install() {
 	global $wpdb;
 	WPSC_Predictive_Search::create_page( 'ecommerce-search', 'ecommerce_search_page_id', __('Predictive Search', 'wpscps'), '[ecommerce_search]' );
-	if ( get_option('ecommerce_search_text_lenght') <= 0  ) {
-		update_option('ecommerce_search_text_lenght','100');
-	}
-	if ( get_option('ecommerce_search_result_items') <= 0  ) {
-		update_option('ecommerce_search_result_items','10');
-	}
-	if ( get_option('ecommerce_search_price_enable') == '' ) {
-		update_option('ecommerce_search_price_enable', 0);
-	}
-	if ( get_option('ecommerce_search_categories_enable') == ''  ) {
-		update_option('ecommerce_search_categories_enable', 0);
-	}
-	if ( get_option('ecommerce_search_tags_enable') == '' ) {
-		update_option('ecommerce_search_tags_enable', 0);
-	}
+	WPSC_Predictive_Search::set_setting();
 }
 
 function wpscps_init() {
@@ -33,6 +19,9 @@ function register_widget_wpscps_predictive_search() {
 
 // Add language
 add_action('init', 'wpscps_init');
+
+// Load Global variables
+add_action( 'plugins_loaded', array( 'WPSC_Predictive_Search', 'plugins_loaded' ), 8 );
 
 // Add text on right of Visit the plugin on Plugin manager page
 add_filter( 'plugin_row_meta', array('WPSC_Predictive_Search_Hook_Filter', 'plugin_extra_links'), 10, 2 );

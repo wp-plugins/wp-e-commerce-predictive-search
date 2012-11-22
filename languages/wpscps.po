@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP e-Commerce Predictive Search LITE\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-21 16:33+0700\n"
-"PO-Revision-Date: 2012-09-21 16:33+0700\n"
+"POT-Creation-Date: 2012-11-22 14:19+0700\n"
+"PO-Revision-Date: 2012-11-22 14:19+0700\n"
 "Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
 "MIME-Version: 1.0\n"
@@ -38,197 +38,310 @@ msgstr ""
 msgid "Page contents:"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:85
-msgid "Search results page settings"
+#: admin/classes/class-wpsc-predictive-search-admin.php:84
+msgid "Exclude From Predictive Search"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:88
-msgid "Results"
+#: admin/classes/class-wpsc-predictive-search-admin.php:87
+msgid "Exclude Products"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:91
-msgid "The number of results to show before endless scroll click to see more results."
+#: admin/classes/class-wpsc-predictive-search-admin.php:90
+msgid "Enter Product ID's comma separated"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:95
-msgid "Description character count"
+#: admin/classes/class-wpsc-predictive-search-admin.php:97
+msgid "Exclude Product Categories"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:98
-msgid "The number of characters from product descriptions that shows with each search result."
-msgstr ""
-
-#: admin/classes/class-wpsc-predictive-search-admin.php:102
-msgid "Price"
+#: admin/classes/class-wpsc-predictive-search-admin.php:100
+msgid "Enter Product Category ID's comma separated"
 msgstr ""
 
 #: admin/classes/class-wpsc-predictive-search-admin.php:104
-msgid "Show product price with search results"
+msgid "Exclude Product Tags"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:108
-#: widget/wpsc-predictive-search-widgets.php:19
-msgid "Product Categories"
+#: admin/classes/class-wpsc-predictive-search-admin.php:107
+msgid "Enter Product Tag ID's comma separated"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:110
-msgid "Show categories with search results"
+#: admin/classes/class-wpsc-predictive-search-admin.php:111
+msgid "Exclude Posts"
 msgstr ""
 
 #: admin/classes/class-wpsc-predictive-search-admin.php:114
-#: widget/wpsc-predictive-search-widgets.php:20
-msgid "Product Tags"
+msgid "Enter Post ID's comma separated"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:116
-msgid "Show tags with search results"
+#: admin/classes/class-wpsc-predictive-search-admin.php:118
+msgid "Exclude Pages"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:120
-msgid "Code"
+#: admin/classes/class-wpsc-predictive-search-admin.php:121
+msgid "Enter Page ID's comma separated"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:124
-msgid "Use this function to place the Predictive Search feature anywhere in your theme."
-msgstr ""
-
-#: admin/classes/class-wpsc-predictive-search-admin.php:127
-msgid "Parameters"
+#: admin/classes/class-wpsc-predictive-search-admin.php:125
+msgid "Search results page settings"
 msgstr ""
 
 #: admin/classes/class-wpsc-predictive-search-admin.php:128
-msgid "Number of Products to show in search field drop-down. Default value is \"6\"."
-msgstr ""
-
-#: admin/classes/class-wpsc-predictive-search-admin.php:129
-msgid "Number of Product Categories to show in search field drop-down. Default value is \"0\"."
-msgstr ""
-
-#: admin/classes/class-wpsc-predictive-search-admin.php:130
-msgid "Number of Product Tags to show in search field drop-down. Default value is \"0\"."
+msgid "Results"
 msgstr ""
 
 #: admin/classes/class-wpsc-predictive-search-admin.php:131
-msgid "Number of Posts to show in search field drop-down. Default value is \"0\"."
-msgstr ""
-
-#: admin/classes/class-wpsc-predictive-search-admin.php:132
-msgid "Number of Pages to show in search field drop-down. Default value is \"0\"."
-msgstr ""
-
-#: admin/classes/class-wpsc-predictive-search-admin.php:133
-msgid "Number of characters from product description to show in search field drop-down. Default value is \"100\"."
-msgstr ""
-
-#: admin/classes/class-wpsc-predictive-search-admin.php:134
-msgid "Use to create a custom style for the Predictive search box | Example: "
+msgid "The number of results to show before endless scroll click to see more results."
 msgstr ""
 
 #: admin/classes/class-wpsc-predictive-search-admin.php:135
-msgid "Set global search or search in current product category or current product tag. Default value is \"true\", global search."
+msgid "Description character count"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:147
-msgid "No Donations Accepted"
+#: admin/classes/class-wpsc-predictive-search-admin.php:138
+msgid "The number of characters from product descriptions that shows with each search result."
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:149
-msgid "Upgrade to the Pro version for Just"
+#: admin/classes/class-wpsc-predictive-search-admin.php:142
+msgid "Price"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:149
-msgid "to"
+#: admin/classes/class-wpsc-predictive-search-admin.php:144
+msgid "Show product price with search results"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:152
-msgid "Activate the search results pages settings in this yellow border."
+#: admin/classes/class-wpsc-predictive-search-admin.php:148
+#: widget/wpsc-predictive-search-widgets.php:20
+msgid "Product Categories"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:153
-msgid "Activate Search by Product Categories, Product Tags, Posts and Pages options in the search widgets."
+#: admin/classes/class-wpsc-predictive-search-admin.php:150
+msgid "Show categories with search results"
 msgstr ""
 
 #: admin/classes/class-wpsc-predictive-search-admin.php:154
-msgid "Activate Search shortcodes for Posts and pages."
+#: widget/wpsc-predictive-search-widgets.php:21
+msgid "Product Tags"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:155
-msgid "Same day priority support."
-msgstr ""
-
-#: admin/classes/class-wpsc-predictive-search-admin.php:158
-msgid "See the Pro version on the"
-msgstr ""
-
-#: admin/classes/class-wpsc-predictive-search-admin.php:158
-msgid "A3 market place"
-msgstr ""
-
-#: admin/classes/class-wpsc-predictive-search-admin.php:159
-msgid "Go Pro and help us help you."
+#: admin/classes/class-wpsc-predictive-search-admin.php:156
+msgid "Show tags with search results"
 msgstr ""
 
 #: admin/classes/class-wpsc-predictive-search-admin.php:160
-msgid "A Pro upgrade license fee helps fund and support the maintenance and ongoing development of this plugin."
-msgstr ""
-
-#: admin/classes/class-wpsc-predictive-search-admin.php:161
-msgid "More WP e-Commerce Plugins from A3 Rev"
+msgid "Predictive Search Function"
 msgstr ""
 
 #: admin/classes/class-wpsc-predictive-search-admin.php:164
+msgid "Copy and paste this global function into your themes header.php file to replace any existing search function. (Be sure to delete the existing WordPress, WP e-Commerce or Theme search function)"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:169
+msgid "Customize Search Function values"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:173
+msgid "The values you set here will be shown when you add the global search function to your header.php file. After adding the global function to your header.php file you can change the values here and 'Update' and they will be auto updated in the function."
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:177
+msgid "Product name"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:180
+msgid "Number of Product Name to show in search field drop-down. Leave &lt;empty&gt; for not activated"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:184
+#: widget/wpsc-predictive-search-widgets.php:19
+msgid "Product SKU"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:187
+msgid "Number of Product SKU to show in search field drop-down. Leave &lt;empty&gt; for not activated"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:191
+msgid "Product category"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:194
+msgid "Number of Product Categories to show in search field drop-down. Leave &lt;empty&gt; for not activated"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:198
+msgid "Product tag"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:201
+msgid "Number of Product Tags to show in search field drop-down. Leave &lt;empty&gt; for not activated"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:205
+msgid "Post"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:208
+msgid "Number of Posts to show in search field drop-down. Leave &lt;empty&gt; for not activated"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:212
+msgid "Page"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:215
+msgid "Number of Pages to show in search field drop-down. Leave &lt;empty&gt; for not activated"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:219
+msgid "Description Characters"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:222
+msgid "Number of characters from product description to show in search field drop-down. Default value is \"100\"."
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:226
+msgid "Width"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:229
+msgid "Leave &lt;empty&gt; for 100% wide"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:233
+msgid "Padding top"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:239
+msgid "Padding bottom"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:245
+msgid "Padding left"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:251
+msgid "Padding right"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:257
+msgid "Custom style"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:260
+msgid "Put other custom style for the Predictive search box"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:264
+msgid "Global search"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:266
+msgid "Set global search or search in current product category or current product tag. \"Checked\" to activate global search."
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:277
+msgid "No Donations Accepted"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:279
+msgid "Upgrade to the Pro version for Just"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:279
+msgid "to"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:282
+msgid "Activate the search results pages settings in this yellow border."
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:283
+msgid "Activate Search by Product Categories, Product Tags, Posts and Pages options in the search widgets."
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:284
+msgid "Activate Search shortcodes for Posts and pages."
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:285
+msgid "Same day priority support."
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:288
+msgid "See the Pro version on the"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:288
+msgid "A3 market place"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:289
+msgid "Go Pro and help us help you."
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:290
+msgid "A Pro upgrade license fee helps fund and support the maintenance and ongoing development of this plugin."
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:291
+msgid "More WP e-Commerce Plugins from A3 Rev"
+msgstr ""
+
+#: admin/classes/class-wpsc-predictive-search-admin.php:294
 msgid "WP e-Commerce Dynamic Gallery"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:165
+#: admin/classes/class-wpsc-predictive-search-admin.php:295
 msgid "WP e-Commerce Compare Products"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:166
+#: admin/classes/class-wpsc-predictive-search-admin.php:296
 msgid "WP Email Template"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:167
+#: admin/classes/class-wpsc-predictive-search-admin.php:297
 msgid "WP e-Commerce Catalog Visibility"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:168
+#: admin/classes/class-wpsc-predictive-search-admin.php:298
 msgid "WP e-Commerce Grid View"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:171
+#: admin/classes/class-wpsc-predictive-search-admin.php:301
 msgid "Spreading the Word about this plugin."
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:172
+#: admin/classes/class-wpsc-predictive-search-admin.php:302
 msgid "Things you can do to help others find this plugin"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:174
+#: admin/classes/class-wpsc-predictive-search-admin.php:304
 msgid "Rate this plugin 5"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:174
+#: admin/classes/class-wpsc-predictive-search-admin.php:304
 msgid "on WordPress.org"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:175
+#: admin/classes/class-wpsc-predictive-search-admin.php:305
 msgid "Write about it in your blog"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:178
+#: admin/classes/class-wpsc-predictive-search-admin.php:308
 msgid "Thank you for your support!"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:185
+#: admin/classes/class-wpsc-predictive-search-admin.php:315
 msgid "Yes you'll love the Predictive Search shortcode feature. Upgrading to the"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:185
+#: admin/classes/class-wpsc-predictive-search-admin.php:315
 msgid "Pro Version"
 msgstr ""
 
-#: admin/classes/class-wpsc-predictive-search-admin.php:185
+#: admin/classes/class-wpsc-predictive-search-admin.php:315
 msgid "activates this shortcode feature as well as the awesome 'Smart Search' feature, per widget controls, the All Search Results page customization settings and function features."
 msgstr ""
 
@@ -332,81 +445,88 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: classes/class-wpsc-predictive-search-shortcodes.php:120
+#: classes/class-wpsc-predictive-search-shortcodes.php:121
 msgid "Showing all results for your search"
 msgstr ""
 
-#: classes/class-wpsc-predictive-search-shortcodes.php:160
-msgid "See more results"
+#: classes/class-wpsc-predictive-search-shortcodes.php:161
+msgid "Loading More Results..."
 msgstr ""
 
-#: classes/class-wpsc-predictive-search-shortcodes.php:184
+#: classes/class-wpsc-predictive-search-shortcodes.php:185
+msgid "No More Results to Show"
+msgstr ""
+
+#: classes/class-wpsc-predictive-search-shortcodes.php:199
 msgid "No result"
 msgstr ""
 
-#: classes/class-wpsc-predictive-search.php:117
-#: widget/wpsc-predictive-search-widgets.php:18
+#: classes/class-wpsc-predictive-search.php:155
 msgid "Products"
 msgstr ""
 
-#: classes/class-wpsc-predictive-search.php:129
+#: classes/class-wpsc-predictive-search.php:167
 msgid "See more results for"
 msgstr ""
 
-#: classes/class-wpsc-predictive-search.php:129
+#: classes/class-wpsc-predictive-search.php:167
 msgid "Displaying top"
 msgstr ""
 
-#: classes/class-wpsc-predictive-search.php:129
+#: classes/class-wpsc-predictive-search.php:167
 msgid "results"
 msgstr ""
 
-#: classes/class-wpsc-predictive-search.php:133
+#: classes/class-wpsc-predictive-search.php:171
 msgid "Keep typing..."
 msgstr ""
 
-#: widget/wpsc-predictive-search-widgets.php:21
-msgid "Posts"
+#: widget/wpsc-predictive-search-widgets.php:18
+msgid "Product Name"
 msgstr ""
 
 #: widget/wpsc-predictive-search-widgets.php:22
+msgid "Posts"
+msgstr ""
+
+#: widget/wpsc-predictive-search-widgets.php:23
 msgid "Pages"
 msgstr ""
 
-#: widget/wpsc-predictive-search-widgets.php:29
+#: widget/wpsc-predictive-search-widgets.php:30
 msgid "User sees search results as they type in a dropdown - links through to 'All Search Results Page' that features endless scroll."
 msgstr ""
 
-#: widget/wpsc-predictive-search-widgets.php:30
+#: widget/wpsc-predictive-search-widgets.php:31
 msgid "WPEC Predictive Search"
 msgstr ""
 
-#: widget/wpsc-predictive-search-widgets.php:144
+#: widget/wpsc-predictive-search-widgets.php:146
 msgid "Title:"
 msgstr ""
 
-#: widget/wpsc-predictive-search-widgets.php:145
+#: widget/wpsc-predictive-search-widgets.php:147
 msgid "Number of results to show:"
 msgstr ""
 
-#: widget/wpsc-predictive-search-widgets.php:146
-#: widget/wpsc-predictive-search-widgets.php:154
+#: widget/wpsc-predictive-search-widgets.php:148
+#: widget/wpsc-predictive-search-widgets.php:156
 msgid " Results description character count:"
 msgstr ""
 
-#: widget/wpsc-predictive-search-widgets.php:147
+#: widget/wpsc-predictive-search-widgets.php:149
 msgid "Upgrade to Pro to activate"
 msgstr ""
 
-#: widget/wpsc-predictive-search-widgets.php:148
+#: widget/wpsc-predictive-search-widgets.php:150
 msgid "Activate search 'types' for this widget by entering the number of results to show in the widget dropdown. &lt;empty&gt; = not activated. Sort order by drag and drop"
 msgstr ""
 
-#: widget/wpsc-predictive-search-widgets.php:155
+#: widget/wpsc-predictive-search-widgets.php:157
 msgid "Search All Products"
 msgstr ""
 
-#: widget/wpsc-predictive-search-widgets.php:156
+#: widget/wpsc-predictive-search-widgets.php:158
 msgid "Smart Search"
 msgstr ""
 

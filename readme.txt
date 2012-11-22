@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP e-Commerce Predictive Search, WP e-Commerce, Predictive Search, Live Search, e-commerce,  wordpress ecommerce
 Requires at least: 3.3
 Tested up to: 3.4.1
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -20,6 +20,7 @@ WP e-Commerce Predictive Search queries <strong>your entire product database</st
 * Shows the results beautifully in the widget drop-down with Product Thumbnail, Title and description text.
 * Set the number of Product results to show in the dropdown.
 * Set the number of characters of the product description text to show with each search result. 
+* <strong>NEW - Exclude Products from search</strong>
 * Click through from the Widget drop down to the 'All Results Search Page'.
 * 'All Results Search Page' shows products thumbnail, Title as a clickable link to the product and product text description.
 * 'All Results Search Page' features endless scroll - allows the page to load quickly and show 'infinite' number of results. 
@@ -34,15 +35,16 @@ Find detailed step-by-step set up and configuration instructions with pretty pic
 WP e-Commerce Predictive Search is the upgrade for those WP e-Commerce store owners who want a truly awesome search feature on their site. You will see all of the available upgrade features on the plugins widgets, admin panel and shortcode poup. Upgrading activates all of these advanced features.
 
 * Configure each widget to search all 'types' 
-- Products (Lite version does these), 
-- Product Categories, 
-- Product Tags, 
-- Posts, - 
-- Pages 
-- or any combination of the above
+ - Products (Lite version does these), 
+ - Product Categories, 
+ - Product Tags, 
+ - Posts, - 
+ - Pages 
+ - or any combination of the above
 
 * Set the number of each search 'type' eg "Product Category" results to show in the search box drop down.
 * Use drag and drop in the widget to set the search 'type' order that the results show in the drop down.
+* NEW - Exclude From Search Results 'Exclude From Predictive Search' Functionality. From the Settings > Store > Predictive Search tab you can now exclude any Product, Product Category, Product tag, Post or Page from showing in the Predictive Search results.
 * User can configure the All Results Search Page for each result to show Product Categories, Product Tags, Product Prices including 'special' pricing with each result just like the single product pages.
 * User can set the number of results to show before 'endless scroll' bar.
 * WP e-Commerce Predictive Search shortcodes - Insert and configure the Search box into any page or post via shortcode.
@@ -118,6 +120,13 @@ You can use this plugin only when you have installed the WP e-Commerce plugin.
 Support and access to this plugin documents are available from the [HELP tab](http://a3rev.com/products-page/wp-e-commerce/wpec-predictive-search-pro/#help) on the Pro Versions Home page.
 
 == Changelog ==
+
+= 1.1.1 - 2012/11/22 =
+
+* Feature: Added exclude individual Products from Predictive Search. From the  Settings > Store > Predictive Search tab enter the Product custom post ID of any products that you do not want included in Predictive Search results.
+* Feature: Added Exclude all search types to the admin panel. Exclude Product category, Product tag, Posts and pages is a Pro version feature but this keeps up the code compatibility between the Pro and Lite versions for seamless upgrades.
+* Feature - Change to admin panel for Predictive Search Function to keep the Lite and Pro Versions in sync for seamless upgrade - Pro Version Search function for replacing WordPress / WP e-Commerce  or Theme Search functions in theme header has been upgraded to allow for easier global function configuration. Go to the Settings > Store > Predictive Search and you will see that with the Pro Version you can now add and update the function search values on that page. Once values are added and the page updated Pro version license holders can just add the global function to their header.php file.
+
 
 = 1.1.0 - 2012/09/21 =
 

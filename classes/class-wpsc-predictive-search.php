@@ -6,6 +6,9 @@
  *
  * Table Of Contents
  *
+ * set_setting()
+ * get_id_excludes()
+ * plugins_loaded()
  * wpscps_get_product_thumbnail()
  * wpscps_limit_words()
  * wpscps_get_result_popup()
@@ -13,6 +16,40 @@
  * get_product_variation_price_available()
  */
 class WPSC_Predictive_Search{
+	
+	function set_setting($reset=false){
+		if ( get_option('ecommerce_search_text_lenght') <= 0 || $reset ) {
+			update_option('ecommerce_search_text_lenght','100');
+		}
+		if ( get_option('ecommerce_search_result_items') <= 0 || $reset ) {
+			update_option('ecommerce_search_result_items','10');
+		}
+		if ( get_option('ecommerce_search_price_enable') == '' || $reset ) {
+			update_option('ecommerce_search_price_enable', 0);
+		}
+		if ( get_option('ecommerce_search_categories_enable') == '' || $reset ) {
+			update_option('ecommerce_search_categories_enable', 0);
+		}
+		if ( get_option('ecommerce_search_tags_enable') == '' || $reset ) {
+			update_option('ecommerce_search_tags_enable', 0);
+		}
+	}
+	
+	function get_id_excludes() {
+		global $wpsc_predictive_id_excludes;
+		
+		$wpsc_predictive_id_excludes = array();
+		$wpsc_predictive_id_excludes['exclude_products'] = get_option('ecommerce_search_exclude_products', '');
+		
+		return $wpsc_predictive_id_excludes;
+	}
+	
+	function plugins_loaded() {
+		global $wpsc_predictive_id_excludes;
+		
+		WPSC_Predictive_Search::get_id_excludes();
+	}
+	
 	function wpscps_get_product_thumbnail( $post_id, $size = 'product-thumbnails', $placeholder_width = 0, $placeholder_height = 0  ) {
 		global $ecommerce;
 		$mediumSRC = '';
@@ -91,6 +128,7 @@ class WPSC_Predictive_Search{
 	
 	function wpscps_get_result_popup() {
 		check_ajax_referer( 'wpscps-get-result-popup', 'security' );
+		global $wpsc_predictive_id_excludes;
 		$row = 5;
 		$text_lenght = 100;
 		$search_keyword = '';
@@ -104,7 +142,7 @@ class WPSC_Predictive_Search{
 		$end_row = $row;
 		
 		if ($search_keyword != '') {
-			$args = array( 's' => $search_keyword, 'numberposts' => $row+1, 'offset'=> 0, 'orderby' => 'title', 'order' => 'ASC', 'post_type' => 'wpsc-product', 'post_status' => 'publish');
+			$args = array( 's' => $search_keyword, 'numberposts' => $row+1, 'offset'=> 0, 'orderby' => 'title', 'order' => 'ASC', 'post_type' => 'wpsc-product', 'post_status' => 'publish', 'exclude' => $wpsc_predictive_id_excludes['exclude_products']);
 			
 			$total_args = $args;
 			$total_args['numberposts'] = -1;
