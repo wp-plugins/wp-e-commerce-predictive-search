@@ -102,7 +102,7 @@ class WPSC_Predictive_Search_Shortcodes {
 		$show_price = false;
 		$show_categories = false;
 		$show_tags = false;
-		if (isset($_REQUEST['rs']) && trim($_REQUEST['rs']) != '') $search_keyword = $_REQUEST['rs'];
+		if (isset($_REQUEST['rs']) && trim($_REQUEST['rs']) != '') $search_keyword = stripslashes( strip_tags( $_REQUEST['rs'] ) );
 		
 		$start = $p * $row;
 		$end_row = $row;
@@ -215,11 +215,11 @@ auto_click_more();
 		$show_price = false;
 		$show_categories = false;
 		$show_tags = false;
-		if (isset($_REQUEST['p']) && $_REQUEST['p'] > 0) $p = $_REQUEST['p'];
-		if (isset($_REQUEST['row']) && $_REQUEST['row'] > 0) $row = $_REQUEST['row'];
-		if (isset($_REQUEST['q']) && trim($_REQUEST['q']) != '') $search_keyword = $_REQUEST['q'];
-		if (isset($_REQUEST['scat']) && trim($_REQUEST['scat']) != '') $cat_slug = $_REQUEST['scat'];
-		if (isset($_REQUEST['stag']) && trim($_REQUEST['stag']) != '') $tag_slug = $_REQUEST['stag'];
+		if (isset($_REQUEST['p']) && $_REQUEST['p'] > 0) $p = stripslashes( strip_tags( $_REQUEST['p'] ) );
+		if (isset($_REQUEST['row']) && $_REQUEST['row'] > 0) $row = stripslashes( strip_tags( $_REQUEST['row'] ) );
+		if (isset($_REQUEST['q']) && trim($_REQUEST['q']) != '') $search_keyword = stripslashes( strip_tags( $_REQUEST['q'] ) );
+		if (isset($_REQUEST['scat']) && trim($_REQUEST['scat']) != '') $cat_slug = stripslashes( strip_tags( $_REQUEST['scat'] ) );
+		if (isset($_REQUEST['stag']) && trim($_REQUEST['stag']) != '') $tag_slug = stripslashes( strip_tags( $_REQUEST['stag'] ) );
 		
 		$start = $p * $row;
 		$end = $start + $row;
