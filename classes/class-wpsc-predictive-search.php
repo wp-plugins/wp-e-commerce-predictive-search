@@ -156,7 +156,10 @@ class WPSC_Predictive_Search{
 				foreach ( $search_products as $product ) {
 					$link_detail = get_permalink($product->ID);
 					$avatar = WPSC_Predictive_Search::wpscps_get_product_thumbnail($product->ID,'product-thumbnails',64,64);
-					$item = '<div class="ajax_search_content"><div class="result_row"><a href="'.$link_detail.'"><span class="rs_avatar">'.$avatar.'</span><div class="rs_content_popup"><span class="rs_name">'.stripslashes( $product->post_title).'</span><span class="rs_description">'.WPSC_Predictive_Search::wpscps_limit_words(strip_tags(strip_shortcodes( str_replace("\n", "", $product->post_content) ) ),$text_lenght,'...').'</span></div></a></div></div>';
+					$product_description = WPSC_Predictive_Search::wpscps_limit_words(strip_tags(strip_shortcodes( str_replace("\n", "", $product->post_content) ) ),$text_lenght,'...');
+					if (trim($product_description) == '') $product_description = WPSC_Predictive_Search::wpscps_limit_words(strip_tags(strip_shortcodes( str_replace("\n", "", $product->post_excerpt) ) ),$text_lenght,'...');
+					
+					$item = '<div class="ajax_search_content"><div class="result_row"><a href="'.$link_detail.'"><span class="rs_avatar">'.$avatar.'</span><div class="rs_content_popup"><span class="rs_name">'.stripslashes( $product->post_title).'</span><span class="rs_description">'.$product_description.'</span></div></a></div></div>';
 					echo "$item|$link_detail|".stripslashes( $product->post_title)."\n";
 					$end_row--;
 					if ($end_row < 1) break;
