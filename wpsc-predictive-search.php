@@ -1,8 +1,9 @@
 <?php
 /*
 Plugin Name: WP e-Commerce Predictive Search LITE
+Plugin URI: http://a3rev.com/shop/wpec-predictive-search-pro/
 Description: Super charge you site with WP e-Commerce Predictive Products Search. Delivers stunning results as you type. Searches your entire WP e-Commerce product database
-Version: 1.1.3
+Version: 1.1.4
 Author: A3 Revolution
 Author URI: http://www.a3rev.com/
 Requires at least: 3.3
@@ -29,7 +30,7 @@ define( 'WPSC_PS_JS_URL',  WPSC_PS_URL . '/assets/js' );
 define( 'WPSC_PS_CSS_URL',  WPSC_PS_URL . '/assets/css' );
 define( 'WPSC_PS_IMAGES_URL',  WPSC_PS_URL . '/assets/images' );
 if(!defined("WPSC_PS_AUTHOR_URI"))
-    define("WPSC_PS_AUTHOR_URI", "http://a3rev.com/products-page/wp-e-commerce/wpec-predictive-search-pro/");
+    define("WPSC_PS_AUTHOR_URI", "http://a3rev.com/shop/wpec-predictive-search-pro/");
 
 include ('classes/class-wpsc-predictive-search-filter.php');
 include ('classes/class-wpsc-predictive-search.php');

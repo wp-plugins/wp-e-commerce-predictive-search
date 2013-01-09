@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP e-Commerce Predictive Search, WP e-Commerce, Predictive Search, Live Search, e-commerce,  wordpress ecommerce
 Requires at least: 3.3
 Tested up to: 3.5
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -53,9 +53,9 @@ WP e-Commerce Predictive Search is the upgrade for those WP e-Commerce store own
 * Function and Parameters activated to allow users to manually add and configure Predictive Search to any part of their theme e.g header.
 * Priority same day support.
 
-[Home Page](http://a3rev.com/products-page/wp-e-commerce/wpec-predictive-search-pro/) |
+[Home Page](http://a3rev.com/shop/wpec-predictive-search-pro/) |
 [Documentation](http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/) |
-[Support](http://a3rev.com/products-page/wp-e-commerce/wpec-predictive-search-pro/#help)
+[Support](http://a3rev.com/shop/wpec-predictive-search-pro/#tab-reviews)
 
 
 == Installation ==
@@ -117,9 +117,13 @@ You can use this plugin only when you have installed the WP e-Commerce plugin.
  
 == Support ==
 
-Support and access to this plugin documents are available from the [HELP tab](http://a3rev.com/products-page/wp-e-commerce/wpec-predictive-search-pro/#help) on the Pro Versions Home page.
+Support and access to this plugin documents are available from the [HELP tab](http://a3rev.com/shop/wpec-predictive-search-pro/#tab-reviews) on the Pro Versions Home page.
 
 == Changelog ==
+
+= 1.1.4 - 2013/01/09 = 
+
+* Tweak: Updated Support and Pro Version link URL's on wordpress.org description, plugins and plugins dashboard. Links were returning 404 errors since the launch of the all new a3rev.com mobile responsive site as the base e-commerce permalinks is changed.
 
 = 1.1.3 - 2012/12/18 =
 
@@ -129,7 +133,9 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 = 1.1.2 - 2012/11/27 =
 
-Security ÊVunerability Fix - please update your plugin now.* Fixed: XSS Vulnerabilities. Added strip tags function to stop XSS injections by adding script via the predictive search box. Thanks to Jason Flemming for alerting us to this issue.
+Security ÊVunerability Fix - please update your plugin now.
+
+* Fixed: XSS Vulnerabilities. Added strip tags function to stop XSS injections by adding script via the predictive search box. Thanks to Jason Flemming for alerting us to this issue.
 
 = 1.1.1 - 2012/11/22 =
 
