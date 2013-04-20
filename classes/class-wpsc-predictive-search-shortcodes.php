@@ -10,15 +10,21 @@
  * add_search_widget_icon()
  * add_search_widget_mce_popup()
  * parse_shortcode_search_result()
- * wpscps_display_search()
- * wpscps_get_result_search_page()
+ * get_product_price()
+ * get_product_addtocart()
+ * get_product_categories()
+ * get_post_categories()
+ * get_product_tags()
+ * get_post_tags()
+ * display_search()
+ * get_result_search_page()
  */
 class WPSC_Predictive_Search_Shortcodes {
 	public static function parse_shortcode_search_widget($attributes) {}
 	
 	function add_search_widget_icon($context){
 		$image_btn = WPSC_PS_IMAGES_URL . "/ps_icon.png";
-		$out = '<a href="#TB_inline?width=670&height=650&modal=false&inlineId=search_widget_shortcode" class="thickbox" title="'.__('Insert WP e-Commerce Predictive Search Shortcode', 'wpscps').'"><img class="search_widget_shortcode_icon" src="'.$image_btn.'" alt="'.__('Insert WP e-Commerce Predictive Search Shortcode', 'wpscps').'" /></a>';
+		$out = '<a href="#TB_inline?width=670&height=680&modal=false&inlineId=search_widget_shortcode" class="thickbox" title="'.__('Insert WP e-Commerce Predictive Search Shortcode', 'wpscps').'"><img class="search_widget_shortcode_icon" src="'.$image_btn.'" alt="'.__('Insert WP e-Commerce Predictive Search Shortcode', 'wpscps').'" /></a>';
 		return $context . $out;
 	}
 	
@@ -40,9 +46,12 @@ class WPSC_Predictive_Search_Shortcodes {
 		</script>
 		<style type="text/css">
 		#TB_ajaxContent{width:auto !important;}
-		.field_content {
+		#TB_ajaxContent p {
 			padding:2px 0;	
 			margin:6px 0;
+		}
+		.field_content {
+			padding:0 0 0 40px;	
 		}
 		.field_content label{
 			width:150px;
@@ -51,7 +60,7 @@ class WPSC_Predictive_Search_Shortcodes {
 		}
 		#wpsc_predictive_upgrade_area { border:2px solid #E6DB55;-webkit-border-radius:10px;-moz-border-radius:10px;-o-border-radius:10px; border-radius: 10px; padding:0; position:relative}
 	  	#wpsc_predictive_upgrade_area h3{ margin-left:10px;}
-	   	#wpsc_predictive_extensions { background: url("<?php echo WPSC_PS_IMAGES_URL; ?>/logo_a3blue.png") no-repeat scroll 4px 6px #FFFBCC; -webkit-border-radius:10px 10px 0 0;-moz-border-radius:10px 10px 0 0;-o-border-radius:10px 10px 0 0; border-radius: 10px 10px 0 0; color: #555555; margin: 0px; padding: 4px 8px 4px 38px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);}
+	   	#wpsc_predictive_extensions { background: url("<?php echo WPSC_PS_IMAGES_URL; ?>/logo_a3blue.png") no-repeat scroll 4px 6px #FFFBCC; -webkit-border-radius:10px 10px 0 0;-moz-border-radius:10px 10px 0 0;-o-border-radius:10px 10px 0 0; border-radius: 10px 10px 0 0; color: #555555; margin: 0px; padding: 4px 8px 4px 100px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);}
 		</style>
 		<div id="search_widget_shortcode" style="display:none;">
 		  <div class="">
@@ -65,6 +74,7 @@ class WPSC_Predictive_Search_Shortcodes {
             	<p><label for="wpsc_search_text_lenght"><?php _e('Characters', 'wpscps'); ?>:</label> <input disabled="disabled" style="width:100px;" size="10" id="wpsc_search_text_lenght" name="wpsc_search_text_lenght" type="text" value="100" /> <span class="description"><?php _e('Number of product description characters', 'wpscps'); ?></span></p>
                 <p><label for="wpsc_search_align"><?php _e('Alignment', 'wpscps'); ?>:</label> <select disabled="disabled" style="width:100px" id="wpsc_search_align" name="wpsc_search_align"><option value="none" selected="selected"><?php _e('None', 'wpscps'); ?></option><option value="left-wrap"><?php _e('Left - wrap', 'wpscps'); ?></option><option value="left"><?php _e('Left - no wrap', 'wpscps'); ?></option><option value="center"><?php _e('Center', 'wpscps'); ?></option><option value="right-wrap"><?php _e('Right - wrap', 'wpscps'); ?></option><option value="right"><?php _e('Right - no wrap', 'wpscps'); ?></option></select> <span class="description"><?php _e('Horizontal aliginment of search box', 'wpscps'); ?></span></p>
                 <p><label for="wpsc_search_width"><?php _e('Search box width', 'wpscps'); ?>:</label> <input disabled="disabled" style="width:100px;" size="10" id="wpsc_search_width" name="wpsc_search_width" type="text" value="200" />px</p>
+                <p><label for="wpsc_search_box_text"><?php _e('Search box text message', 'wpscps'); ?>:</label> <input disabled="disabled" style="width:300px;" size="10" id="wpsc_search_box_text" name="wpsc_search_box_text" type="text" value="<?php echo get_option('ecommerce_search_box_text'); ?>" /></p>
                 <p><label for="wpsc_search_padding"><strong><?php _e('Padding', 'wpscps'); ?></strong>:</label><br /> 
 				<label for="wpsc_search_padding_top" style="width:auto; float:none"><?php _e('Above', 'wpscps'); ?>:</label><input disabled="disabled" style="width:50px;" size="10" id="wpsc_search_padding_top" name="wpsc_search_padding_top" type="text" value="10" />px &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <label for="wpsc_search_padding_bottom" style="width:auto; float:none"><?php _e('Below', 'wpscps'); ?>:</label> <input disabled="disabled" style="width:50px;" size="10" id="wpsc_search_padding_bottom" name="wpsc_search_padding_bottom" type="text" value="10" />px &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -82,16 +92,20 @@ class WPSC_Predictive_Search_Shortcodes {
 	}
 	
 	public static function parse_shortcode_search_result($attributes) {
-    	return WPSC_Predictive_Search_Shortcodes::wpscps_display_search();	
+    	return WPSC_Predictive_Search_Shortcodes::display_search();	
     }
 	
 	function get_product_price($product_id, $show_price=true) {}
+	
+	function get_product_addtocart($product_id, $show_addtocart=true) {}
 	
 	function get_product_categories($product_id, $show_categories=true) {}
 	
 	function get_product_tags($product_id, $show_tags=true) {}
 	
-	function wpscps_display_search() {
+	function display_search() {
+		global $wp_query;
+		global $wpdb;
 		global $wpsc_predictive_id_excludes;
 		$p = 0;
 		$row = 5;
@@ -102,13 +116,15 @@ class WPSC_Predictive_Search_Shortcodes {
 		$show_price = false;
 		$show_categories = false;
 		$show_tags = false;
-		if (isset($_REQUEST['rs']) && trim($_REQUEST['rs']) != '') $search_keyword = stripslashes( strip_tags( $_REQUEST['rs'] ) );
+		
+		if (isset($wp_query->query_vars['keyword'])) $search_keyword = stripslashes( strip_tags( urldecode( $wp_query->query_vars['keyword'] ) ) );
+		else if (isset($_REQUEST['rs']) && trim($_REQUEST['rs']) != '') $search_keyword = stripslashes( strip_tags( $_REQUEST['rs'] ) );
 		
 		$start = $p * $row;
 		$end_row = $row;
 				
 		if ($search_keyword != '') {
-			$args = array( 's' => $search_keyword, 'numberposts' => $row+1, 'offset'=> $start, 'orderby' => 'title', 'order' => 'ASC', 'post_type' => 'wpsc-product', 'post_status' => 'publish', 'exclude' => $wpsc_predictive_id_excludes['exclude_products']);
+			$args = array( 's' => $search_keyword, 'numberposts' => $row+1, 'offset'=> $start, 'orderby' => 'predictive', 'order' => 'ASC', 'post_type' => 'wpsc-product', 'post_status' => 'publish', 'exclude' => $wpsc_predictive_id_excludes['exclude_products'], 'suppress_filters' => FALSE);
 			
 			$total_args = $args;
 			$total_args['numberposts'] = -1;
@@ -149,8 +165,8 @@ class WPSC_Predictive_Search_Shortcodes {
 					
 					$product_tags_output = WPSC_Predictive_Search_Shortcodes::get_product_tags($product->ID, $show_tags);
 					
-					$product_description = WPSC_Predictive_Search::wpscps_limit_words($product->post_content,$text_lenght,'...');
-					if (trim($product_description) == '') $product_description = WPSC_Predictive_Search::wpscps_limit_words($product->post_excerpt,$text_lenght,'...');
+					$product_description = WPSC_Predictive_Search::wpscps_limit_words( strip_tags( WPSC_Predictive_Search::strip_shortcodes( strip_shortcodes( $product->post_content ) ) ),$text_lenght,'...');
+					if (trim($product_description) == '') $product_description = WPSC_Predictive_Search::wpscps_limit_words( strip_tags( WPSC_Predictive_Search::strip_shortcodes( strip_shortcodes( $product->post_excerpt ) ) ),$text_lenght,'...');
 					
 					$html .= '<div class="rs_result_row"><span class="rs_rs_avatar">'.$avatar.'</span><div class="rs_content"><a href="'.$link_detail.'"><span class="rs_rs_name">'.stripslashes( $product->post_title).'</span></a>'.$product_price_output.'<div class="rs_rs_description">'.$product_description.'</div>'.$product_cats_output.$product_tags_output.'</div></div>';
 					
@@ -178,7 +194,7 @@ function auto_click_more() {
 			var p_data = p_data_obj.html();
 			p_data_obj.html('');
 			var urls = '&p='+p_data+'&row=".$row."&q=".$search_keyword.$extra_parameter."&action=wpscps_get_result_search_page&security=".$wpscps_get_result_search_page."';
-			jQuery.post('".admin_url('admin-ajax.php')."', urls, function(theResponse){
+			jQuery.post('". ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ) ."', urls, function(theResponse){
 				if(theResponse != ''){
 					var num = parseInt(p_data)+1;
 					p_data_obj.html(num);
@@ -200,15 +216,18 @@ auto_click_more();
 });</script>";
 				}
 			} else {
-				$html .= '<p style="text-align:center">'.__('No result', 'wpscps').'</p>';
+				$html .= '<p style="text-align:center">'.__('Nothing Found! Please refine your search and try again.', 'wpscps').'</p>';
 			} 
 			
 			return $html;
 		}
 	}
 	
-	function wpscps_get_result_search_page() {
+	function get_result_search_page() {
 		check_ajax_referer( 'wpscps-get-result-search-page', 'security' );
+		add_filter( 'posts_search', array('WPSC_Predictive_Search_Hook_Filter', 'search_by_title_only'), 500, 2 );
+		add_filter( 'posts_orderby', array('WPSC_Predictive_Search_Hook_Filter', 'predictive_posts_orderby'), 500, 2 );
+		add_filter( 'posts_request', array('WPSC_Predictive_Search_Hook_Filter', 'posts_request_unconflict_role_scoper_plugin'), 500, 2);
 		global $wpsc_predictive_id_excludes;
 		$p = 1;
 		$row = 5;
@@ -230,7 +249,7 @@ auto_click_more();
 		$end_row = $row;
 		
 		if ($search_keyword != '') {
-			$args = array( 's' => $search_keyword, 'numberposts' => $row+1, 'offset'=> $start, 'orderby' => 'title', 'order' => 'ASC', 'post_type' => 'wpsc-product', 'post_status' => 'publish', 'exclude' => $wpsc_predictive_id_excludes['exclude_products']);
+			$args = array( 's' => $search_keyword, 'numberposts' => $row+1, 'offset'=> $start, 'orderby' => 'predictive', 'order' => 'ASC', 'post_type' => 'wpsc-product', 'post_status' => 'publish', 'exclude' => $wpsc_predictive_id_excludes['exclude_products'], 'suppress_filters' => FALSE);
 			
 			$total_args = $args;
 			$total_args['numberposts'] = -1;
@@ -254,8 +273,8 @@ auto_click_more();
 					
 					$product_tags_output = WPSC_Predictive_Search_Shortcodes::get_product_tags($product->ID, $show_tags);
 					
-					$product_description = WPSC_Predictive_Search::wpscps_limit_words($product->post_content,$text_lenght,'...');
-					if (trim($product_description) == '') $product_description = WPSC_Predictive_Search::wpscps_limit_words($product->post_excerpt,$text_lenght,'...');
+					$product_description = WPSC_Predictive_Search::wpscps_limit_words( strip_tags( WPSC_Predictive_Search::strip_shortcodes( strip_shortcodes( $product->post_content ) ) ),$text_lenght,'...');
+					if (trim($product_description) == '') $product_description = WPSC_Predictive_Search::wpscps_limit_words( strip_tags( WPSC_Predictive_Search::strip_shortcodes( strip_shortcodes( $product->post_excerpt ) ) ),$text_lenght,'...');
 					
 					$html .= '<div class="rs_result_row"><span class="rs_rs_avatar">'.$avatar.'</span><div class="rs_content"><a href="'.$link_detail.'"><span class="rs_rs_name">'.stripslashes( $product->post_title).'</span></a>'.$product_price_output.'<div class="rs_rs_description">'.$product_description.'</div>'.$product_cats_output.$product_tags_output.'</div></div>';
 					$html .= '<div style="clear:both"></div>';
