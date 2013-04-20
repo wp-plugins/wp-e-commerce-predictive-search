@@ -16,12 +16,12 @@ WP e-Commerce Predictive Search engine queries <strong>your entire product datab
 
 = Key Features =
 
-* WooCommerce Predictive Search engine delivers 100% accurate results, 100% of the time.
+* WP e-Commerce Predictive Search engine delivers 100% accurate results, 100% of the time.
 * New Feature Pretty URL for the All Search Results pages.
 * Use 'live search' to wow your customers by delivering deadly, super fast search results.
 * Add and configure a search box to any widgetized area on your site.
 * Shows the results beautifully in the widget drop-down with Product Thumbnail, Title and description text.
-* Searches your entire WooCommerce product database for the product name that match what is being typed.
+* Searches your entire WP e-Commerce product database for the product name that match what is being typed.
 * Set the number of Product results to show in the drop down.
 * Add description text to show by default inside each Widget Search box.
 * Set the number of characters of the product description text to show with each search result.
@@ -40,7 +40,7 @@ Once you have the plugin installed and activated please refer to the plugins com
 
 = Pro Version Upgrade =
 
-WooCommerce Predictive Search is now the most powerful site search engine ever developed, because with the Pro version you can optimize your entire site search to perform just the way you want it too. No matter how your customers or clients search the all new Predictive Search 'Focus keyword' feature allows you to configure your site search feature to return the results you want when you want it. Total Control.
+WP e-Commerce Predictive Search is now the most powerful site search engine ever developed, because with the Pro version you can optimize your entire site search to perform just the way you want it too. No matter how your customers or clients search the all new Predictive Search 'Focus keyword' feature allows you to configure your site search feature to return the results you want when you want it. Total Control.
 
 = Pro Version advanced features =
 
@@ -58,7 +58,7 @@ WooCommerce Predictive Search is now the most powerful site search engine ever d
 * Easy to read and easy to sort All Search Results pages featuring endless scroll. 
 * Pretty URL's for the All Search Results pages.
 * Search by Product name, Product SKU, Product Categories, Product tags, posts and Pages and any combination of these
-* Configure Search of your entire WooCommerce product database by Product titles, SKU's, Product Categories and Tags, exclude any. 
+* Configure Search of your entire WP e-Commerce product database by Product titles, SKU's, Product Categories and Tags, exclude any. 
 
 = All Search Results Pages: =
 * To see more results for the search Click through from the Widget drop down footer to the 'All Results Search Page'. Design like the facebook search.
@@ -70,7 +70,6 @@ WooCommerce Predictive Search is now the most powerful site search engine ever d
  - Product Prices including 'special' pricing with each result.
  - Add to cart button
  - Number of results to show before 'endless scroll' bar.
-
 * 'All Results Search Page' features endless scroll - allows the page to load quickly and show 'infinite' number of results. 
 
 = Widget Search =
@@ -82,13 +81,12 @@ WooCommerce Predictive Search is now the most powerful site search engine ever d
  - Posts, 
  - Pages 
  - or any combination of these.
-
 * Set the number of each search 'type' eg Product category results to show in the search box dropdown.
 * Use drag and drop to set the search 'type' order that the results show in the drop down.
 * All Search results page sorted is auto sorted into results types configured for the widget.
 
 = Shortcodes =
-* WooCommerce Predictive Search shortcodes - Insert and configure the Search box into any page or post via shortcode.
+* WP e-Commerce Predictive Search shortcodes - Insert and configure the Search box into any page or post via shortcode.
 * Customize shortcodes search box dimensions and alignment on page.
 * Full customization just like the Widget search
 
@@ -177,11 +175,11 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 = 2.0 - 2013/04/20 =
 * Feature: Newly developed mysql command that makes the Predictive Search Engine results 100% accurate, 100% of the time. Install this upgrade and try it out for yourself - you will be absolutely amazed, excited, over the moon like we are about it.
-* Feature: Added ‘Pretty URL' support to replace the All Search Results pages parameter driven URLS
+* Feature: Added 'Pretty URL' support to replace the All Search Results pages parameter driven URLS
 * Feature: Added the ability to add text content that shows inside the Search box. Added as a Global setting or can be individually set on Widgets, Shortcode or the Search Function
 * Feature: All Results search page shortcode now shows as an image in the Search results page Visual text editor instead of the shortcode [ecommerce_search]. We have used an image to overcome some confusion about if the shortcode was a3rev Predictive Search or a WP e-Commerce shortcode function. Also has instructions (in English) about moving the shortcode to another page. After you upgrade, take a look.
-* Feature: Major UI upgrade. We have completely rewritten the plugins admin panel and the Predictive Search tab on the WP e-Commerce > Store settings. Content is now broken into sub nav tabs for ease of use. The tabs are …. Predictive Search | All Results Search Pages | Exclude Content | Search Function, with styling to be added in the next feature upgrade.
-* Feature: Added a new Chosen styling lib for drop-downs and Options – this was important because it now makes excluding content a very easy thing to do for each content search taxonomy.
+* Feature: Major UI upgrade. We have completely rewritten the plugins admin panel and the Predictive Search tab on the WP e-Commerce > Store settings. Content is now broken into sub nav tabs for ease of use. The tabs are Predictive Search | All Results Search Pages | Exclude Content | Search Function, with styling to be added in the next feature upgrade.
+* Feature: Added a new Chosen styling lib for drop-downs and Options this was important because it now makes excluding content a very easy thing to do for each content search taxonomy.
 * Feature: Added when install and activate plugin link redirects to the Predictive Search admin page instead of the wp-plugins dashboard.
 * Fixed: Made new ajax filters to stop plugins like Role Scoper filtering predictive search functions.
 * Fixed: Posts that do not have any meta data not showing in search results.
@@ -190,7 +188,7 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 * Fixed: Link from search box drop down footer to All Results Search pages not working in Internet Explorer 8, 9 and 10.
 * Fixed: All Results pages returning a 404 page not found when custom permalinks set with a trailing slash. When a sites custom permalinks where set with a trailing slash this caused an extra / in the Results Search pages URL resulting in a 404. The plugin now checks if the trailing slash is present and allows for that to produce the correct URL. 
 * Fixed: Bug for users who have https: (SSL) on their sites wp-admin but have http on sites front end. This was causing search results to show a -1 in the drop down instead of the results because wp-admin with SSL applied only allows https:, but the url of admin-ajax.php is http: and it is denied hence returning the ajax -1 error. Fixed by writing a filter to recognize when https is configured on wp-admin and parsing correctly. If you do not have this configuration nothing changes for you, if you do have https on your wp-admin (or install it in the future) and http on the front end then Predictive Search now automatically detects that and works as it should.
-* Fixed: Search function and shortcodes not working on themes that call the wpautop function before the shortcode function (very poor practice). The wpautop function auto adds the <p> tag to all white space in php functions and thus breaks our function. We use internal script rather than a js file for the search function and shortcodes because a js file is always called on each page load even when it is not required. We have removed all white spaces and problem no longer exists.
+* Fixed: Search function and shortcodes not working on themes that call the wpautop function before the shortcode function (very poor practice). The wpautop function auto adds the &lt;p&gt; tag to all white space in php functions and thus breaks our function. We use internal script rather than a js file for the search function and shortcodes because a js file is always called on each page load even when it is not required. We have removed all white spaces and problem no longer exists.
 * Fixed: Undefined variable mediumSRC notice showing in search box dropdown when product does not have a featured image.We fixed by defining the variable.
 * Fixed: Full WP_DEG run. All Uncaught exceptions fixed.
 * Tweak: Jumped version from 1.1.4 to 2.0 to keep in sync with the Pro Version.
@@ -204,7 +202,6 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 * Fixed: Plugin now supports themes that use post_type array rather than post_type string. If the theme post_type is array plugin will now use function is_array() and in_array() instead of trim() function to generate the All Search Results pages. Thanks to Dietmar Hohn of Germany for working with us on this quirky bug fix.
 
 = 1.1.2 - 2012/11/27 =
-Security Vunerability Fix - please update your plugin now.
 * Fixed: XSS Vulnerabilities. Added strip tags function to stop XSS injections by adding script via the predictive search box. Thanks to Jason Flemming for alerting us to this issue.
 
 = 1.1.1 - 2012/11/22 =
@@ -229,7 +226,7 @@ Security Vunerability Fix - please update your plugin now.
 * Documentation: Added comprehensive extension documentation to the [a3rev wiki](http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/)
 
 = 1.0.1 - 2012/08/03 =
-* Fixed: Show the 6 results with 100 characters of product description by default when no value is present Â in Widget control and Admin panel
+* Fixed: Show the 6 results with 100 characters of product description by default when no value is present in Widget control and Admin panel
 * Fixed: Change z-index for search box from 1001 to 99 so that themes nav bar dropdowns slide over it instead of behind the search box
 * Feature: Hide the description when enter 0 as the number of description characters in the sidebar widget and Admin panel.
 * Feature: Show first thumb image in product gallery if the product does not have feature image.
