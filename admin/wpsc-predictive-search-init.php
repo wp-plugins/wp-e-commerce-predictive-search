@@ -9,7 +9,7 @@ function wpsc_predictive_install() {
 	WPSC_Predictive_Search::create_page( 'ecommerce-search', 'ecommerce_search_page_id', __('Predictive Search', 'wpscps'), '[ecommerce_search]' );
 	
 	WPSC_Predictive_Search::set_setting();
-	update_option('wpsc_predictive_search_version', '2.0');
+	update_option('wpsc_predictive_search_version', '2.0.1');
 	$wp_rewrite->flush_rules();
 	
 	update_option('wpsc_predictive_search_just_installed', true);
@@ -85,5 +85,5 @@ if(version_compare(get_option('wpsc_predictive_search_version'), '2.0') === -1){
 	update_option('wpsc_predictive_search_version', '2.0');
 }
 
-update_option('wpsc_predictive_search_version', '2.0');
+update_option('wpsc_predictive_search_version', '2.0.1');
 ?>
