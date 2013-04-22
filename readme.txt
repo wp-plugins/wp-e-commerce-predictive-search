@@ -176,7 +176,7 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 = 2.0.1 - 2013/04/22 =
 * Feature: Updated all plugin code to be 100% compatible with the new WP e-Commerce version 3.8.10. The plugin is backward compatible with older version to 3.8.5
 
-= 2.0 - 2013/04/20 =
+= 2.0.0 - 2013/04/20 =
 * Feature: Newly developed mysql command that makes the Predictive Search Engine results 100% accurate, 100% of the time. Install this upgrade and try it out for yourself - you will be absolutely amazed, excited, over the moon like we are about it.
 * Feature: Added 'Pretty URL' support to replace the All Search Results pages parameter driven URLS
 * Feature: Added the ability to add text content that shows inside the Search box. Added as a Global setting or can be individually set on Widgets, Shortcode or the Search Function
