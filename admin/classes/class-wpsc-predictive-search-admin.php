@@ -188,6 +188,12 @@ class WPSC_Settings_Tab_Ps_Settings {
             </td>
 		  </tr>
           <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_sku_enable"><?php _e('SKU', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <label><input disabled="disabled" type="checkbox" <?php if(get_option('ecommerce_search_sku_enable') == '' || get_option('ecommerce_search_sku_enable') == 1){ echo 'checked="checked"'; } ?> value="1" id="ecommerce_search_sku_enable" name="ecommerce_search_sku_enable" /> <span class=""><?php _e('Show product SKU with search results', 'wpscps');?></span></label>
+            </td>
+		  </tr>
+          <tr valign="top">
 		    <th class="titledesc" scope="row"><label for="ecommerce_search_price_enable"><?php _e('Price', 'wpscps');?></label></th>
 		    <td class="forminp">
               <label><input disabled="disabled" type="checkbox" <?php if(get_option('ecommerce_search_price_enable') == '' || get_option('ecommerce_search_price_enable') == 1){ echo 'checked="checked"'; } ?> value="1" id="ecommerce_search_price_enable" name="ecommerce_search_price_enable" /> <span class=""><?php _e('Show product price with search results', 'wpscps');?></span></label>

@@ -25,6 +25,7 @@ class WPSC_Predictive_Search{
 		update_option('ecommerce_search_focus_plugin', 'none');
 		update_option('ecommerce_search_result_items', 5);
 		update_option('ecommerce_search_text_lenght', 100);
+		update_option('ecommerce_search_sku_enable', 0);
 		update_option('ecommerce_search_price_enable', 0);
 		update_option('ecommerce_search_categories_enable', 0);
 		update_option('ecommerce_search_tags_enable', 0);
