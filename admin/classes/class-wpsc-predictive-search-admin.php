@@ -38,6 +38,12 @@ class WPSC_Settings_Tab_Ps_Settings {
 			foreach($request as $key=>$value){
 				update_option($key,$value);
 			}
+			if (!isset($request['ecommerce_search_clean_on_deletion'])) {
+				update_option('ecommerce_search_clean_on_deletion', 0);
+				$uninstallable_plugins = (array) get_option('uninstall_plugins');
+				unset($uninstallable_plugins[WPSC_PS_NAME]);
+				update_option('uninstall_plugins', $uninstallable_plugins);
+			}
 			WPSC_Predictive_Search::set_setting();
 		}
 	}
@@ -167,6 +173,17 @@ class WPSC_Settings_Tab_Ps_Settings {
 				<span class="description"><?php _e('Page contents:', 'wpscps');?> [ecommerce_search]</span>
             </td>
 		  </tr>
+		</table>
+        <h3><?php _e('House Keeping', 'wpscps');?> :</h3>		
+        <table class="form-table">
+            <tr valign="top" class="">
+				<th class="titledesc" scope="row"><label for="ecommerce_search_clean_on_deletion"><?php _e('Clean up on Deletion', 'wpscps');?></label></th>
+				<td class="forminp">
+						<label>
+						<input <?php checked( get_option('ecommerce_search_clean_on_deletion'), 1); ?> type="checkbox" value="1" id="ecommerce_search_clean_on_deletion" name="ecommerce_search_clean_on_deletion">
+						<?php _e('Check this box and if you ever delete this plugin it will completely remove all tables and data it created, leaving no trace it was ever here.', 'wpscps');?></label> <br>
+				</td>
+			</tr>
 		</table>
 	</div>
     <div class="section" id="all-results-pages"> 

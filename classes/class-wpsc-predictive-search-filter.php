@@ -157,7 +157,7 @@ class WPSC_Predictive_Search_Hook_Filter {
 			return $links;
 		}
 		$links[] = '<a href="http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/" target="_blank">'.__('Documentation', 'wpscps').'</a>';
-		$links[] = '<a href="http://a3rev.com/shop/wp-e-commerce-predictive-search-pro/#help_tab" target="_blank">'.__('Support', 'wpscps').'</a>';
+		$links[] = '<a href="http://wordpress.org/support/plugin/wp-e-commerce-predictive-search" target="_blank">'.__('Support', 'wpscps').'</a>';
 		return $links;
 	}
 }
