@@ -28,8 +28,12 @@ class WPSC_Predictive_Search_Hook_Filter {
 	* Include the script for widget search and Search page
 	*/
 	function wpscps_add_frontend_script() {
-		wp_enqueue_style( 'ajax-wpsc-autocomplete-style', WPSC_PS_JS_URL . '/ajax-autocomplete/jquery.autocomplete.css' );
+		wp_enqueue_script('jquery');
 		wp_enqueue_script( 'ajax-wpsc-autocomplete-script', WPSC_PS_JS_URL . '/ajax-autocomplete/jquery.autocomplete.js', array(), false, true );
+	}
+	
+	function wpscps_add_frontend_style() {
+		wp_enqueue_style( 'ajax-wpsc-autocomplete-style', WPSC_PS_JS_URL . '/ajax-autocomplete/jquery.autocomplete.css' );
 	}
 	
 	function add_query_vars($aVars) {

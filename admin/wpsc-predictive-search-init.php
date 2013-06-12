@@ -9,7 +9,7 @@ function wpsc_predictive_install() {
 	WPSC_Predictive_Search::create_page( 'ecommerce-search', 'ecommerce_search_page_id', __('Predictive Search', 'wpscps'), '[ecommerce_search]' );
 	
 	WPSC_Predictive_Search::set_setting();
-	update_option('wpsc_predictive_search_version', '2.0.3');
+	update_option('wpsc_predictive_search_version', '2.0.4');
 	$wp_rewrite->flush_rules();
 	
 	update_option('wpsc_predictive_search_just_installed', true);
@@ -79,11 +79,15 @@ add_action('wp_ajax_nopriv_wpscps_get_result_popup', array('WPSC_Predictive_Sear
 
 add_action( 'admin_footer', array('WPSC_Predictive_Search_Hook_Filter', 'wp_admin_footer_scripts') );
 
+//Add ajax search box at header
+if ( ! is_admin() )
+	add_action('init',array('WPSC_Predictive_Search_Hook_Filter','wpscps_add_frontend_style'));
+
 // Upgrade to 2.0
 if(version_compare(get_option('wpsc_predictive_search_version'), '2.0') === -1){
 	WPSC_Predictive_Search::upgrade_version_2_0();
 	update_option('wpsc_predictive_search_version', '2.0');
 }
 
-update_option('wpsc_predictive_search_version', '2.0.3');
+update_option('wpsc_predictive_search_version', '2.0.4');
 ?>
