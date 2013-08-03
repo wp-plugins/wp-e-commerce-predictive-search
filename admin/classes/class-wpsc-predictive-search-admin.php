@@ -38,6 +38,7 @@ class WPSC_Settings_Tab_Ps_Settings {
 			foreach($request as $key=>$value){
 				update_option($key,$value);
 			}
+			if (!isset($request['ecommerce_search_exclude_products'])) update_option('ecommerce_search_exclude_products', array() );
 			if (!isset($request['ecommerce_search_clean_on_deletion'])) {
 				update_option('ecommerce_search_clean_on_deletion', 0);
 				$uninstallable_plugins = (array) get_option('uninstall_plugins');
