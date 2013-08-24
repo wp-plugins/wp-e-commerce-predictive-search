@@ -17,9 +17,10 @@
  * wp_admin_footer_scripts()
  * plugin_extra_links()
  */
-class WPSC_Predictive_Search_Hook_Filter {
+class WPSC_Predictive_Search_Hook_Filter 
+{
 	
-	function add_wpsc_settings_tabs($tabs){
+	public static function add_wpsc_settings_tabs($tabs){
 		$tabs['ps_settings'] = __('Predictive Search', 'wpscps');
 		return $tabs;
 	}
@@ -27,23 +28,23 @@ class WPSC_Predictive_Search_Hook_Filter {
 	/*
 	* Include the script for widget search and Search page
 	*/
-	function wpscps_add_frontend_script() {
+	public static function wpscps_add_frontend_script() {
 		wp_enqueue_script('jquery');
 		wp_enqueue_script( 'ajax-wpsc-autocomplete-script', WPSC_PS_JS_URL . '/ajax-autocomplete/jquery.autocomplete.js', array(), false, true );
 	}
 	
-	function wpscps_add_frontend_style() {
+	public static function wpscps_add_frontend_style() {
 		wp_enqueue_style( 'ajax-wpsc-autocomplete-style', WPSC_PS_JS_URL . '/ajax-autocomplete/jquery.autocomplete.css' );
 	}
 	
-	function add_query_vars($aVars) {
+	public static function add_query_vars($aVars) {
 		$aVars[] = "keyword";    // represents the name of the product category as shown in the URL
 		$aVars[] = "scat";
 		$aVars[] = "stag";
 		return $aVars;
 	}
 	
-	function add_rewrite_rules($aRules) {
+	public static function add_rewrite_rules($aRules) {
 		//var_dump($_SERVER);
 		$ecommerce_search_page_id = get_option('ecommerce_search_page_id');
 		$search_page = get_page($ecommerce_search_page_id);
@@ -89,7 +90,7 @@ class WPSC_Predictive_Search_Hook_Filter {
 		return $aRules;
 	} 
 	
-	function custom_rewrite_rule() {
+	public static function custom_rewrite_rule() {
 		// BEGIN rewrite
 		// hook add_query_vars function into query_vars
 		add_filter('query_vars', array('WPSC_Predictive_Search_Hook_Filter', 'add_query_vars') );
@@ -108,7 +109,7 @@ class WPSC_Predictive_Search_Hook_Filter {
 		// END rewrite
 	}
 	
-	function search_by_title_only( $search, &$wp_query ) {
+	public static function search_by_title_only( $search, &$wp_query ) {
 		global $wpdb;
 		$q = $wp_query->query_vars;
 		if ( empty( $search) || !isset($q['s']) )
@@ -122,7 +123,7 @@ class WPSC_Predictive_Search_Hook_Filter {
 		return $search;
 	}
 	
-	function predictive_posts_orderby( $orderby, &$wp_query ) {
+	public static function predictive_posts_orderby( $orderby, &$wp_query ) {
 		global $wpdb;
 		$q = $wp_query->query_vars;
 		if (isset($q['orderby']) && $q['orderby'] == 'predictive' && isset($q['s']) ) {
@@ -133,13 +134,13 @@ class WPSC_Predictive_Search_Hook_Filter {
 		return $orderby;
 	}
 	
-	function posts_request_unconflict_role_scoper_plugin( $posts_request, &$wp_query ) {
+	public static function posts_request_unconflict_role_scoper_plugin( $posts_request, &$wp_query ) {
 		$posts_request = str_replace('1=2', '2=2', $posts_request);
 		
 		return $posts_request;
 	}
 	
-	function wp_admin_footer_scripts() {
+	public static function wp_admin_footer_scripts() {
 	?>
     <script type="text/javascript">
 		(function($){		
@@ -156,12 +157,12 @@ class WPSC_Predictive_Search_Hook_Filter {
     <?php
 	}
 	
-	function plugin_extra_links($links, $plugin_name) {
+	public static function plugin_extra_links($links, $plugin_name) {
 		if ( $plugin_name != WPSC_PS_NAME) {
 			return $links;
 		}
 		$links[] = '<a href="http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/" target="_blank">'.__('Documentation', 'wpscps').'</a>';
-		$links[] = '<a href="http://wordpress.org/support/plugin/wp-e-commerce-predictive-search" target="_blank">'.__('Support', 'wpscps').'</a>';
+		$links[] = '<a href="http://wordpress.org/support/plugin/wp-e-commerce-predictive-search/" target="_blank">'.__('Support', 'wpscps').'</a>';
 		return $links;
 	}
 }

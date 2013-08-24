@@ -19,7 +19,8 @@
  * display_search()
  * get_result_search_page()
  */
-class WPSC_Predictive_Search_Shortcodes {
+class WPSC_Predictive_Search_Shortcodes 
+{
 	public static function parse_shortcode_search_widget($attributes) {}
 	
 	function add_search_widget_icon($context){
@@ -29,7 +30,7 @@ class WPSC_Predictive_Search_Shortcodes {
 	}
 	
 	//Action target that displays the popup to insert a form to a post/page
-	function add_search_widget_mce_popup(){
+	public static function add_search_widget_mce_popup(){
 		$items_search_default = WPSC_Predictive_Search_Widgets::get_items_search();
 		?>
 		<script type="text/javascript">
@@ -95,15 +96,15 @@ class WPSC_Predictive_Search_Shortcodes {
     	return WPSC_Predictive_Search_Shortcodes::display_search();	
     }
 	
-	function get_product_price($product_id, $show_price=true) {}
+	public static function get_product_price($product_id, $show_price=true) {}
 	
-	function get_product_addtocart($product_id, $show_addtocart=true) {}
+	public static function get_product_addtocart($product_id, $show_addtocart=true) {}
 	
-	function get_product_categories($product_id, $show_categories=true) {}
+	public static function get_product_categories($product_id, $show_categories=true) {}
 	
-	function get_product_tags($product_id, $show_tags=true) {}
+	public static function get_product_tags($product_id, $show_tags=true) {}
 	
-	function display_search() {
+	public static function display_search() {
 		global $wp_query;
 		global $wpdb;
 		global $wpsc_predictive_id_excludes;
@@ -223,7 +224,7 @@ auto_click_more();
 		}
 	}
 	
-	function get_result_search_page() {
+	public static function get_result_search_page() {
 		check_ajax_referer( 'wpscps-get-result-search-page', 'security' );
 		add_filter( 'posts_search', array('WPSC_Predictive_Search_Hook_Filter', 'search_by_title_only'), 500, 2 );
 		add_filter( 'posts_orderby', array('WPSC_Predictive_Search_Hook_Filter', 'predictive_posts_orderby'), 500, 2 );

@@ -16,7 +16,8 @@
  * plugin_pro_notice()
  * predictive_extension_shortcode()
  */
-class WPSC_Settings_Tab_Ps_Settings {
+class WPSC_Settings_Tab_Ps_Settings 
+{
 	
 	public function is_submit_button_displayed() {
 		return true;
@@ -28,7 +29,7 @@ class WPSC_Settings_Tab_Ps_Settings {
 		
 		return true;
 	}
-	function update_settings($request){
+	public function update_settings($request){
 		
 		if( is_array($request) && count($request) > 0 ){
 			unset($request['wpsc_admin_action']);
@@ -100,6 +101,8 @@ class WPSC_Settings_Tab_Ps_Settings {
 		#wpec_predictive_search_extensions { border:2px solid #E6DB55;-webkit-border-radius:10px;-moz-border-radius:10px;-o-border-radius:10px; border-radius: 10px; color: #555555; margin: 0px; padding: 5px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); background:#FFFBCC; }
 		.pro_feature_fields { margin-right: -12px; position: relative; z-index: 10; border:2px solid #E6DB55;-webkit-border-radius:10px 0 0 10px;-moz-border-radius:10px 0 0 10px;-o-border-radius:10px 0 0 10px; border-radius: 10px 0 0 10px; border-right: 2px solid #FFFFFF; }
 		.pro_feature_fields h3, .pro_feature_fields p { margin-left:5px; }
+		.pro_feature_fields h3 { margin-bottom:5px; }
+		.pro_feature_fields .form-table td, .pro_feature_fields .form-table th { padding:4px 10px; }
         </style>
 <div id="wpec_predictive_search_panel_container">
 <div id="wpec_predictive_search_panel_fields" class="a3_subsubsub_section">
@@ -338,42 +341,42 @@ class WPSC_Settings_Tab_Ps_Settings {
 		    <th class="titledesc" scope="row"><label for="ecommerce_search_product_items"><?php _e('Product name', 'wpscps');?></label></th>
 		    <td class="forminp">
               <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_product_items" name="ecommerce_search_product_items" />
-              <span class="description"><?php _e('Number of Product Name to show in search field drop-down. Leave &lt;empty&gt; for not activated', 'wpscps');?></span>
+              <span class="description"><?php _e('Number of Product Name to show in search field drop-down.', 'wpscps');?></span>
             </td>
 		  </tr>
           <tr valign="top">
 		    <th class="titledesc" scope="row"><label for="ecommerce_search_p_sku_items"><?php _e('Product SKU', 'wpscps');?></label></th>
 		    <td class="forminp">
               <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_p_sku_items" name="ecommerce_search_p_sku_items" />
-              <span class="description"><?php _e('Number of Product SKU to show in search field drop-down. Leave &lt;empty&gt; for not activated', 'wpscps');?></span>
+              <span class="description"><?php _e('Number of Product SKU to show in search field drop-down.', 'wpscps');?></span>
             </td>
 		  </tr>
           <tr valign="top">
 		    <th class="titledesc" scope="row"><label for="ecommerce_search_p_cat_items"><?php _e('Product category', 'wpscps');?></label></th>
 		    <td class="forminp">
               <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_p_cat_items" name="ecommerce_search_p_cat_items" />
-              <span class="description"><?php _e('Number of Product Categories to show in search field drop-down. Leave &lt;empty&gt; for not activated', 'wpscps');?></span>
+              <span class="description"><?php _e('Number of Product Categories to show in search field drop-down.', 'wpscps');?></span>
             </td>
 		  </tr>
           <tr valign="top">
 		    <th class="titledesc" scope="row"><label for="ecommerce_search_p_tag_items"><?php _e('Product tag', 'wpscps');?></label></th>
 		    <td class="forminp">
               <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_p_tag_items" name="ecommerce_search_p_tag_items" />
-              <span class="description"><?php _e('Number of Product Tags to show in search field drop-down. Leave &lt;empty&gt; for not activated', 'wpscps');?></span>
+              <span class="description"><?php _e('Number of Product Tags to show in search field drop-down.', 'wpscps');?></span>
             </td>
 		  </tr>
           <tr valign="top">
 		    <th class="titledesc" scope="row"><label for="ecommerce_search_post_items"><?php _e('Post', 'wpscps');?></label></th>
 		    <td class="forminp">
               <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_post_items" name="ecommerce_search_post_items" />
-              <span class="description"><?php _e('Number of Posts to show in search field drop-down. Leave &lt;empty&gt; for not activated', 'wpscps');?></span>
+              <span class="description"><?php _e('Number of Posts to show in search field drop-down.', 'wpscps');?></span>
             </td>
 		  </tr>
           <tr valign="top">
 		    <th class="titledesc" scope="row"><label for="ecommerce_search_page_items"><?php _e('Page', 'wpscps');?></label></th>
 		    <td class="forminp">
               <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_page_items" name="ecommerce_search_page_items" />
-              <span class="description"><?php _e('Number of Pages to show in search field drop-down. Leave &lt;empty&gt; for not activated', 'wpscps');?></span>
+              <span class="description"><?php _e('Number of Pages to show in search field drop-down.', 'wpscps');?></span>
             </td>
 		  </tr>
           <tr valign="top">
@@ -468,7 +471,7 @@ class WPSC_Settings_Tab_Ps_Settings {
 		<?php
 	}
 	
-	function add_scripts(){
+	public function add_scripts(){
 		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 		wp_enqueue_script('jquery');
 		
@@ -478,12 +481,14 @@ class WPSC_Settings_Tab_Ps_Settings {
 		wp_enqueue_script( 'a3rev-chosen-script-init', WPSC_PS_JS_URL.'/init-chosen.js', array(), false, true );
 	}
 	
-	function plugin_pro_notice() {
+	public static function plugin_pro_notice() {
 		$html = '';
 		$html .= '<div id="wpec_predictive_search_extensions">';
 		$html .= '<a href="http://a3rev.com/shop/" target="_blank" style="float:right;margin-top:5px; margin-left:10px;" ><img src="'.WPSC_PS_IMAGES_URL.'/a3logo.png" /></a>';
 		$html .= '<h3>'.__('Upgrade to Predictive Search Pro', 'wpscps').'</h3>';
-		$html .= '<p>'.__("Visit the", 'wpscps').' <a href="'.WPSC_PS_AUTHOR_URI.'" target="_blank">'.__("a3rev website", 'wpscps').'</a> '.__("to see all the extra features the Pro version of this plugin offers like", 'wpscps').':</p>';
+		$html .= '<p>'.__("<strong>NOTE:</strong> All the functions inside the Yellow border on the plugins admin panel are extra functionality that is activated by upgrading to the Pro version", 'wpscps').':</p>';
+		$html .= '<h3>* <a href="'.WPSC_PS_AUTHOR_URI.'" target="_blank">'.__('WPEC Predictive Search Pro', 'wpscps').'</a></h3>';
+		$html .= '<h3>'.__('Activates these advanced features', 'wpscps').':</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
 		$html .= '<li>1. '.__("Activate site search optimization with Predictive Search 'Focus Keywords'.", 'wpscps').'</li>';
@@ -496,52 +501,30 @@ class WPSC_Settings_Tab_Ps_Settings {
 		$html .= '<li>8. '.__("Activate 'Smart Search' function on Widgets, Shortcode and the search Function", 'wpscps').'</li>';
 		$html .= '</ul>';
 		$html .= '</p>';
-		$html .= '<h3>'.__('Plugin Documentation', 'wpscps').'</h3>';
-		$html .= '<p>'.__('All of our plugins have comprehensive online documentation. Please refer to the plugins docs before raising a support request', 'wpscps').'. <a href="http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/" target="_blank">'.__('Visit the a3rev wiki.', 'wpscps').'</a></p>';
-		$html .= '<h3>'.__('More a3rev Quality Plugins', 'wpscps').'</h3>';
-		$html .= '<p>'.__('Below is a list of the a3rev plugins that are available for free download from wordpress.org', 'wpscps').'</p>';
-		$html .= '<h3>'.__('WP e-Commerce Plugins', 'wpscps').'</h3>';
+		
+		$html .= '<h3>'.__('View this plugins', 'wpscps').' <a href="http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/" target="_blank">'.__('documentation', 'wpscps').'</a></h3>';
+		$html .= '<h3>'.__('Visit this plugins', 'wpscps').' <a href="http://wordpress.org/support/plugin/wp-e-commerce-predictive-search/" target="_blank">'.__('support forum', 'wpscps').'</a></h3>';
+		$html .= '<h3>'.__('More FREE a3rev WP e-Commerce Plugins', 'wpscps').'</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-dynamic-gallery/" target="_blank">'.__('WP e-Commerce Dynamic Gallery', 'wpscps').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-predictive-search/" target="_blank">'.__('WP e-Commerce Predictive Search', 'wpscps').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-ecommerce-compare-products/" target="_blank">'.__('WP e-Commerce Compare Products', 'wpscps').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-catalog-visibility-and-email-inquiry/" target="_blank">'.__('WP e-Commerce Catalog Visibility & Email Inquiry', 'wpscps').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-grid-view/" target="_blank">'.__('WP e-Commerce Grid View', 'wpscps').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-products-quick-view/" target="_blank">'.__('WP e-Commerce Products Quick View', 'wpscps').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-dynamic-gallery/" target="_blank">'.__('WP e-Commerce Dynamic Gallery', 'wpscps').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-ecommerce-compare-products/" target="_blank">'.__('WP e-Commerce Compare Products', 'wpscps').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-catalog-visibility-and-email-inquiry/" target="_blank">'.__('WP e-Commerce Catalog Visibility & Email Inquiry', 'wpscps').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-grid-view/" target="_blank">'.__('WP e-Commerce Grid View', 'wpscps').'</a></li>';
 		$html .= '</ul>';
 		$html .= '</p>';
-		
-		$html .= '<h3>'.__('WordPress Plugins', 'wpscps').'</h3>';
+		$html .= '<h3>'.__('FREE a3rev WordPress Plugins', 'wpscps').'</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-email-template/" target="_blank">'.__('WordPress Email Template', 'wpscps').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/page-views-count/" target="_blank">'.__('Page View Count', 'wpscps').'</a></li>';
-		$html .= '</ul>';
-		$html .= '</p>';
-		
-		$html .= '<h3>'.__('WooCommerce Plugins', 'wpscps').'</h3>';
-		$html .= '<p>';
-		$html .= '<ul style="padding-left:10px;">';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-dynamic-gallery/" target="_blank">'.__('WooCommerce Dynamic Products Gallery', 'wpscps').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-predictive-search/" target="_blank">'.__('WooCommerce Predictive Search', 'wpscps').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-compare-products/" target="_blank">'.__('WooCommerce Compare Products', 'wpscps').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woo-widget-product-slideshow/" target="_blank">'.__('WooCommerce Widget Product Slideshow', 'wpscps').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-email-inquiry-cart-options/" target="_blank">'.__('WooCommerce Email Inquiry & Cart Options', 'wpscps').'</a></li>';
-		$html .= '</ul>';
-		$html .= '</p>';
-		
-		$html .= '<h3>'.__('Help spread the Word about this plugin', 'wpscps').'</h3>';
-		$html .= '<p>'.__("Things you can do to help others find this plugin", 'wpscps');
-		$html .= '<ul style="padding-left:10px;">';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-predictive-search/" target="_blank">'.__('Rate this plugin 5', 'wpscps').' <img src="'.WPSC_PS_IMAGES_URL.'/stars.png" align="top" /> '.__('on WordPress.org', 'wpscps').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-predictive-search/" target="_blank">'.__('Mark the plugin as a fourite', 'wpscps').'</a></li>';
-		$html .= '</ul>';
-		$html .= '</p>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/contact-us-page-contact-people/" target="_blank">'.__('Contact Us Page - Contact People', 'wpscps').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-email-template/" target="_blank">'.__('WordPress Email Template', 'wpscps').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/page-views-count/" target="_blank">'.__('Page View Count', 'wpscps').'</a></li>';
 		$html .= '</div>';
 		return $html;
 	}
 	
-	function predictive_extension_shortcode() {
+	public static function predictive_extension_shortcode() {
 		$html = '';
 		$html .= '<div id="wpsc_predictive_extensions">'.__("Yes you'll love the Predictive Search shortcode feature. Upgrading to the", 'wpscps').' <a target="_blank" href="'.WPSC_PS_AUTHOR_URI.'">'.__('Pro Version', 'wpscps').'</a> '.__("activates this shortcode feature as well as the awesome 'Smart Search' feature, per widget controls, the All Search Results page customization settings and function features.", 'wpscps').'</div>';
 		return $html;	

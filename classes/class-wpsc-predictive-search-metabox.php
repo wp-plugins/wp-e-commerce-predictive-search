@@ -11,9 +11,10 @@
  * data_metabox()
  * save_custombox()
  */
-class WPSC_Predictive_Search_Meta{
+class WPSC_Predictive_Search_Meta
+{
 	
-	function create_custombox() {
+	public static function create_custombox() {
 		global $post;
 		$exclude_items = array();
 		if (get_post_type($post->ID) == 'wpsc-product') {
@@ -36,7 +37,7 @@ class WPSC_Predictive_Search_Meta{
 		add_meta_box( 'wpec_predictive_search_metabox', __('Predictive Search Meta', 'wpscps').$hide_item_from_result_text , array('WPSC_Predictive_Search_Meta','data_metabox'), 'wpsc-product', 'normal', 'high' );
 	}
 	
-	function data_metabox() {
+	public static function data_metabox() {
 		global $post;
 		$postid = $post->ID;
 				
@@ -57,7 +58,7 @@ class WPSC_Predictive_Search_Meta{
 		
 	}
 	
-	function save_custombox($post_id) {
+	public static function save_custombox($post_id) {
 		$post_status = get_post_status($post_id);
 		$post_type = get_post_type($post_id);
 		if(in_array($post_type, array('wpsc-product') ) && isset($_REQUEST['_predictive_search_focuskw']) && $post_status != false  && $post_status != 'inherit') {

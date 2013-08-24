@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP e-Commerce Predictive Search, WP e-Commerce, Predictive Search, Live Search, e-commerce,  wordpress ecommerce
 Requires at least: 3.3
 Tested up to: 3.6
-Stable tag: 2.0.5
+Stable tag: 2.0.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -173,6 +173,12 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 == Changelog ==
 
+= 2.0.6 - 2013/08/24 =
+* Tweaks :
+	* Ran full WP_DEBUG All Uncaught exceptions errors and warnings fixed.
+	* Added PHP Public Static to functions in Class. Done so that Public Static warnings don't show in DE_BUG mode.
+	* Updated admin dashboard Yellow Sidebar content.
+
 = 2.0.5 - 2013/08/03 =
 * Tweaks :
 	* Tested for full compatibility with WordPress v3.6.0
@@ -257,6 +263,9 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 
 == Upgrade Notice ==
+
+= 2.0.6 =
+Upgrade now for a full DEBUG of the source code.
 
 = 2.0.5 =
 Please update your plugin now for full WordPress v3.6.0 compatibility

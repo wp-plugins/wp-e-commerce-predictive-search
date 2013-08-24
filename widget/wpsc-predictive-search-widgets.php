@@ -49,7 +49,7 @@ class WPSC_Predictive_Search_Widgets extends WP_Widget {
 		echo $after_widget;
 	}
 	
-	function wpscps_results_search_form($widget_id, $number_items=5, $text_lenght=100, $style='', $search_global = 0, $search_box_text = ''){
+	public static function wpscps_results_search_form($widget_id, $number_items=5, $text_lenght=100, $style='', $search_global = 0, $search_box_text = ''){
 		
 		// Add ajax search box script and style at footer
 		add_action('wp_footer',array('WPSC_Predictive_Search_Hook_Filter','wpscps_add_frontend_script'));
