@@ -174,7 +174,7 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 == Changelog ==
 
 = 2.0.6 - 2013/08/24 =
-* Tweaks :
+* Tweaks : 
 	* Ran full WP_DEBUG All Uncaught exceptions errors and warnings fixed.
 	* Added PHP Public Static to functions in Class. Done so that Public Static warnings don't show in DE_BUG mode.
 	* Updated admin dashboard Yellow Sidebar content.
