@@ -95,6 +95,12 @@ class WPSC_Settings_Tab_Ps_Settings
 		.description{font-family: sans-serif;font-size: 12px;font-style: italic;color:#666666;}
 		.subsubsub { white-space:normal;}
 		.subsubsub li { white-space:nowrap;}
+		.a3-view-docs-button {
+			background-color: #FFFFE0 !important;
+			border: 1px solid #E6DB55 !important;
+			text-shadow:none !important;
+			font-weight:normal !important;
+		}
 		#wpec_predictive_search_panel_container { position:relative; margin-top:10px;}
 		#wpec_predictive_search_panel_fields {width:60%; float:left;}
 		#wpec_predictive_search_upgrade_area { position:relative; margin-left: 60%; padding-left:10px;}
@@ -115,7 +121,7 @@ class WPSC_Settings_Tab_Ps_Settings
     <br class="clear">
     <div class="section" id="global-settings">
     	<div class="pro_feature_fields">
-    	<h3><?php _e('Focus Keywords', 'wpscps'); ?></h3>
+    	<h3><?php _e('Focus Keywords', 'wpscps'); ?> <a class="add-new-h2 a3-view-docs-button" target="_blank" href="<?php echo WPSC_PREDICTIVE_SEARCH_DOCS_URI; ?>#section-11" ><?php _e('View Docs', 'wpscps'); ?></a></h3>
 		<table class="form-table">
           <tr valign="top">
 		    <th class="titledesc" scope="row"><label for="ecommerce_search_focus_enable"><?php _e('Predictive Search', 'wpscps');?></label></th>
@@ -192,7 +198,7 @@ class WPSC_Settings_Tab_Ps_Settings
 	</div>
     <div class="section" id="all-results-pages"> 
     	<div class="pro_feature_fields">       
-        <h3><?php _e('Search results page settings', 'wpscps'); ?></h3>
+        <h3><?php _e('Search results page settings', 'wpscps'); ?> <a class="add-new-h2 a3-view-docs-button" target="_blank" href="<?php echo WPSC_PREDICTIVE_SEARCH_DOCS_URI; ?>#section-13" ><?php _e('View Docs', 'wpscps'); ?></a></h3>
         <table class="form-table">
           <tr valign="top">
 		    <th class="titledesc" scope="row"><label for="ecommerce_search_result_items"><?php _e('Results', 'wpscps');?></label></th>
@@ -236,7 +242,7 @@ class WPSC_Settings_Tab_Ps_Settings
         </div>
 	</div>
     <div class="section" id="exclude-content">
-    	<h3><?php _e('Exclude From Predictive Search', 'wpscps'); ?></h3>
+    	<h3><?php _e('Exclude From Predictive Search', 'wpscps'); ?> <a class="add-new-h2 a3-view-docs-button" target="_blank" href="<?php echo WPSC_PREDICTIVE_SEARCH_DOCS_URI; ?>#section-12" ><?php _e('View Docs', 'wpscps'); ?></a></h3>
         <table class="form-table">
           <tr valign="top">
 		    <th class="titledesc" scope="row"><label for="ecommerce_search_exclude_products"><?php _e('Exclude Products', 'wpscps');?></label></th>
@@ -321,7 +327,7 @@ class WPSC_Settings_Tab_Ps_Settings
     </div>
     <div class="section" id="search-function">
     	<div class="pro_feature_fields">
-		<h3><?php _e('Predictive Search Function', 'wpscps'); ?></h3>
+		<h3><?php _e('Predictive Search Function', 'wpscps'); ?> <a class="add-new-h2 a3-view-docs-button" target="_blank" href="<?php echo WPSC_PREDICTIVE_SEARCH_DOCS_URI; ?>#section-14" ><?php _e('View Docs', 'wpscps'); ?></a></h3>
 		<table class="form-table">
           <tr valign="top">
 		    <td class="forminp" colspan="2">

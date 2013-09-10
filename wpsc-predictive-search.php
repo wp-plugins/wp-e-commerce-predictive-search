@@ -3,7 +3,7 @@
 Plugin Name: WP e-Commerce Predictive Search LITE
 Plugin URI: http://a3rev.com/shop/wp-e-commerce-predictive-search-pro/
 Description: Super charge you site with WP e-Commerce Predictive Products Search. Delivers stunning results as you type. Searches your entire WP e-Commerce product database
-Version: 2.0.6
+Version: 2.0.7
 Author: A3 Revolution
 Author URI: http://www.a3rev.com/
 Requires at least: 3.3
@@ -25,12 +25,14 @@ define( 'WPSC_PS_FILE_PATH', dirname(__FILE__) );
 define( 'WPSC_PS_DIR_NAME', basename(WPSC_PS_FILE_PATH) );
 define( 'WPSC_PS_FOLDER', dirname(plugin_basename(__FILE__)) );
 define( 'WPSC_PS_NAME', plugin_basename(__FILE__) );
-define( 'WPSC_PS_URL', WP_CONTENT_URL.'/plugins/'.WPSC_PS_FOLDER );
+define( 'WPSC_PS_URL', str_replace( 'http://', '//', str_replace( 'https://', '//', WP_CONTENT_URL ) ).'/plugins/'.WPSC_PS_FOLDER );
 define( 'WPSC_PS_JS_URL',  WPSC_PS_URL . '/assets/js' );
 define( 'WPSC_PS_CSS_URL',  WPSC_PS_URL . '/assets/css' );
 define( 'WPSC_PS_IMAGES_URL',  WPSC_PS_URL . '/assets/images' );
 if(!defined("WPSC_PS_AUTHOR_URI"))
     define("WPSC_PS_AUTHOR_URI", "http://a3rev.com/shop/wp-e-commerce-predictive-search-pro/");
+if(!defined("WPSC_PREDICTIVE_SEARCH_DOCS_URI"))
+    define("WPSC_PREDICTIVE_SEARCH_DOCS_URI", "http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/");
 
 include 'classes/class-wpsc-predictive-search-filter.php';
 include 'classes/class-wpsc-predictive-search.php';

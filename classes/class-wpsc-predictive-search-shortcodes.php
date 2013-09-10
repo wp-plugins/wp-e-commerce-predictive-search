@@ -59,13 +59,34 @@ class WPSC_Predictive_Search_Shortcodes
 			float:left;
 			text-align:left;
 		}
+		.a3-view-docs-button {
+			background-color: #FFFFE0 !important;
+			border: 1px solid #E6DB55 !important;
+			border-radius: 3px;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			color: #21759B !important;
+			outline: 0 none;
+			text-shadow:none !important;
+			font-weight:normal !important;
+			font-family: sans-serif;
+			font-size: 12px;
+			text-decoration: none;
+			padding: 3px 8px;
+			position: relative;
+			margin-left: 4px;
+			top: -3px;
+		}
+		.a3-view-docs-button:hover {
+			color: #D54E21 !important;
+		}
 		#wpsc_predictive_upgrade_area { border:2px solid #E6DB55;-webkit-border-radius:10px;-moz-border-radius:10px;-o-border-radius:10px; border-radius: 10px; padding:0; position:relative}
 	  	#wpsc_predictive_upgrade_area h3{ margin-left:10px;}
 	   	#wpsc_predictive_extensions { background: url("<?php echo WPSC_PS_IMAGES_URL; ?>/logo_a3blue.png") no-repeat scroll 4px 6px #FFFBCC; -webkit-border-radius:10px 10px 0 0;-moz-border-radius:10px 10px 0 0;-o-border-radius:10px 10px 0 0; border-radius: 10px 10px 0 0; color: #555555; margin: 0px; padding: 4px 8px 4px 100px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);}
 		</style>
 		<div id="search_widget_shortcode" style="display:none;">
 		  <div class="">
-			<h3><?php _e('Customize the Predictive Search Shortcode', 'wpscps'); ?></h3>
+			<h3><?php _e('Customize the Predictive Search Shortcode', 'wpscps'); ?> <a class="add-new-h2 a3-view-docs-button" target="_blank" href="<?php echo WPSC_PREDICTIVE_SEARCH_DOCS_URI; ?>#section-16" ><?php _e('View Docs', 'wpscps'); ?></a></h3>
 			<div style="clear:both"></div>
             <div id="wpsc_predictive_upgrade_area"><?php echo WPSC_Settings_Tab_Ps_Settings::predictive_extension_shortcode(); ?>
 			<div class="field_content">

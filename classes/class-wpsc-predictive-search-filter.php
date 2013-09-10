@@ -161,7 +161,7 @@ class WPSC_Predictive_Search_Hook_Filter
 		if ( $plugin_name != WPSC_PS_NAME) {
 			return $links;
 		}
-		$links[] = '<a href="http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/" target="_blank">'.__('Documentation', 'wpscps').'</a>';
+		$links[] = '<a href="'.WPSC_PREDICTIVE_SEARCH_DOCS_URI.'" target="_blank">'.__('Documentation', 'wpscps').'</a>';
 		$links[] = '<a href="http://wordpress.org/support/plugin/wp-e-commerce-predictive-search/" target="_blank">'.__('Support', 'wpscps').'</a>';
 		return $links;
 	}
