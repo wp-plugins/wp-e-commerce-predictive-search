@@ -23,6 +23,7 @@
 .predictive_results ul li .result_row a{display:inline-block !important;width:100% !important;}
 .predictive_results ul li a:hover{opacity:1 !important; color:#FFF !important;}
 .predictive_results ul li .rs_name{width:100%;color: #3B5998 !important; font-weight:bold !important; padding-bottom:2px !important; float:left !important;}
+.predictive_results ul li .rs_price .oldprice{font-size: 80%;text-decoration: line-through;}
 .predictive_results ul li .rs_description{width:100%; float:left !important;}
 .predictive_results ul li.ac_over a, .predictive_results ul li.ac_over a .rs_name{color:#FFF !important;}
 .ajax_search_content_title{width:90%;float:left;background:#F2F2F2 !important;padding:3px 5%; font-weight:bold !important; color:#000000 !important;}

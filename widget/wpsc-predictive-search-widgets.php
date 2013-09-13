@@ -39,17 +39,18 @@ class WPSC_Predictive_Search_Widgets extends WP_Widget {
 		if(empty($instance['text_lenght']) || $instance['text_lenght'] < 0) $text_lenght = 100; 
 		else $text_lenght = $instance['text_lenght'];
 		$search_global = empty($instance['search_global']) ? 0 : $instance['search_global'];
+		$show_price = empty($instance['show_price']) ? 0 : $instance['show_price'];
 		$search_box_text = ( isset($instance['search_box_text']) ? $instance['search_box_text'] : '' );
 		if (trim($search_box_text) == '') $search_box_text = get_option('ecommerce_search_box_text');
 
 		echo $before_widget;
 		if ( $title )
 			echo $before_title . $title . $after_title;
-		echo $this->wpscps_results_search_form($widget_id, $number_items, $text_lenght, '',$search_global, $search_box_text);
+		echo $this->wpscps_results_search_form($widget_id, $number_items, $text_lenght, '',$search_global, $search_box_text, $show_price);
 		echo $after_widget;
 	}
 	
-	public static function wpscps_results_search_form($widget_id, $number_items=5, $text_lenght=100, $style='', $search_global = 0, $search_box_text = ''){
+	public static function wpscps_results_search_form($widget_id, $number_items=5, $text_lenght=100, $style='', $search_global = 0, $search_box_text = '', $show_price = 1){
 		
 		// Add ajax search box script and style at footer
 		add_action('wp_footer',array('WPSC_Predictive_Search_Hook_Filter','wpscps_add_frontend_script'));
@@ -95,7 +96,7 @@ jQuery(document).ready(function() {
 		/*width: ul_width,*/
 		scrollHeight: 2000,
 		max: <?php echo ($row + 2); ?>,
-		extraParams: {'row':'<?php echo $row; ?>', 'text_lenght':'<?php echo $text_lenght;?>', 'security':'<?php echo $wpscps_get_result_popup;?>' <?php if($cat_slug != ''){ ?>, 'scat':'<?php echo $cat_slug ?>' <?php } ?> <?php if($tag_slug != ''){ ?>, 'stag':'<?php echo $tag_slug ?>' <?php } ?> },
+		extraParams: {'row':'<?php echo $row; ?>', 'text_lenght':'<?php echo $text_lenght;?>', 'security':'<?php echo $wpscps_get_result_popup;?>' <?php if($cat_slug != ''){ ?>, 'scat':'<?php echo $cat_slug ?>' <?php } ?> <?php if($tag_slug != ''){ ?>, 'stag':'<?php echo $tag_slug ?>' <?php } ?>, 'show_price':'<?php echo $show_price; ?>' },
 		inputClass: "ac_input_<?php echo $id; ?>",
 		resultsClass: "ac_results_<?php echo $id; ?>",
 		loadingClass: "predictive_loading",
@@ -143,6 +144,7 @@ jQuery(document).ready(function() {
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['number_items'] = $new_instance['number_items'];
 		$instance['text_lenght'] = strip_tags($new_instance['text_lenght']);
+		$instance['show_price'] = $new_instance['show_price'];
 		$instance['search_global'] = 1;
 		$instance['search_box_text'] = strip_tags($new_instance['search_box_text']);
 		return $instance;
@@ -152,12 +154,13 @@ jQuery(document).ready(function() {
 		$global_search_box_text = get_option('ecommerce_search_box_text');
 		$items_search_default = WPSC_Predictive_Search_Widgets::get_items_search();
 		
-		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'number_items' => 5, 'text_lenght' => 100, 'search_global' => 1, 'search_box_text' => $global_search_box_text) );
+		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'number_items' => 5, 'text_lenght' => 100, 'show_price' => 1, 'search_global' => 1, 'search_box_text' => $global_search_box_text) );
 		$title = strip_tags($instance['title']);
 		$number_items = $instance['number_items'];
 		if (empty($number_items) || is_array($number_items) ) $number_items = 5;
 		else $number_items = strip_tags($instance['number_items']);
 		$text_lenght = strip_tags($instance['text_lenght']);
+		$show_price = $instance['show_price'];
 		$search_global = $instance['search_global'];
 		$search_box_text = $instance['search_box_text'];
 ?>		
@@ -171,6 +174,8 @@ jQuery(document).ready(function() {
 		</style>
 			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'wpscps'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
             <p><label for="<?php echo $this->get_field_id('search_box_text'); ?>"><?php _e('Search box text message:', 'wpscps'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('search_box_text'); ?>" name="<?php echo $this->get_field_name('search_box_text'); ?>" type="text" value="<?php echo esc_attr($search_box_text); ?>" /></p>
+            <p><label><input type="checkbox" name="<?php echo $this->get_field_name('show_price'); ?>" value="1" <?php checked( $show_price, 1 ); ?>  /> <?php _e('Show Product prices', 'wpscps'); ?></label>
+            </p>
             <p><label for="<?php echo $this->get_field_id('number_items'); ?>"><?php _e('Number of results to show:', 'wpscps'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('number_items'); ?>" name="<?php echo $this->get_field_name('number_items'); ?>" type="text" value="<?php echo esc_attr($number_items); ?>" /></p>
 			<p><label for="<?php echo $this->get_field_id('text_lenght'); ?>"><?php _e(' Results description character count:', 'wpscps'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('text_lenght'); ?>" name="<?php echo $this->get_field_name('text_lenght'); ?>" type="text" value="<?php echo esc_attr($text_lenght); ?>" /></p>
             <fieldset id="wpsc_predictive_upgrade_area"><legend><?php _e('Upgrade to','wpscps'); ?> <a href="<?php echo WPSC_PS_AUTHOR_URI; ?>" target="_blank"><?php _e('Pro Version', 'wpscps'); ?></a> <?php _e('to activate', 'wpscps'); ?></legend>

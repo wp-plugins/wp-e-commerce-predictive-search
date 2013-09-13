@@ -11,6 +11,7 @@
  * add_search_widget_mce_popup()
  * parse_shortcode_search_result()
  * get_product_price()
+ * get_product_price_dropdown()
  * get_product_addtocart()
  * get_product_categories()
  * get_post_categories()
@@ -93,6 +94,7 @@ class WPSC_Predictive_Search_Shortcodes
             	<?php foreach ($items_search_default as $key => $data) { ?>
                 <p><label for="wpsc_search_<?php echo $key ?>_items"><?php echo $data['name']; ?>:</label> <input disabled="disabled" style="width:100px;" size="10" id="wpsc_search_<?php echo $key ?>_items" name="wpsc_search_<?php echo $key ?>_items" type="text" value="<?php echo $data['number'] ?>" /> <span class="description"><?php _e('Number of', 'wpscps'); echo ' '.$data['name'].' '; _e('results to show in dropdown', 'wpscps'); ?></span></p> 
                 <?php } ?>
+                <p><label for="wpsc_search_show_price"><?php _e('Price', 'wpscps'); ?>:</label> <input disabled="disabled" type="checkbox" checked="checked" id="wpsc_search_show_price" name="wpsc_search_show_price" value="1" /> <span class="description"><?php _e('Show Product prices', 'wpscps'); ?></span></p>
             	<p><label for="wpsc_search_text_lenght"><?php _e('Characters', 'wpscps'); ?>:</label> <input disabled="disabled" style="width:100px;" size="10" id="wpsc_search_text_lenght" name="wpsc_search_text_lenght" type="text" value="100" /> <span class="description"><?php _e('Number of product description characters', 'wpscps'); ?></span></p>
                 <p><label for="wpsc_search_align"><?php _e('Alignment', 'wpscps'); ?>:</label> <select disabled="disabled" style="width:100px" id="wpsc_search_align" name="wpsc_search_align"><option value="none" selected="selected"><?php _e('None', 'wpscps'); ?></option><option value="left-wrap"><?php _e('Left - wrap', 'wpscps'); ?></option><option value="left"><?php _e('Left - no wrap', 'wpscps'); ?></option><option value="center"><?php _e('Center', 'wpscps'); ?></option><option value="right-wrap"><?php _e('Right - wrap', 'wpscps'); ?></option><option value="right"><?php _e('Right - no wrap', 'wpscps'); ?></option></select> <span class="description"><?php _e('Horizontal aliginment of search box', 'wpscps'); ?></span></p>
                 <p><label for="wpsc_search_width"><?php _e('Search box width', 'wpscps'); ?>:</label> <input disabled="disabled" style="width:100px;" size="10" id="wpsc_search_width" name="wpsc_search_width" type="text" value="200" />px</p>
@@ -118,6 +120,42 @@ class WPSC_Predictive_Search_Shortcodes
     }
 	
 	public static function get_product_price($product_id, $show_price=true) {}
+	
+	public static function get_product_price_dropdown($product_id) {
+		$product_price_output = '';
+			$variable_price = WPSC_Predictive_Search::get_product_variation_price_available($product_id);
+			if ($variable_price > 0) {
+				$variable_price = apply_filters( 'wpsc_do_convert_price', $variable_price );
+				$args = array(
+						'display_as_html' => false,
+						'display_decimal_point' => true
+				);
+				$product_price_output = '<span class="rs_price">'.__('Priced from', 'wpscps').': ';
+				$product_price_output .= '<span class="currentprice pricedisplay">'.wpsc_currency_display( $variable_price, $args ).'</span></span>';
+			} else {
+				$price = $full_price = get_post_meta( $product_id, '_wpsc_price', true );
+		
+				$special_price = get_post_meta( $product_id, '_wpsc_special_price', true );
+			
+				if ( ( $full_price > $special_price ) && ( $special_price > 0 ) )
+					$price = $special_price;
+			
+				$price = apply_filters( 'wpsc_do_convert_price', $price );
+				$full_price = apply_filters( 'wpsc_do_convert_price', $full_price );
+				$args = array(
+						'display_as_html' => false,
+						'display_decimal_point' => true
+				);
+				if($price > 0){
+					$product_price_output = '<span class="rs_price">'.__('Price', 'wpscps').': ';
+					if ( ( $full_price > $special_price ) && ( $special_price > 0 ) )
+						$product_price_output .= '<span class="oldprice">'.wpsc_currency_display( $full_price, $args ).'</span> ';
+					$product_price_output .= '<span class="currentprice pricedisplay">'.wpsc_currency_display( $price, $args ).'</span></span>';
+				}
+			}
+		
+		return $product_price_output;
+	}
 	
 	public static function get_product_addtocart($product_id, $show_addtocart=true) {}
 	

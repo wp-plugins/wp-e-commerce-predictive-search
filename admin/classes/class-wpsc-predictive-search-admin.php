@@ -386,6 +386,12 @@ class WPSC_Settings_Tab_Ps_Settings
             </td>
 		  </tr>
           <tr valign="top">
+		    <th class="titledesc" scope="row"><label for="ecommerce_search_show_price"><?php _e('Price', 'wpscps');?></label></th>
+		    <td class="forminp">
+              <input disabled="disabled" type="checkbox" checked="checked" value="1" id="ecommerce_search_show_price" name="ecommerce_search_show_price" /> <span class="description"><label for="ecommerce_search_show_price"><?php _e('Show Product prices', 'wpscps');?></label></span>
+            </td>
+		  </tr>
+          <tr valign="top">
 		    <th class="titledesc" scope="row"><label for="ecommerce_search_character_max"><?php _e('Description Characters', 'wpscps');?></label></th>
 		    <td class="forminp">
               <input disabled="disabled" type="text" value="" size="6" id="ecommerce_search_character_max" name="ecommerce_search_character_max" />

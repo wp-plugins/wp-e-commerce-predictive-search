@@ -164,12 +164,14 @@ class WPSC_Predictive_Search
 		global $wpsc_predictive_id_excludes;
 		$row = 5;
 		$text_lenght = 100;
+		$show_price = 1;
 		$search_keyword = '';
 		$cat_slug = '';
 		$tag_slug = '';
 		$extra_parameter = '';
 		if (isset($_REQUEST['row']) && $_REQUEST['row'] > 0) $row = stripslashes( strip_tags( $_REQUEST['row'] ) );
 		if (isset($_REQUEST['text_lenght']) && $_REQUEST['text_lenght'] >= 0) $text_lenght = stripslashes( strip_tags( $_REQUEST['text_lenght'] ) );
+		if (isset($_REQUEST['show_price']) && trim($_REQUEST['show_price']) != '') $show_price = stripslashes( strip_tags( $_REQUEST['show_price'] ) );
 		if (isset($_REQUEST['q']) && trim($_REQUEST['q']) != '') $search_keyword = stripslashes( strip_tags( $_REQUEST['q'] ) );
 		
 		$end_row = $row;
@@ -192,7 +194,11 @@ class WPSC_Predictive_Search
 					$product_description = WPSC_Predictive_Search::wpscps_limit_words(strip_tags( WPSC_Predictive_Search::strip_shortcodes( strip_shortcodes( str_replace("\n", "", $product->post_content) ) ) ),$text_lenght,'...');
 					if (trim($product_description) == '') $product_description = WPSC_Predictive_Search::wpscps_limit_words(strip_tags( WPSC_Predictive_Search::strip_shortcodes( strip_shortcodes( str_replace("\n", "", $product->post_excerpt) ) ) ),$text_lenght,'...');
 					
-					$item = '<div class="ajax_search_content"><div class="result_row"><a href="'.$link_detail.'"><span class="rs_avatar">'.$avatar.'</span><div class="rs_content_popup"><span class="rs_name">'.stripslashes( $product->post_title).'</span><span class="rs_description">'.$product_description.'</span></div></a></div></div>';
+					$price_html = '';
+					if ( $show_price == 1)
+						$price_html = WPSC_Predictive_Search_Shortcodes::get_product_price_dropdown($product->ID);
+					
+					$item = '<div class="ajax_search_content"><div class="result_row"><a href="'.$link_detail.'"><span class="rs_avatar">'.$avatar.'</span><div class="rs_content_popup"><span class="rs_name">'.stripslashes( $product->post_title).'</span>'.$price_html.'<span class="rs_description">'.$product_description.'</span></div></a></div></div>';
 					echo "$item|$link_detail|".stripslashes( $product->post_title)."\n";
 					$end_row--;
 					if ($end_row < 1) break;
