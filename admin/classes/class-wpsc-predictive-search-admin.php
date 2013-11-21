@@ -332,7 +332,10 @@ class WPSC_Settings_Tab_Ps_Settings
           <tr valign="top">
 		    <td class="forminp" colspan="2">
             <?php _e('Copy and paste this global function into your themes header.php file to replace any existing search function. (Be sure to delete the existing WordPress, WP e-Commerce or Theme search function)', 'wpscps');?>
-            <br /><code>&lt;?php if(function_exists('wpsc_search_widget')) wpsc_search_widget(); ?&gt;</code>
+            <br /><code>&lt;?php<br />
+            $ps_echo = true ; <br /> 
+            if ( function_exists( 'wpsc_search_widget' ) ) wpsc_search_widget( $ps_echo ); <br /> 
+            ?&gt;</code>
             </td>
           </tr>
         </table>
