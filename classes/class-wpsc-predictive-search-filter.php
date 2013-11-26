@@ -6,7 +6,6 @@
  *
  * Table Of Contents
  *
- * wpscps_add_settings_search()
  * wpscps_add_frontend_script()
  * add_query_vars()
  * add_rewrite_rules()
@@ -14,16 +13,10 @@
  * search_by_title_only()
  * predictive_posts_orderby()
  * posts_request_unconflict_role_scoper_plugin()
- * wp_admin_footer_scripts()
  * plugin_extra_links()
  */
 class WPSC_Predictive_Search_Hook_Filter 
 {
-	
-	public static function add_wpsc_settings_tabs($tabs){
-		$tabs['ps_settings'] = __('Predictive Search', 'wpscps');
-		return $tabs;
-	}
 	
 	/*
 	* Include the script for widget search and Search page
@@ -139,24 +132,7 @@ class WPSC_Predictive_Search_Hook_Filter
 		
 		return $posts_request;
 	}
-	
-	public static function wp_admin_footer_scripts() {
-	?>
-    <script type="text/javascript">
-		(function($){		
-			$(function(){	
-				$("a.nav-tab").click(function(){
-					if($(this).attr('data-tab-id') == 'ps_settings'){
-						window.location.href=$(this).attr('href');
-						return false;
-					}
-				});
-			});		  
-		})(jQuery);
-	</script>
-    <?php
-	}
-	
+		
 	public static function plugin_extra_links($links, $plugin_name) {
 		if ( $plugin_name != WPSC_PS_NAME) {
 			return $links;

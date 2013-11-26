@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP e-Commerce Predictive Search, WP e-Commerce, Predictive Search, Live Search, e-commerce,  wordpress ecommerce
 Requires at least: 3.5
 Tested up to: 3.7.1
-Stable tag: 2.0.8.1
+Stable tag: 2.0.9
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -173,6 +173,13 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 == Changelog ==
 
+= 2.0.9 - 2013/11/26 =
+* Feature - Upgraded the plugin to the newly developed a3rev admin Framework with app style interface.
+* Feature - New admin UI features check boxes replaced by switches.
+* Tweak - Moved admin from wp-admin Settings > Shop tabs to new menu item on wp-admin Products. Menu item name is Predictive Search.
+* Tweak - Predictive Search menu broken up into tabs - Setting, All Results Pages, Exclude Content, Search Function.
+* Tweak - Removed View Docs button from admin panels until new docs are posted. 
+
 = 2.0.8.1 - 2013/11/21 =
 * Tweak - Plugin tested 100% compatible with WordPress 3.7.1
 * Fix - change pipe | character to [|] character in result popup code to solve the conflict with users who use pipe | in product titles.
@@ -276,6 +283,9 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 
 == Upgrade Notice ==
+
+= 2.0.9 =
+Upgrade your plugin now to the a3rev plugin framework with app style admin interface.
 
 = 2.0.8.1 =
 Upgrade now for pipe separator in product title bug fix plus compatibility with WP v3.7.1

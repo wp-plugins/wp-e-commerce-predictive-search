@@ -89,7 +89,7 @@ class WPSC_Predictive_Search_Shortcodes
 		  <div class="">
 			<h3><?php _e('Customize the Predictive Search Shortcode', 'wpscps'); ?> <a class="add-new-h2 a3-view-docs-button" target="_blank" href="<?php echo WPSC_PREDICTIVE_SEARCH_DOCS_URI; ?>#section-16" ><?php _e('View Docs', 'wpscps'); ?></a></h3>
 			<div style="clear:both"></div>
-            <div id="wpsc_predictive_upgrade_area"><?php echo WPSC_Settings_Tab_Ps_Settings::predictive_extension_shortcode(); ?>
+            <div id="wpsc_predictive_upgrade_area"><?php echo WPSC_Predictive_Search::predictive_extension_shortcode(); ?>
 			<div class="field_content">
             	<?php foreach ($items_search_default as $key => $data) { ?>
                 <p><label for="wpsc_search_<?php echo $key ?>_items"><?php echo $data['name']; ?>:</label> <input disabled="disabled" style="width:100px;" size="10" id="wpsc_search_<?php echo $key ?>_items" name="wpsc_search_<?php echo $key ?>_items" type="text" value="<?php echo $data['number'] ?>" /> <span class="description"><?php _e('Number of', 'wpscps'); echo ' '.$data['name'].' '; _e('results to show in dropdown', 'wpscps'); ?></span></p> 

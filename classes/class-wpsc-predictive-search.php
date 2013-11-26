@@ -20,25 +20,6 @@
 class WPSC_Predictive_Search
 {
 	
-	public static function set_setting($reset=false){
-		update_option('ecommerce_search_focus_enable', 0);
-		//update_option('ecommerce_search_addtocart_enable', 0);
-		update_option('ecommerce_search_focus_plugin', 'none');
-		update_option('ecommerce_search_result_items', 5);
-		update_option('ecommerce_search_text_lenght', 100);
-		update_option('ecommerce_search_sku_enable', 0);
-		update_option('ecommerce_search_price_enable', 0);
-		update_option('ecommerce_search_categories_enable', 0);
-		update_option('ecommerce_search_tags_enable', 0);
-		update_option('ecommerce_search_exclude_p_categories', array());
-		update_option('ecommerce_search_exclude_p_tags', array());
-		update_option('ecommerce_search_exclude_posts', array());
-		update_option('ecommerce_search_exclude_pages', array());
-		if ( $reset ) {
-			update_option('ecommerce_search_box_text', '');
-		}
-	}
-	
 	public static function plugins_loaded() {
 		global $wpsc_predictive_id_excludes;
 		
@@ -300,6 +281,53 @@ class WPSC_Predictive_Search
 		$content = preg_replace( '|\[(.+?)\](.+?\[/\\1\])?|s', '', $content);
 		
 		return $content;
+	}
+	
+	public static function plugin_extension() {
+		$html = '';
+		$html .= '<a href="http://a3rev.com/shop/" target="_blank" style="float:right;margin-top:5px; margin-left:10px;" ><img src="'.WPSC_PS_IMAGES_URL.'/a3logo.png" /></a>';
+		$html .= '<h3>'.__('Upgrade to Predictive Search Pro', 'wpscps').'</h3>';
+		$html .= '<p>'.__("<strong>NOTE:</strong> All the functions inside the Yellow border on the plugins admin panel are extra functionality that is activated by upgrading to the Pro version", 'wpscps').':</p>';
+		$html .= '<h3>* <a href="'.WPSC_PS_AUTHOR_URI.'" target="_blank">'.__('WPEC Predictive Search Pro', 'wpscps').'</a></h3>';
+		$html .= '<h3>'.__('Activates these advanced features', 'wpscps').':</h3>';
+		$html .= '<p>';
+		$html .= '<ul style="padding-left:10px;">';
+		$html .= '<li>1. '.__("Activate site search optimization with Predictive Search 'Focus Keywords'.", 'wpscps').'</li>';
+		$html .= '<li>2. '.__('Activate integration with Yoasts WordPress SEO or All in One SEO plugins.', 'wpscps').'</li>';
+		$html .= '<li>3. '.__('Activate the Advance All Search results page customization setting.', 'wpscps').'</li>';
+		$html .= '<li>4. '.__('Activate Search by Product Categories, Product Tags, Posts and Pages options in the search widgets.', 'wpscps').'</li>';
+		$html .= '<li>5. '.__('Activate Search shortcodes for Posts and pages.', 'wpscps').'</li>';
+		$html .= '<li>6. '.__('Activate Exclude Product Cats, Product Tags , Posts and pages from search results.', 'wpscps').'</li>';
+		$html .= '<li>7. '.__('Activate Predictive Search Function to place the search box in any non widget area of your site - example the header.', 'wpscps').'</li>';
+		$html .= '<li>8. '.__("Activate 'Smart Search' function on Widgets, Shortcode and the search Function", 'wpscps').'</li>';
+		$html .= '</ul>';
+		$html .= '</p>';
+		
+		$html .= '<h3>'.__('View this plugins', 'wpscps').' <a href="http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-predictive-search/" target="_blank">'.__('documentation', 'wpscps').'</a></h3>';
+		$html .= '<h3>'.__('Visit this plugins', 'wpscps').' <a href="http://wordpress.org/support/plugin/wp-e-commerce-predictive-search/" target="_blank">'.__('support forum', 'wpscps').'</a></h3>';
+		$html .= '<h3>'.__('More FREE a3rev WP e-Commerce Plugins', 'wpscps').'</h3>';
+		$html .= '<p>';
+		$html .= '<ul style="padding-left:10px;">';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-products-quick-view/" target="_blank">'.__('WP e-Commerce Products Quick View', 'wpscps').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-dynamic-gallery/" target="_blank">'.__('WP e-Commerce Dynamic Gallery', 'wpscps').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-ecommerce-compare-products/" target="_blank">'.__('WP e-Commerce Compare Products', 'wpscps').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-catalog-visibility-and-email-inquiry/" target="_blank">'.__('WP e-Commerce Catalog Visibility & Email Inquiry', 'wpscps').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-grid-view/" target="_blank">'.__('WP e-Commerce Grid View', 'wpscps').'</a></li>';
+		$html .= '</ul>';
+		$html .= '</p>';
+		$html .= '<h3>'.__('FREE a3rev WordPress Plugins', 'wpscps').'</h3>';
+		$html .= '<p>';
+		$html .= '<ul style="padding-left:10px;">';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/contact-us-page-contact-people/" target="_blank">'.__('Contact Us Page - Contact People', 'wpscps').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-email-template/" target="_blank">'.__('WordPress Email Template', 'wpscps').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/page-views-count/" target="_blank">'.__('Page View Count', 'wpscps').'</a></li>';
+		return $html;
+	}
+	
+	public static function predictive_extension_shortcode() {
+		$html = '';
+		$html .= '<div id="wpsc_predictive_extensions">'.__("Yes you'll love the Predictive Search shortcode feature. Upgrading to the", 'wpscps').' <a target="_blank" href="'.WPSC_PS_AUTHOR_URI.'">'.__('Pro Version', 'wpscps').'</a> '.__("activates this shortcode feature as well as the awesome 'Smart Search' feature, per widget controls, the All Search Results page customization settings and function features.", 'wpscps').'</div>';
+		return $html;	
 	}
 	
 	public static function upgrade_version_2_0() {

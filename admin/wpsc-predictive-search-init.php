@@ -8,8 +8,11 @@ function wpsc_predictive_install() {
 	global $wp_rewrite;
 	WPSC_Predictive_Search::create_page( 'ecommerce-search', 'ecommerce_search_page_id', __('Predictive Search', 'wpscps'), '[ecommerce_search]' );
 	
-	WPSC_Predictive_Search::set_setting();
-	update_option('wpsc_predictive_search_version', '2.0.8.1');
+	// Set Settings Default from Admin Init
+	global $wpsc_predictive_search_admin_init;
+	$wpsc_predictive_search_admin_init->set_default_settings();
+	
+	update_option('wpsc_predictive_search_version', '2.0.9');
 	$wp_rewrite->flush_rules();
 	
 	update_option('wpsc_predictive_search_just_installed', true);
@@ -18,7 +21,7 @@ function wpsc_predictive_install() {
 function wpscps_init() {
 	if ( get_option('wpsc_predictive_search_just_installed') ) {
 		delete_option('wpsc_predictive_search_just_installed');
-		wp_redirect( admin_url( 'options-general.php?page=wpsc-settings&tab=ps_settings', 'relative' ) );
+		wp_redirect( admin_url( 'edit.php?post_type=wpsc-product&page=wpsc-predictive-search', 'relative' ) );
 		exit;
 	}
 	load_plugin_textdomain( 'wpscps', false, WPSC_PS_FOLDER.'/languages' );
@@ -37,11 +40,15 @@ add_action( 'plugins_loaded', array( 'WPSC_Predictive_Search', 'plugins_loaded' 
 // Add text on right of Visit the plugin on Plugin manager page
 add_filter( 'plugin_row_meta', array('WPSC_Predictive_Search_Hook_Filter', 'plugin_extra_links'), 10, 2 );
 
+// Need to call Admin Init to show Admin UI
+global $wpsc_predictive_search_admin_init;
+$wpsc_predictive_search_admin_init->init();
+
+// Add upgrade notice to Dashboard pages
+add_filter( $wpsc_predictive_search_admin_init->plugin_name . '_plugin_extension', array( 'WPSC_Predictive_Search', 'plugin_extension' ) );
+
 // Custom Rewrite Rules
 add_action( 'init', array('WPSC_Predictive_Search_Hook_Filter', 'custom_rewrite_rule' ) );
-
-// Add Predictive Search tab into Store settings 	
-add_filter( 'wpsc_settings_tabs', array('WPSC_Predictive_Search_Hook_Filter', 'add_wpsc_settings_tabs') );
 
 // Registry widget
 add_action('widgets_init', 'register_widget_wpscps_predictive_search');
@@ -77,8 +84,6 @@ add_action('wp_ajax_nopriv_wpscps_get_result_search_page', array('WPSC_Predictiv
 add_action('wp_ajax_wpscps_get_result_popup', array('WPSC_Predictive_Search','wpscps_get_result_popup'));
 add_action('wp_ajax_nopriv_wpscps_get_result_popup', array('WPSC_Predictive_Search','wpscps_get_result_popup'));
 
-add_action( 'admin_footer', array('WPSC_Predictive_Search_Hook_Filter', 'wp_admin_footer_scripts') );
-
 //Add ajax search box at header
 if ( ! is_admin() )
 	add_action('init',array('WPSC_Predictive_Search_Hook_Filter','wpscps_add_frontend_style'));
@@ -89,5 +94,5 @@ if(version_compare(get_option('wpsc_predictive_search_version'), '2.0') === -1){
 	update_option('wpsc_predictive_search_version', '2.0');
 }
 
-update_option('wpsc_predictive_search_version', '2.0.8.1');
+update_option('wpsc_predictive_search_version', '2.0.9');
 ?>
