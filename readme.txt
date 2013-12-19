@@ -2,8 +2,8 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP e-Commerce Predictive Search, WP e-Commerce, Predictive Search, Live Search, e-commerce,  wordpress ecommerce
 Requires at least: 3.5
-Tested up to: 3.7.1
-Stable tag: 2.0.9
+Tested up to: 3.8.0
+Stable tag: 2.1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -30,10 +30,20 @@ WP e-Commerce Predictive Search engine queries <strong>your entire product datab
 * 'All Results Search Page' shows products thumbnail, Title as a clickable link to the product and product text description.
 * 'All Results Search Page' features endless scroll - allows the page to load quickly and show 'infinite' number of results. 
 
+= Mobile Responsive App style admin interface =
+Like WordPress we believe that a3rev plugin users should be able to configure and tweak our plugins settings while on the go, right from their mobile or tablet. This plugins features an app style admin interface with Switches, Sliders and a smart interface that hides associated settings when a feature is not turned ON.
+
+* 100% compatible with WordPress v3.8.0 admin interface.
+* Backward compatibility to WordPress v3.5.0
+* App style admin interface.
+* Admin app interface is fully mobile and tablet responsive.
+
+= Lite & Pro Version Admin Interface =
+All a3rev Lite Version plugins have exactly the same admin interface as the Pro Version. Pro Version features and settings are easy to spot on the admin dashboard, Predictive Search Widget and shortcode pop-up as they are inside of a Yellow border. The Pro Version settings are all active on the admin panels so they can be used to get a great idea of how they work and what is available BUT the settings do not save when changes are saved and hence are not applied to the front end. Upgrading to the Pro version activates all the Pro version Features and Settings and removes the Yellow side bar and borders.
 
 = Lite Version Support =
 
-As a Lite Version user please post all support requests to the plugins WordPress Support forum. We do not watch that forum and posting there you will be relying on another user for support not an a3rev team member. Pro Version Licence holders have 'write' access to the a3rev support forum and Lifetime priority support, not from support staff but from the developers.
+As a Lite Version user please post all support requests to the plugins WordPress Support forum. We do not watch that forum and posting there you will be relying on another user for support, not an a3rev team member. Upgrading to a Pro Version Licence gives 'write' access to the a3rev support forum and hence Lifetime priority support as part of the License.
 
 = Pro Version Upgrade =
 
@@ -46,7 +56,7 @@ WP e-Commerce Predictive Search is now the most powerful site search engine ever
 * Predictive Search meta section on each product page, post and page for setting 'Focus Keywords and Keyword Phrases'.
 * Exclude any product, post or page from Predictive Search results Globally from the admin panel or right from the Predictive Search Meta on product, post or page.
 * Integration with SEO plugins. Can be a massive time saver. Configure your plugin with the click of a mouse to use Focus Keywords that are set on an SEO plugin you are using. Include any 'Focus Keywords' that have been set while optimizing the site content for search engine search.  
-* Currently supports * Yoasts WordPress SEO and the * All in One SEO plugins. If you use another WordPress SEO Plugin and would like to see it included in the list of supported plugins please just let us know and we will look in including support for it in future updates.
+* Currently supports Yoasts WordPress SEO and the All in One SEO plugins. If you use another WordPress SEO Plugin and would like to see it included in the list of supported plugins please just let us know and we will look in including support for it in future updates.
 
 = General =
 * Use 'live search' to wow your customers - fast and deadly accurate.
@@ -151,7 +161,7 @@ The manual installation method involves downloading our plugin and uploading it 
 
 == Usage ==
 
-1. WP admin > Settings > Store > Predictive Search
+1. WP admin > Products > Predictive Search
 
 2. Appearance > Widgets
 
@@ -172,6 +182,15 @@ You can use this plugin only when you have installed the WP e-Commerce plugin.
 Support and access to this plugin documents are available from the [HELP tab](http://wordpress.org/support/plugin/wp-e-commerce-predictive-search) on the Pro Versions Home page.
 
 == Changelog ==
+
+= 2.1.0 - 2013/12/19 =
+* Feature - a3rev Plugin Framework admin interface upgraded to 100% Compatibility with WordPress v3.8.0 with backward compatibility.
+* Feature - a3rev framework 100% mobile and tablet responsive, portrait and landscape viewing.
+* Tweak - Upgraded dashboard switch and slider to Vector based display that shows when WordPress version 3.8.0 is activated.
+* Tweak - Upgraded all plugin .jpg icons and images to Vector based display for full compatibility with new WordPress version.
+* Tweak - Yellow sidebar on Pro Version Menus does not show in Mobile screens to optimize admin panel screen space.
+* Tweak - Tested 100% compatible with WP 3.8.0
+* Fix - Upgraded array_textareas type for Padding, Margin settings on the a3rev plugin framework
 
 = 2.0.9 - 2013/11/26 =
 * Feature - Upgraded the plugin to the newly developed a3rev admin Framework with app style interface.
@@ -284,6 +303,9 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 == Upgrade Notice ==
 
+= 2.1.0 =
+Upgrade now for full a3rev Plugin Framework compatibility with WordPress version 3.8.0 and backwards. New admin interface full mobile and tablet responsive display.
+
 = 2.0.9 =
 Upgrade your plugin now to the a3rev plugin framework with app style admin interface.
 
@@ -291,7 +313,7 @@ Upgrade your plugin now to the a3rev plugin framework with app style admin inter
 Upgrade now for pipe separator in product title bug fix plus compatibility with WP v3.7.1
 
 = 2.0.8 =
-Upgrade now for 1 very important bug fix and 1 new feature Ð option to show product prices in drop down.
+
 
 = 2.0.7 =
 Update now for new 'View Docs' quick reference feature and 2 SSL bug fixes.

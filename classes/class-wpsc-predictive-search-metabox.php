@@ -26,9 +26,9 @@ class WPSC_Predictive_Search_Meta
 		}
 		
 		if (get_post_type($post->ID) == 'wpsc-product') {
-			$hide_item_from_result_text = ' <span style="float:right;"><label><input style="position: relative; top: 2px;" type="checkbox" '.$check.' value="1" name="_ecommerce_search_exclude_item" /> '.__('Hide from Predictive Search results.', 'wpscps').'</label></span>';
+			$hide_item_from_result_text = ' <span style="float:right;" class="a3_ecommerce_search_exclude_item"><label><input style="position: relative; top: 2px;" type="checkbox" '.$check.' value="1" name="_ecommerce_search_exclude_item" /> '.__('Hide from Predictive Search results.', 'wpscps').'</label></span>';
 		} else {
-			$hide_item_from_result_text = ' <span style="float:right;"><label><input disabled="disabled" style="position: relative; top: 2px;" type="checkbox" checked="checked" value="1" name="_ecommerce_search_exclude_item" /> '.__('Hide from Predictive Search results.', 'wpscps').'</label></span>';
+			$hide_item_from_result_text = ' <span style="float:right;" class="a3_woocommerce_search_exclude_item"><label><input disabled="disabled" style="position: relative; top: 2px;" type="checkbox" checked="checked" value="1" name="_ecommerce_search_exclude_item" /> '.__('Hide from Predictive Search results.', 'wpscps').'</label></span>';
 		}
 		
 		add_meta_box( 'wpec_predictive_search_metabox', __('Predictive Search Meta', 'wpscps').$hide_item_from_result_text , array('WPSC_Predictive_Search_Meta','data_metabox'), 'post', 'normal', 'high' );

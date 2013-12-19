@@ -13,6 +13,7 @@
  * search_by_title_only()
  * predictive_posts_orderby()
  * posts_request_unconflict_role_scoper_plugin()
+ * a3_wp_admin()
  * plugin_extra_links()
  */
 class WPSC_Predictive_Search_Hook_Filter 
@@ -131,6 +132,10 @@ class WPSC_Predictive_Search_Hook_Filter
 		$posts_request = str_replace('1=2', '2=2', $posts_request);
 		
 		return $posts_request;
+	}
+	
+	public static function a3_wp_admin() {
+		wp_enqueue_style( 'a3rev-wp-admin-style', WPSC_PS_CSS_URL . '/a3_wp_admin.css' );
 	}
 		
 	public static function plugin_extra_links($links, $plugin_name) {

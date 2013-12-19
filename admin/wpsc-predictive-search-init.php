@@ -12,7 +12,8 @@ function wpsc_predictive_install() {
 	global $wpsc_predictive_search_admin_init;
 	$wpsc_predictive_search_admin_init->set_default_settings();
 	
-	update_option('wpsc_predictive_search_version', '2.0.9');
+	update_option('wpsc_predictive_search_lite_version', '2.1.0');
+	update_option('wpsc_predictive_search_version', '2.1.0');
 	$wp_rewrite->flush_rules();
 	
 	update_option('wpsc_predictive_search_just_installed', true);
@@ -33,6 +34,9 @@ function register_widget_wpscps_predictive_search() {
 
 // Add language
 add_action('init', 'wpscps_init');
+
+// Add custom style to dashboard
+add_action( 'admin_enqueue_scripts', array( 'WPSC_Predictive_Search_Hook_Filter', 'a3_wp_admin' ) );
 
 // Load Global variables
 add_action( 'plugins_loaded', array( 'WPSC_Predictive_Search', 'plugins_loaded' ), 8 );
@@ -88,11 +92,18 @@ add_action('wp_ajax_nopriv_wpscps_get_result_popup', array('WPSC_Predictive_Sear
 if ( ! is_admin() )
 	add_action('init',array('WPSC_Predictive_Search_Hook_Filter','wpscps_add_frontend_style'));
 
-// Upgrade to 2.0
-if(version_compare(get_option('wpsc_predictive_search_version'), '2.0') === -1){
-	WPSC_Predictive_Search::upgrade_version_2_0();
-	update_option('wpsc_predictive_search_version', '2.0');
-}
+// Check upgrade functions
+add_action('plugins_loaded', 'wpsc_predictive_search_lite_upgrade_plugin');
+function wpsc_predictive_search_lite_upgrade_plugin () {
+	
+	// Upgrade to 2.0
+	if(version_compare(get_option('wpsc_predictive_search_version'), '2.0') === -1){
+		WPSC_Predictive_Search::upgrade_version_2_0();
+		update_option('wpsc_predictive_search_version', '2.0');
+	}
+	
+	update_option('wpsc_predictive_search_lite_version', '2.1.0');
+	update_option('wpsc_predictive_search_version', '2.1.0');
 
-update_option('wpsc_predictive_search_version', '2.0.9');
+}
 ?>

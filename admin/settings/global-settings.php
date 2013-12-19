@@ -127,7 +127,7 @@ class WPSC_Predictive_Search_Global_Settings extends WPSC_Predictive_Search_Admi
 	/* Process when clean on deletion option is un selected */
 	/*-----------------------------------------------------------------------------------*/
 	public function after_save_settings() {
-		if ( get_option( 'ecommerce_search_lite_clean_on_deletion' ) == 0  )  {
+		if ( ( isset( $_POST['bt_save_settings'] ) || isset( $_POST['bt_reset_settings'] ) ) && get_option( 'ecommerce_search_lite_clean_on_deletion' ) == 0  )  {
 			$uninstallable_plugins = (array) get_option('uninstall_plugins');
 			unset($uninstallable_plugins[WPSC_PS_NAME]);
 			update_option('uninstall_plugins', $uninstallable_plugins);
