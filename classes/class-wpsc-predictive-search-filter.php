@@ -103,6 +103,47 @@ class WPSC_Predictive_Search_Hook_Filter
 		// END rewrite
 	}
 	
+	public static function remove_special_characters_in_mysql( $field_name ) {
+		if ( trim( $field_name ) == '' ) return '';
+		
+		$field_name = 'REPLACE( '.$field_name.', "(", "")';
+		$field_name = 'REPLACE( '.$field_name.', ")", "")';
+		$field_name = 'REPLACE( '.$field_name.', "{", "")';
+		$field_name = 'REPLACE( '.$field_name.', "}", "")';
+		$field_name = 'REPLACE( '.$field_name.', "<", "")';
+		$field_name = 'REPLACE( '.$field_name.', ">", "")';
+		$field_name = 'REPLACE( '.$field_name.', "©", "")'; 	// copyright
+		$field_name = 'REPLACE( '.$field_name.', "®", "")'; 	// registered
+		$field_name = 'REPLACE( '.$field_name.', "™", "")'; 	// trademark
+		$field_name = 'REPLACE( '.$field_name.', "£", "")'; 
+		$field_name = 'REPLACE( '.$field_name.', "¥", "")';	
+		$field_name = 'REPLACE( '.$field_name.', "§", "")';
+		$field_name = 'REPLACE( '.$field_name.', "¢", "")';
+		$field_name = 'REPLACE( '.$field_name.', "µ", "")';
+		$field_name = 'REPLACE( '.$field_name.', "¶", "")';
+		$field_name = 'REPLACE( '.$field_name.', "–", "")'; 
+		$field_name = 'REPLACE( '.$field_name.', "¿", "")'; 
+		$field_name = 'REPLACE( '.$field_name.', "«", "")'; 
+		$field_name = 'REPLACE( '.$field_name.', "»", "")'; 
+		 
+	
+		$field_name = 'REPLACE( '.$field_name.', "&lsquo;", "")'; 	// left single curly quote
+		$field_name = 'REPLACE( '.$field_name.', "&rsquo;", "")'; 	// right single curly quote
+		$field_name = 'REPLACE( '.$field_name.', "&ldquo;", "")'; 	// left double curly quote
+		$field_name = 'REPLACE( '.$field_name.', "&rdquo;", "")'; 	// right double curly quote
+		$field_name = 'REPLACE( '.$field_name.', "&quot;", "")'; 	// quotation mark
+		$field_name = 'REPLACE( '.$field_name.', "&ndash;", "")'; 	// en dash
+		$field_name = 'REPLACE( '.$field_name.', "&mdash;", "")'; 	// em dash
+		$field_name = 'REPLACE( '.$field_name.', "&iexcl;", "")'; 	// inverted exclamation
+		$field_name = 'REPLACE( '.$field_name.', "&iquest;", "")'; 	// inverted question mark
+		$field_name = 'REPLACE( '.$field_name.', "&laquo;", "")'; 	// guillemets
+		$field_name = 'REPLACE( '.$field_name.', "&raquo;", "")'; 	// guillemets
+		$field_name = 'REPLACE( '.$field_name.', "&gt;", "")'; 		// greater than
+		$field_name = 'REPLACE( '.$field_name.', "&lt;", "")'; 		// less than
+		
+		return $field_name;
+	}
+	
 	public static function search_by_title_only( $search, &$wp_query ) {
 		global $wpdb;
 		$q = $wp_query->query_vars;
@@ -110,7 +151,13 @@ class WPSC_Predictive_Search_Hook_Filter
 			return $search; // skip processing - no search term in query
 		$search = '';
 		$term = esc_sql( like_escape( trim($q['s']) ) );
-		$search .= "($wpdb->posts.post_title LIKE '{$term}%' OR $wpdb->posts.post_title LIKE '% {$term}%')";
+		$term_nospecial = preg_replace( "/[^a-zA-Z0-9_.-\s]/", "", $term );
+		$search_nospecial = false;
+		if ( $term != $term_nospecial ) $search_nospecial = true;
+		
+		$search .= "( ".WPSC_Predictive_Search_Hook_Filter::remove_special_characters_in_mysql( "$wpdb->posts.post_title" )." LIKE '{$term}%' OR ".WPSC_Predictive_Search_Hook_Filter::remove_special_characters_in_mysql( "$wpdb->posts.post_title" )." LIKE '% {$term}%')";
+		if ( $search_nospecial ) $search .= " OR ( ".WPSC_Predictive_Search_Hook_Filter::remove_special_characters_in_mysql( "$wpdb->posts.post_title" )." LIKE '{$term_nospecial}%' OR ".WPSC_Predictive_Search_Hook_Filter::remove_special_characters_in_mysql( "$wpdb->posts.post_title" )." LIKE '% {$term_nospecial}%')";
+		
 		if ( ! empty( $search ) ) {
 			$search = " AND ({$search}) ";
 		}

@@ -2,8 +2,8 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP e-Commerce Predictive Search, WP e-Commerce, Predictive Search, Live Search, e-commerce,  wordpress ecommerce
 Requires at least: 3.5
-Tested up to: 3.8.0
-Stable tag: 2.1.0
+Tested up to: 3.8.1
+Stable tag: 2.1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -183,6 +183,20 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 == Changelog ==
 
+= 2.1.1 - 2014/02/08 =
+* Feature - Special Characters Within near match. Query strings that CONTAINS a special character eg d'E return all matches found for d'e and de.
+* Feature - Special Characters Prepend and Append near match e.g. Query (Purple) will return all matches found for (Purple) and Purple.
+* Tweak - Settings admin panel Tweak. Added SEO Plugin Focus Keyword Activation setting only shows when the Predictive Search Focus Keyword Feature is ON.
+* Tweak - Updated the Focus Keyword text on Settings tab to be more descriptive and useful.
+* Tweak - Updated the Predictive Search box dropdown message 'Keep typing ... when no results found to a more helpful dialog. 
+* Tweak - Framework load time. Added remove_all_filters('mce_external_plugins'); before call to wp_editor to remove extension scripts from other plugins.
+* Tweak - Added description text to the top of each Pro Version yellow border section
+* Tweak - All switch text to show as Uppercase.
+* Tweak - Tested 100% compatible with WordPress version 3.8.1
+* Tweak - Tested 100% compatible with WP e-Commerce version 3.8.13.3
+* Credit - Thanks to Mylene for pointing out the Special Characters Within issue.
+* Credit - Thanks to Scott Lesh for pointing out the Special characters Prepend and Append issue
+
 = 2.1.0 - 2013/12/19 =
 * Feature - a3rev Plugin Framework admin interface upgraded to 100% Compatibility with WordPress v3.8.0 with backward compatibility.
 * Feature - a3rev framework 100% mobile and tablet responsive, portrait and landscape viewing.
@@ -302,6 +316,9 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 
 == Upgrade Notice ==
+
+= 2.1.1 =
+Update your plugin now for 2 new special characters search functions, 6 associated tweaks and full compatibility with WordPress v3.8.1 and WP e-Commerce v3.8.13.3.
 
 = 2.1.0 =
 Upgrade now for full a3rev Plugin Framework compatibility with WordPress version 3.8.0 and backwards. New admin interface full mobile and tablet responsive display.

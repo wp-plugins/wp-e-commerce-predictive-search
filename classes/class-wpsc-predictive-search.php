@@ -187,14 +187,14 @@ class WPSC_Predictive_Search
 				$rs_item = '';
 				if ( count($search_products) > $row ) {
 					if (get_option('permalink_structure') == '')
-						$link_search = get_permalink(get_option('ecommerce_search_page_id')).'&rs='.$search_keyword.$extra_parameter;
+						$link_search = get_permalink(get_option('ecommerce_search_page_id')).'&rs='. urlencode($search_keyword) .$extra_parameter;
 					else
-						$link_search = rtrim( get_permalink(get_option('ecommerce_search_page_id')), '/' ).'/keyword/'.$search_keyword.$extra_parameter;
+						$link_search = rtrim( get_permalink(get_option('ecommerce_search_page_id')), '/' ).'/keyword/'. urlencode($search_keyword) .$extra_parameter;
 					$rs_item .= '<div class="more_result" rel="more_result"><a href="'.$link_search.'">'.__('See more results for', 'wpscps').' '.$search_keyword.' <span class="see_more_arrow"></span></a><span>'.__('Displaying top', 'wpscps').' '.$row.' '.__('results', 'wpscps').'</span></div>';
 					echo $rs_item.'[|]'.$link_search.'[|]'.$search_keyword."\n";
 				}
 			} else {
-				echo '<div class="ajax_no_result">'.__('Keep typing...', 'wpscps').'</div>';
+				echo '<div class="ajax_no_result">'.__('Nothing found for that name. Try a different spelling or name.', 'wpscps').'</div>';
 			}
 		}
 		die();
