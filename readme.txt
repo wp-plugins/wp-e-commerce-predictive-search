@@ -1,9 +1,9 @@
 === WP e-Commerce Predictive Search  ===
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP e-Commerce Predictive Search, WP e-Commerce, Predictive Search, Live Search, e-commerce,  wordpress ecommerce
-Requires at least: 3.5
-Tested up to: 3.8.1
-Stable tag: 2.1.1
+Requires at least: 3.7
+Tested up to: 3.9
+Stable tag: 2.1.1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -11,8 +11,7 @@ WP e-Commerce Predictive Search gives your customers an awesome search experienc
 
 == Description ==
 
-WP e-Commerce Predictive Search engine queries <strong>your entire product database</strong> while you type. It delivers users instant and changing results as they type in the dropdown which shows the product thumbnail, product title and description. Users can click through from the drop down to the 'All Results Search Page' that features endless scroll. 
-  
+WP e-Commerce Predictive Search engine queries <strong>your entire product database</strong> while you type. It delivers users instant and changing results as they type in the dropdown which shows the product thumbnail, product title and description. Users can click through from the drop down to the 'All Results Search Page' that features endless scroll.   
 
 = Key Features =
 
@@ -102,6 +101,10 @@ WP e-Commerce Predictive Search is now the most powerful site search engine ever
 * Activate Smart search in any widget or any search function.
 * Activate or deactivate the 'Smart Search" feature with the click of a mouse.
 
+= Google Analytics Site Search =
+* Full integration with the Google Analytics Site Serach Feature
+* Use the plugins default Query parameter:ps or create your own.
+
 = Search Function =
 * Add a Predictive Search box to any part of your site that is not widgetized via the Predictive search Function.
 * From the admin panel configure all the Parameters of the Search function then just use the short function code to add the Search box where ever you want it. example in the header.
@@ -129,7 +132,7 @@ Please note that we do not provide support for our Lite Version plugins. Hundred
 
 = Minimum Requirements =
 
-* WordPress 3.5 or greater
+* WordPress 3.7 or greater
 * PHP version 5.2.4 or greater
 * MySQL version 5.0 or greater
  
@@ -182,6 +185,12 @@ You can use this plugin only when you have installed the WP e-Commerce plugin.
 Support and access to this plugin documents are available from the [HELP tab](http://wordpress.org/support/plugin/wp-e-commerce-predictive-search) on the Pro Versions Home page.
 
 == Changelog ==
+
+= 2.1.1.1 - 2014/04/28
+Tweak - Added new Google Analytics tab and config settings to dashboard. (New Pro Version feature)
+Tweak - Updated Framework help text font for consistency.
+Tweak - Added remove_all_filters('mce_external_plugins'); before call to wp_editor to remove extension scripts from other plugins.
+Tweak - Checked and updated for full compatibility with WordPress version 3.9
 
 = 2.1.1 - 2014/02/08 =
 * Feature - Special Characters Within near match. Query strings that CONTAINS a special character eg d'E return all matches found for d'e and de.
@@ -316,6 +325,9 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 
 == Upgrade Notice ==
+
+= 2.1.1.1 =
+Update your plugin now for 2 code tweaks and 100% compatibility with WordPress Version 3.9.
 
 = 2.1.1 =
 Update your plugin now for 2 new special characters search functions, 6 associated tweaks and full compatibility with WordPress v3.8.1 and WP e-Commerce v3.8.13.3.

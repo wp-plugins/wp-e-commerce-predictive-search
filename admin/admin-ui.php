@@ -122,15 +122,15 @@ class WPSC_Predictive_Search_Admin_UI
 	/* upgrade_top_message() */
 	/* Show upgrade top message for pro fields
 	/*-----------------------------------------------------------------------------------*/
-	public function upgrade_top_message( $echo = false ) {
+	public function upgrade_top_message( $echo = false, $setting_id = '' ) {
 		$upgrade_top_message = sprintf( '<div class="pro_feature_top_message">' 
 			. __( 'Settings inside this yellow border are %s Features.', 'wpscps' ) 
 			. '<br />' 
 			. __( 'Upgrade to the <a href="%s" target="_blank">%s</a> to activate these settings.', 'wpscps' ) 
 			. '</div>'
-			, apply_filters( $this->plugin_name . '_pro_version_name', __( 'Pro Version', 'wpscps' ) )
-			, apply_filters( $this->plugin_name . '_pro_plugin_page_url', $this->pro_plugin_page_url )
-			, apply_filters( $this->plugin_name . '_pro_version_name', __( 'Pro Version', 'wpscps' ) ) 
+			, apply_filters( $this->plugin_name . '_' . $setting_id . '_pro_version_name', apply_filters( $this->plugin_name . '_pro_version_name', __( 'Pro Version', 'wpscps' ) ) )
+			, apply_filters( $this->plugin_name . '_' . $setting_id . '_pro_plugin_page_url', apply_filters( $this->plugin_name . '_pro_plugin_page_url', $this->pro_plugin_page_url ) )
+			, apply_filters( $this->plugin_name . '_' . $setting_id . '_pro_version_name', apply_filters( $this->plugin_name . '_pro_version_name', __( 'Pro Version', 'wpscps' ) ) )
 		);
 		
 		$upgrade_top_message = apply_filters( $this->plugin_name . '_upgrade_top_message', $upgrade_top_message );

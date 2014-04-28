@@ -161,7 +161,7 @@ class WPSC_Predictive_Search_Shortcodes
 						'display_as_html' => false,
 						'display_decimal_point' => true
 				);
-				$product_price_output = '<span class="rs_price">'.__('Priced from', 'wpscps').': ';
+				$product_price_output = '<span class="rs_price">'.__('Price from', 'wpscps').': ';
 				$product_price_output .= '<span class="currentprice pricedisplay">'.wpsc_currency_display( $variable_price, $args ).'</span></span>';
 			} else {
 				$price = $full_price = get_post_meta( $product_id, '_wpsc_price', true );
