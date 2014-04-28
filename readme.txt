@@ -186,7 +186,7 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 == Changelog ==
 
-= 2.1.1.1 - 2014/04/28
+= 2.1.1.1 - 2014/04/28 =
 Tweak - Added new Google Analytics tab and config settings to dashboard. (New Pro Version feature)
 Tweak - Updated Framework help text font for consistency.
 Tweak - Added remove_all_filters('mce_external_plugins'); before call to wp_editor to remove extension scripts from other plugins.
