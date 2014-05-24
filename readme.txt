@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP e-Commerce Predictive Search, WP e-Commerce, Predictive Search, Live Search, e-commerce,  wordpress ecommerce
 Requires at least: 3.7
 Tested up to: 3.9.1
-Stable tag: 2.1.1.2
+Stable tag: 2.1.1.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -186,6 +186,11 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 == Changelog ==
 
+= 2.1.1.3 - 2014/05/24 =
+* Tweak - Chnaged add_filter( 'gettext', array( $this, 'change_button_text' ), null, 2 ); to add_filter( 'gettext', array( $this, 'change_button_text' ), null, 3 );
+* Tweak - Update change_button_text() function from ( $original == 'Insert into Post' ) to ( is_admin() && $original === 'Insert into Post' )
+* Fix - Code tweaks to fix a3 Plugins Framework conflict with WP e-Commerce tax rates.
+
 = 2.1.1.2 - 2014/05/20 =
 * Tweak - Checked and updated for full compatibility with WP e-Commerce Version 3.8.14.1 and WordPress version 3.9.1
 * Fix - Updated preg_replace function that removes special characters from database query.
@@ -330,6 +335,9 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 
 == Upgrade Notice ==
+
+= 2.1.1.3 =
+Update now for a bug fix - a3 Plugin Framework conflict with WP e-Commerce tax rates.
 
 = 2.1.1.2 =
 Update now for an important bug fix and full compatibility with WP e-Commerce Version 3.8.14.1 Version 2.1.9 and WordPress Version 3.9.1

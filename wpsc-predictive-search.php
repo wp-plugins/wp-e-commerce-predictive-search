@@ -3,7 +3,7 @@
 Plugin Name: WP e-Commerce Predictive Search LITE
 Plugin URI: http://a3rev.com/shop/wp-e-commerce-predictive-search-pro/
 Description: Super charge you site with WP e-Commerce Predictive Products Search. Delivers stunning results as you type. Searches your entire WP e-Commerce product database
-Version: 2.1.1.2
+Version: 2.1.1.3
 Author: A3 Revolution
 Author URI: http://www.a3rev.com/
 Requires at least: 3.7
