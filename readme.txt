@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP e-Commerce Predictive Search, WP e-Commerce, Predictive Search, Live Search, e-commerce,  wordpress ecommerce
 Requires at least: 3.7
 Tested up to: 3.9.1
-Stable tag: 2.1.1.3
+Stable tag: 2.1.1.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -38,11 +38,16 @@ Like WordPress we believe that a3rev plugin users should be able to configure an
 * Admin app interface is fully mobile and tablet responsive.
 
 = Lite & Pro Version Admin Interface =
-All a3rev Lite Version plugins have exactly the same admin interface as the Pro Version. Pro Version features and settings are easy to spot on the admin dashboard, Predictive Search Widget and shortcode pop-up as they are inside of a Yellow border. The Pro Version settings are all active on the admin panels so they can be used to get a great idea of how they work and what is available BUT the settings do not save when changes are saved and hence are not applied to the front end. Upgrading to the Pro version activates all the Pro version Features and Settings and removes the Yellow side bar and borders.
+* All a3rev Lite Version plugins have exactly the same admin interface as the Pro Version. 
+* Pro Version features and settings are easy to spot on the admin dashboard, Predictive Search Widget and shortcode pop-up as they are inside of a Yellow border. 
+* The Pro Version settings are all active on the admin panels so they can be used to get a great idea of how they work and what is available BUT the settings do not save when changes are saved and hence are not applied to the front end. 
+* Upgrading to the Pro version activates all the Pro version Features and Settings and removes the Yellow side bar and borders.
 
-= Lite Version Support =
-
-As a Lite Version user please post all support requests to the plugins WordPress Support forum. We do not watch that forum and posting there you will be relying on another user for support, not an a3rev team member. Upgrading to a Pro Version Licence gives 'write' access to the a3rev support forum and hence Lifetime priority support as part of the License.
+>= Premium Support = 
+>
+>The a3rev team does not provide support for the WP e-Commerce Predictive Search plugin on the WordPress.org forums. One on one developer support is available via the plugins a3rev [support forum](https://a3rev.com/forums/forum/wp-e-commerce-plugins/predictive-search/) to people who have purchased a [WP e-Commerce Predictive Search Pro](http://a3rev.com/shop/wp-e-commerce-predictive-search-pro/) plugin Lifetime License. 
+>
+>The Pro Version has lots of extra features that coupled with developer support might be well worth your investment!
 
 = Pro Version Upgrade =
 
@@ -185,6 +190,11 @@ You can use this plugin only when you have installed the WP e-Commerce plugin.
 Support and access to this plugin documents are available from the [HELP tab](http://wordpress.org/support/plugin/wp-e-commerce-predictive-search) on the Pro Versions Home page.
 
 == Changelog ==
+
+= 2.1.1.4 - 2014/06/23 =
+* Tweak - Added support for placeholder feature for input, email , password , text area types.
+* Tweak - Updated chosen js script to latest version 1.1.0 on the a3rev Plugin Framework
+* Tweak - Update plugins wordpress.org description and admin Yellow sidebar text. 
 
 = 2.1.1.3 - 2014/05/24 =
 * Tweak - Chnaged add_filter( 'gettext', array( $this, 'change_button_text' ), null, 2 ); to add_filter( 'gettext', array( $this, 'change_button_text' ), null, 3 );
@@ -335,6 +345,9 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 
 == Upgrade Notice ==
+
+= 2.1.1.4 =
+Upgrade now for 3 framework code tweaks.
 
 = 2.1.1.3 =
 Update now for a bug fix - a3 Plugin Framework conflict with WP e-Commerce tax rates.
