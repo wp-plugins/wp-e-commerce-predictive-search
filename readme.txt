@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP e-Commerce Predictive Search, WP e-Commerce, Predictive Search, Live Search, e-commerce,  wordpress ecommerce
 Requires at least: 3.7
 Tested up to: 3.9.1
-Stable tag: 2.1.1.4
+Stable tag: 2.1.1.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -191,6 +191,9 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 == Changelog ==
 
+= 2.1.1.5 - 2014/07/22 =
+* Fix - Moved $search_box_text into esc_js() function to stop the search breaking when default text is entered with slash characters.
+
 = 2.1.1.4 - 2014/06/23 =
 * Tweak - Added support for placeholder feature for input, email , password , text area types.
 * Tweak - Updated chosen js script to latest version 1.1.0 on the a3rev Plugin Framework
@@ -345,6 +348,9 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 
 == Upgrade Notice ==
+
+= 2.1.1.5 =
+Update your plugin now for 1 new bug fix.
 
 = 2.1.1.4 =
 Upgrade now for 3 framework code tweaks.
