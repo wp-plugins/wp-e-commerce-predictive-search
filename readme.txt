@@ -2,8 +2,8 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP e-Commerce Predictive Search, WP e-Commerce, Predictive Search, Live Search, e-commerce,  wordpress ecommerce
 Requires at least: 3.7
-Tested up to: 3.9.1
-Stable tag: 2.1.1.5
+Tested up to: 4.0
+Stable tag: 2.1.1.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -33,7 +33,7 @@ WP e-Commerce Predictive Search engine queries <strong>your entire product datab
 Like WordPress we believe that a3rev plugin users should be able to configure and tweak our plugins settings while on the go, right from their mobile or tablet. This plugins features an app style admin interface with Switches, Sliders and a smart interface that hides associated settings when a feature is not turned ON.
 
 * 100% compatible with WordPress v3.8.0 admin interface.
-* Backward compatibility to WordPress v3.5.0
+* Backward compatibility to WordPress v3.7.0
 * App style admin interface.
 * Admin app interface is fully mobile and tablet responsive.
 
@@ -190,6 +190,12 @@ You can use this plugin only when you have installed the WP e-Commerce plugin.
 Support and access to this plugin documents are available from the [HELP tab](http://wordpress.org/support/plugin/wp-e-commerce-predictive-search) on the Pro Versions Home page.
 
 == Changelog ==
+
+= 2.1.1.6 - 2014/09/09 =
+* Tweak - Use $wpdb->esc_like() function instead of like_escape() function, which is deprecated on WordPress 4.0
+* Tweak - Updated google font face in plugin framework.
+* Tweak - Tested 100% compatible with WP e-Commerce 3.8.14.3
+* Tweak - Tested 100% compatible with WordPress Version 4.0
 
 = 2.1.1.5 - 2014/07/22 =
 * Fix - Moved $search_box_text into esc_js() function to stop the search breaking when default text is entered with slash characters.
@@ -348,6 +354,9 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 
 == Upgrade Notice ==
+
+= 2.1.1.6 =
+Upgrade your plugin now for full compatibility with WordPress Version 4.0 and WP e-Commerce Version 3.8.14.3
 
 = 2.1.1.5 =
 Update your plugin now for 1 new bug fix.
