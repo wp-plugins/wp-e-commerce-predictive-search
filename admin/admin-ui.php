@@ -32,6 +32,14 @@ class WPSC_Predictive_Search_Admin_UI
 	 */
 	public $plugin_name = 'wpsc_predictive_search';
 	
+	public $is_free_plugin = true;
+	
+	/**
+	 * @var string
+	 * You must change to correct class name that you are working
+	 */
+	public $class_name = 'WPSC_Predictive_Search';
+	
 	/**
 	 * @var string
 	 * You must change to correct pro plugin page url on a3rev site
@@ -124,11 +132,10 @@ class WPSC_Predictive_Search_Admin_UI
 	/*-----------------------------------------------------------------------------------*/
 	public function upgrade_top_message( $echo = false, $setting_id = '' ) {
 		$upgrade_top_message = sprintf( '<div class="pro_feature_top_message">' 
-			. __( 'Settings inside this yellow border are %s Features.', 'wpscps' ) 
+			. __( 'Advanced settings inside this yellow border are not activated on the Lite Version.', 'wpscps' ) 
 			. '<br />' 
 			. __( 'Upgrade to the <a href="%s" target="_blank">%s</a> to activate these settings.', 'wpscps' ) 
 			. '</div>'
-			, apply_filters( $this->plugin_name . '_' . $setting_id . '_pro_version_name', apply_filters( $this->plugin_name . '_pro_version_name', __( 'Pro Version', 'wpscps' ) ) )
 			, apply_filters( $this->plugin_name . '_' . $setting_id . '_pro_plugin_page_url', apply_filters( $this->plugin_name . '_pro_plugin_page_url', $this->pro_plugin_page_url ) )
 			, apply_filters( $this->plugin_name . '_' . $setting_id . '_pro_version_name', apply_filters( $this->plugin_name . '_pro_version_name', __( 'Pro Version', 'wpscps' ) ) )
 		);
