@@ -13,7 +13,7 @@
  */
 class WPSC_Predictive_Search_Widgets extends WP_Widget {
 	
-	function get_items_search() {
+	public static function get_items_search() {
 		$items_search = array(
 				'product'				=> array( 'number' => 6, 'name' => __('Product Name', 'wpscps') ),
 				'p_sku'					=> array( 'number' => 0, 'name' => __('Product SKU', 'wpscps') ),

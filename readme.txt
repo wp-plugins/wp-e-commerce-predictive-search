@@ -192,6 +192,7 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 == Changelog ==
 
 = 2.1.1.6 - 2014/09/09 =
+* Tweak - Added PHP Public Static to functions in Class. Done so that Public Static warnings don't show in DE_BUG mode.
 * Tweak - Use $wpdb->esc_like() function instead of like_escape() function, which is deprecated on WordPress 4.0
 * Tweak - Updated google font face in plugin framework.
 * Tweak - Tested 100% compatible with WP e-Commerce 3.8.14.3
