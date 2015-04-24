@@ -288,8 +288,7 @@ class WPSC_Predictive_Search
 		$html .= '<a href="http://a3rev.com/shop/" target="_blank" style="float:right;margin-top:5px; margin-left:10px;" ><div class="a3-plugin-ui-icon a3-plugin-ui-a3-rev-logo"></div></a>';
 		$html .= '<h3>'.__('Upgrade to Predictive Search Pro', 'wpscps').'</h3>';
 		$html .= '<p>'.__("<strong>NOTE:</strong> All the functions inside the Yellow border on the plugins admin panel are extra functionality that is activated by upgrading to the Pro version", 'wpscps').':</p>';
-		$html .= '<h3>* <a href="'.WPSC_PS_AUTHOR_URI.'" target="_blank">'.__('WPEC Predictive Search Pro', 'wpscps').'</a></h3>';
-		$html .= '<h3>'.__('Activates these advanced features', 'wpscps').':</h3>';
+		$html .= '<h3>* <a href="'.WPSC_PS_AUTHOR_URI.'" target="_blank">'.__('WPEC Predictive Search Pro', 'wpscps').'</a> '.__('Features', 'wpscps').'</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
 		$html .= '<li>1. '.__("Activate site search optimization with Predictive Search 'Focus Keywords'.", 'wpscps').'</li>';
@@ -300,6 +299,7 @@ class WPSC_Predictive_Search
 		$html .= '<li>6. '.__('Activate Exclude Product Cats, Product Tags , Posts and pages from search results.', 'wpscps').'</li>';
 		$html .= '<li>7. '.__('Activate Predictive Search Function to place the search box in any non widget area of your site - example the header.', 'wpscps').'</li>';
 		$html .= '<li>8. '.__("Activate 'Smart Search' function on Widgets, Shortcode and the search Function", 'wpscps').'</li>';
+		$html .= '<li>9. '.__("Multi Lingual Support. Fully compatible with WPML", 'wpscps').'</li>';
 		$html .= '</ul>';
 		$html .= '</p>';
 		
@@ -318,6 +318,7 @@ class WPSC_Predictive_Search
 		$html .= '<h3>'.__('FREE a3rev WordPress Plugins', 'wpscps').'</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/a3-responsive-slider/" target="_blank">'.__('a3 Responsive Slider', 'wpscps').'</a>&nbsp;&nbsp;&nbsp;'.__( 'New Release!' , 'wpscps' ).'</li>';
 		$html .= '<li>* <a href="http://wordpress.org/plugins/contact-us-page-contact-people/" target="_blank">'.__('Contact Us Page - Contact People', 'wpscps').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-email-template/" target="_blank">'.__('WordPress Email Template', 'wpscps').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/plugins/page-views-count/" target="_blank">'.__('Page View Count', 'wpscps').'</a></li>';

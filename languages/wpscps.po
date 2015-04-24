@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP e-Commerce Predictive Search LITE\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-28 12:33+0700\n"
-"PO-Revision-Date: 2014-04-28 12:33+0700\n"
+"POT-Creation-Date: 2014-06-23 17:35+0700\n"
+"PO-Revision-Date: 2014-06-23 17:35+0700\n"
 "Last-Translator: Nguyen Cong Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
 "Language: en\n"
@@ -16,76 +16,76 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/admin-interface.php:127
+#: admin/admin-interface.php:129
 msgid "Settings successfully saved."
 msgstr ""
 
-#: admin/admin-interface.php:135
+#: admin/admin-interface.php:137
 msgid "Error: Settings can not save."
 msgstr ""
 
-#: admin/admin-interface.php:143
+#: admin/admin-interface.php:145
 msgid "Settings successfully reseted."
 msgstr ""
 
-#: admin/admin-interface.php:164
+#: admin/admin-interface.php:166
 msgid "Thin"
 msgstr ""
 
-#: admin/admin-interface.php:165
+#: admin/admin-interface.php:167
 msgid "Thin/Italic"
 msgstr ""
 
-#: admin/admin-interface.php:166
+#: admin/admin-interface.php:168
 msgid "Normal"
 msgstr ""
 
-#: admin/admin-interface.php:167
+#: admin/admin-interface.php:169
 msgid "Italic"
 msgstr ""
 
-#: admin/admin-interface.php:168
+#: admin/admin-interface.php:170
 msgid "Bold"
 msgstr ""
 
-#: admin/admin-interface.php:169
+#: admin/admin-interface.php:171
 msgid "Bold/Italic"
 msgstr ""
 
-#: admin/admin-interface.php:179
+#: admin/admin-interface.php:181
 msgid "Solid"
 msgstr ""
 
-#: admin/admin-interface.php:180
+#: admin/admin-interface.php:182
 msgid "Double"
 msgstr ""
 
-#: admin/admin-interface.php:181
+#: admin/admin-interface.php:183
 msgid "Dashed"
 msgstr ""
 
-#: admin/admin-interface.php:182
+#: admin/admin-interface.php:184
 msgid "Dotted"
 msgstr ""
 
-#: admin/admin-interface.php:183
+#: admin/admin-interface.php:185
 msgid "Groove"
 msgstr ""
 
-#: admin/admin-interface.php:184
+#: admin/admin-interface.php:186
 msgid "Ridge"
 msgstr ""
 
-#: admin/admin-interface.php:185
+#: admin/admin-interface.php:187
 msgid "Inset"
 msgstr ""
 
-#: admin/admin-interface.php:186
+#: admin/admin-interface.php:188
 msgid "Outset"
 msgstr ""
 
-#: admin/admin-interface.php:1298 admin/admin-interface.php:1388
-#: admin/admin-interface.php:1417
+#: admin/admin-interface.php:1354 admin/admin-interface.php:1444
+#: admin/admin-interface.php:1473
 #: admin/settings/all-results-page-settings.php:221
 #: admin/settings/all-results-page-settings.php:232
 #: admin/settings/all-results-page-settings.php:243
@@ -98,8 +98,8 @@ msgstr ""
 msgid "ON"
 msgstr ""
 
-#: admin/admin-interface.php:1299 admin/admin-interface.php:1389
-#: admin/admin-interface.php:1418
+#: admin/admin-interface.php:1355 admin/admin-interface.php:1445
+#: admin/admin-interface.php:1474
 #: admin/settings/all-results-page-settings.php:222
 #: admin/settings/all-results-page-settings.php:233
 #: admin/settings/all-results-page-settings.php:244
@@ -112,104 +112,104 @@ msgstr ""
 msgid "OFF"
 msgstr ""
 
-#: admin/admin-interface.php:1459
+#: admin/admin-interface.php:1515
 #: admin/settings/search-function-settings.php:268
 msgid "Width"
 msgstr ""
 
-#: admin/admin-interface.php:1461
+#: admin/admin-interface.php:1517
 msgid "Height"
 msgstr ""
 
-#: admin/admin-interface.php:1463
+#: admin/admin-interface.php:1519
 msgid "Hard Crop"
 msgstr ""
 
-#: admin/admin-interface.php:1541
+#: admin/admin-interface.php:1596
 msgid "-- Default Fonts --"
 msgstr ""
 
-#: admin/admin-interface.php:1552
+#: admin/admin-interface.php:1607
 msgid "-- Google Fonts --"
 msgstr ""
 
-#: admin/admin-interface.php:1593
+#: admin/admin-interface.php:1648
 msgid "Preview your customized typography settings"
 msgstr ""
 
-#: admin/admin-interface.php:1727 admin/admin-interface.php:1986
+#: admin/admin-interface.php:1782 admin/admin-interface.php:2041
 msgid "Preview your customized border settings"
 msgstr ""
 
-#: admin/admin-interface.php:1736 admin/admin-interface.php:1977
+#: admin/admin-interface.php:1791 admin/admin-interface.php:2032
 msgid "Rounded"
 msgstr ""
 
-#: admin/admin-interface.php:1737 admin/admin-interface.php:1978
+#: admin/admin-interface.php:1792 admin/admin-interface.php:2033
 msgid "Square"
 msgstr ""
 
-#: admin/admin-interface.php:1747 admin/admin-interface.php:1991
+#: admin/admin-interface.php:1802 admin/admin-interface.php:2046
 msgid "Top Left Corner"
 msgstr ""
 
-#: admin/admin-interface.php:1767 admin/admin-interface.php:2011
+#: admin/admin-interface.php:1822 admin/admin-interface.php:2066
 msgid "Top Right Corner"
 msgstr ""
 
-#: admin/admin-interface.php:1787 admin/admin-interface.php:2031
+#: admin/admin-interface.php:1842 admin/admin-interface.php:2086
 msgid "Bottom Right Corner"
 msgstr ""
 
-#: admin/admin-interface.php:1807 admin/admin-interface.php:2051
+#: admin/admin-interface.php:1862 admin/admin-interface.php:2106
 msgid "Bottom Left Corner"
 msgstr ""
 
-#: admin/admin-interface.php:1900
+#: admin/admin-interface.php:1955
 msgid "Preview your customized border styles settings"
 msgstr ""
 
-#: admin/admin-interface.php:2112
+#: admin/admin-interface.php:2167
 msgid "YES"
 msgstr ""
 
-#: admin/admin-interface.php:2113
+#: admin/admin-interface.php:2168
 msgid "NO"
 msgstr ""
 
-#: admin/admin-interface.php:2127
+#: admin/admin-interface.php:2182
 msgid "Horizontal Shadow"
 msgstr ""
 
-#: admin/admin-interface.php:2145
+#: admin/admin-interface.php:2200
 msgid "Vertical Shadow"
 msgstr ""
 
-#: admin/admin-interface.php:2163
+#: admin/admin-interface.php:2218
 msgid "Blur Distance"
 msgstr ""
 
-#: admin/admin-interface.php:2181
+#: admin/admin-interface.php:2236
 msgid "Spread Size"
 msgstr ""
 
-#: admin/admin-interface.php:2199
+#: admin/admin-interface.php:2254
 msgid "INNER"
 msgstr ""
 
-#: admin/admin-interface.php:2200
+#: admin/admin-interface.php:2255
 msgid "OUTER"
 msgstr ""
 
-#: admin/admin-interface.php:2218
+#: admin/admin-interface.php:2273
 msgid "Preview your customized box shadow settings"
 msgstr ""
 
-#: admin/admin-interface.php:2407
+#: admin/admin-interface.php:2509
 msgid "Save changes"
 msgstr ""
 
-#: admin/admin-interface.php:2408
+#: admin/admin-interface.php:2510
 msgid "Reset Settings"
 msgstr ""
 
@@ -220,21 +220,21 @@ msgstr ""
 msgid "Predictive Search"
 msgstr ""
 
-#: admin/admin-ui.php:127
-#, php-format
-msgid "Settings inside this yellow border are %s Features."
+#: admin/admin-ui.php:135
+msgid ""
+"Advanced settings inside this yellow border are not activated on the Lite "
+"Version."
 msgstr ""
 
-#: admin/admin-ui.php:129
+#: admin/admin-ui.php:137
 #, php-format
 msgid ""
 "Upgrade to the <a href=\"%s\" target=\"_blank\">%s</a> to activate these "
 "settings."
 msgstr ""
 
-#: admin/admin-ui.php:131 admin/admin-ui.php:133
-#: classes/class-wpsc-predictive-search-metabox.php:49
-#: classes/class-wpsc-predictive-search.php:329
+#: admin/admin-ui.php:140 classes/class-wpsc-predictive-search-metabox.php:49
+#: classes/class-wpsc-predictive-search.php:330
 #: widget/wpsc-predictive-search-widgets.php:181
 msgid "Pro Version"
 msgstr ""
@@ -823,7 +823,7 @@ msgid "Cancel"
 msgstr ""
 
 #: classes/class-wpsc-predictive-search-shortcodes.php:164
-msgid "Priced from"
+msgid "Price from"
 msgstr ""
 
 #: classes/class-wpsc-predictive-search-shortcodes.php:228
@@ -877,50 +877,54 @@ msgstr ""
 msgid "WPEC Predictive Search Pro"
 msgstr ""
 
-#: classes/class-wpsc-predictive-search.php:292
-msgid "Activates these advanced features"
+#: classes/class-wpsc-predictive-search.php:291
+msgid "Features"
 msgstr ""
 
-#: classes/class-wpsc-predictive-search.php:295
+#: classes/class-wpsc-predictive-search.php:294
 msgid ""
 "Activate site search optimization with Predictive Search 'Focus Keywords'."
 msgstr ""
 
-#: classes/class-wpsc-predictive-search.php:296
+#: classes/class-wpsc-predictive-search.php:295
 msgid ""
 "Activate integration with Yoasts WordPress SEO or All in One SEO plugins."
 msgstr ""
 
-#: classes/class-wpsc-predictive-search.php:297
+#: classes/class-wpsc-predictive-search.php:296
 msgid "Activate the Advance All Search results page customization setting."
 msgstr ""
 
-#: classes/class-wpsc-predictive-search.php:298
+#: classes/class-wpsc-predictive-search.php:297
 msgid ""
 "Activate Search by Product Categories, Product Tags, Posts and Pages options "
 "in the search widgets."
 msgstr ""
 
-#: classes/class-wpsc-predictive-search.php:299
+#: classes/class-wpsc-predictive-search.php:298
 msgid "Activate Search shortcodes for Posts and pages."
 msgstr ""
 
-#: classes/class-wpsc-predictive-search.php:300
+#: classes/class-wpsc-predictive-search.php:299
 msgid ""
 "Activate Exclude Product Cats, Product Tags , Posts and pages from search "
 "results."
 msgstr ""
 
-#: classes/class-wpsc-predictive-search.php:301
+#: classes/class-wpsc-predictive-search.php:300
 msgid ""
 "Activate Predictive Search Function to place the search box in any non "
 "widget area of your site - example the header."
 msgstr ""
 
-#: classes/class-wpsc-predictive-search.php:302
+#: classes/class-wpsc-predictive-search.php:301
 msgid ""
 "Activate 'Smart Search' function on Widgets, Shortcode and the search "
 "Function"
+msgstr ""
+
+#: classes/class-wpsc-predictive-search.php:302
+msgid "Multi Lingual Support. Fully compatible with WPML"
 msgstr ""
 
 #: classes/class-wpsc-predictive-search.php:306
@@ -968,23 +972,31 @@ msgid "FREE a3rev WordPress Plugins"
 msgstr ""
 
 #: classes/class-wpsc-predictive-search.php:321
-msgid "Contact Us Page - Contact People"
+msgid "a3 Responsive Slider"
+msgstr ""
+
+#: classes/class-wpsc-predictive-search.php:321
+msgid "New Release!"
 msgstr ""
 
 #: classes/class-wpsc-predictive-search.php:322
-msgid "WordPress Email Template"
+msgid "Contact Us Page - Contact People"
 msgstr ""
 
 #: classes/class-wpsc-predictive-search.php:323
+msgid "WordPress Email Template"
+msgstr ""
+
+#: classes/class-wpsc-predictive-search.php:324
 msgid "Page View Count"
 msgstr ""
 
-#: classes/class-wpsc-predictive-search.php:329
+#: classes/class-wpsc-predictive-search.php:330
 msgid ""
 "Yes you'll love the Predictive Search shortcode feature. Upgrading to the"
 msgstr ""
 
-#: classes/class-wpsc-predictive-search.php:329
+#: classes/class-wpsc-predictive-search.php:330
 msgid ""
 "activates this shortcode feature as well as the awesome 'Smart Search' "
 "feature, per widget controls, the All Search Results page customization "

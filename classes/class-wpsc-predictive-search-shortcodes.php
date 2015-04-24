@@ -24,7 +24,7 @@ class WPSC_Predictive_Search_Shortcodes
 {
 	public static function parse_shortcode_search_widget($attributes) {}
 	
-	function add_search_widget_icon($context){
+	public static function add_search_widget_icon($context){
 		$image_btn = WPSC_PS_IMAGES_URL . "/ps_icon.png";
 		$out = '<a href="#TB_inline?width=670&height=500&modal=false&inlineId=search_widget_shortcode" class="thickbox" title="'.__('Insert WP e-Commerce Predictive Search Shortcode', 'wpscps').'"><img class="search_widget_shortcode_icon" src="'.$image_btn.'" alt="'.__('Insert WP e-Commerce Predictive Search Shortcode', 'wpscps').'" /></a>';
 		return $context . $out;

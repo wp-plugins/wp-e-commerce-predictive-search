@@ -2,8 +2,8 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP e-Commerce Predictive Search, WP e-Commerce, Predictive Search, Live Search, e-commerce,  wordpress ecommerce
 Requires at least: 3.7
-Tested up to: 3.9
-Stable tag: 2.1.1.1
+Tested up to: 4.0
+Stable tag: 2.1.1.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -33,16 +33,21 @@ WP e-Commerce Predictive Search engine queries <strong>your entire product datab
 Like WordPress we believe that a3rev plugin users should be able to configure and tweak our plugins settings while on the go, right from their mobile or tablet. This plugins features an app style admin interface with Switches, Sliders and a smart interface that hides associated settings when a feature is not turned ON.
 
 * 100% compatible with WordPress v3.8.0 admin interface.
-* Backward compatibility to WordPress v3.5.0
+* Backward compatibility to WordPress v3.7.0
 * App style admin interface.
 * Admin app interface is fully mobile and tablet responsive.
 
 = Lite & Pro Version Admin Interface =
-All a3rev Lite Version plugins have exactly the same admin interface as the Pro Version. Pro Version features and settings are easy to spot on the admin dashboard, Predictive Search Widget and shortcode pop-up as they are inside of a Yellow border. The Pro Version settings are all active on the admin panels so they can be used to get a great idea of how they work and what is available BUT the settings do not save when changes are saved and hence are not applied to the front end. Upgrading to the Pro version activates all the Pro version Features and Settings and removes the Yellow side bar and borders.
+* All a3rev Lite Version plugins have exactly the same admin interface as the Pro Version. 
+* Pro Version features and settings are easy to spot on the admin dashboard, Predictive Search Widget and shortcode pop-up as they are inside of a Yellow border. 
+* The Pro Version settings are all active on the admin panels so they can be used to get a great idea of how they work and what is available BUT the settings do not save when changes are saved and hence are not applied to the front end. 
+* Upgrading to the Pro version activates all the Pro version Features and Settings and removes the Yellow side bar and borders.
 
-= Lite Version Support =
-
-As a Lite Version user please post all support requests to the plugins WordPress Support forum. We do not watch that forum and posting there you will be relying on another user for support, not an a3rev team member. Upgrading to a Pro Version Licence gives 'write' access to the a3rev support forum and hence Lifetime priority support as part of the License.
+>= Premium Support = 
+>
+>The a3rev team does not provide support for the WP e-Commerce Predictive Search plugin on the WordPress.org forums. One on one developer support is available via the plugins a3rev [support forum](https://a3rev.com/forums/forum/wp-e-commerce-plugins/predictive-search/) to people who have purchased a [WP e-Commerce Predictive Search Pro](http://a3rev.com/shop/wp-e-commerce-predictive-search-pro/) plugin Lifetime License. 
+>
+>The Pro Version has lots of extra features that coupled with developer support might be well worth your investment!
 
 = Pro Version Upgrade =
 
@@ -186,11 +191,36 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 == Changelog ==
 
+= 2.1.1.6 - 2014/09/09 =
+* Tweak - Added PHP Public Static to functions in Class. Done so that Public Static warnings don't show in DE_BUG mode.
+* Tweak - Use $wpdb->esc_like() function instead of like_escape() function, which is deprecated on WordPress 4.0
+* Tweak - Updated google font face in plugin framework.
+* Tweak - Tested 100% compatible with WP e-Commerce 3.8.14.3
+* Tweak - Tested 100% compatible with WordPress Version 4.0
+
+= 2.1.1.5 - 2014/07/22 =
+* Fix - Moved $search_box_text into esc_js() function to stop the search breaking when default text is entered with slash characters.
+
+= 2.1.1.4 - 2014/06/23 =
+* Tweak - Added support for placeholder feature for input, email , password , text area types.
+* Tweak - Updated chosen js script to latest version 1.1.0 on the a3rev Plugin Framework
+* Tweak - Update plugins wordpress.org description and admin Yellow sidebar text. 
+
+= 2.1.1.3 - 2014/05/24 =
+* Tweak - Chnaged add_filter( 'gettext', array( $this, 'change_button_text' ), null, 2 ); to add_filter( 'gettext', array( $this, 'change_button_text' ), null, 3 );
+* Tweak - Update change_button_text() function from ( $original == 'Insert into Post' ) to ( is_admin() && $original === 'Insert into Post' )
+* Fix - Code tweaks to fix a3 Plugins Framework conflict with WP e-Commerce tax rates.
+
+= 2.1.1.2 - 2014/05/20 =
+* Tweak - Checked and updated for full compatibility with WP e-Commerce Version 3.8.14.1 and WordPress version 3.9.1
+* Fix - Updated preg_replace function that removes special characters from database query.
+* Credit - to Peter Scott [Web Systems Management](http://www.websysman.com/) for advising the issue and access to find and fix it.
+
 = 2.1.1.1 - 2014/04/28 =
-Tweak - Added new Google Analytics tab and config settings to dashboard. (New Pro Version feature)
-Tweak - Updated Framework help text font for consistency.
-Tweak - Added remove_all_filters('mce_external_plugins'); before call to wp_editor to remove extension scripts from other plugins.
-Tweak - Checked and updated for full compatibility with WordPress version 3.9
+* Tweak - Added new Google Analytics tab and config settings to dashboard. (New Pro Version feature)
+* Tweak - Updated Framework help text font for consistency.
+* Tweak - Added remove_all_filters('mce_external_plugins'); before call to wp_editor to remove extension scripts from other plugins.
+* Tweak - Checked and updated for full compatibility with WordPress version 3.9
 
 = 2.1.1 - 2014/02/08 =
 * Feature - Special Characters Within near match. Query strings that CONTAINS a special character eg d'E return all matches found for d'e and de.
@@ -325,6 +355,21 @@ Tweak - Checked and updated for full compatibility with WordPress version 3.9
 
 
 == Upgrade Notice ==
+
+= 2.1.1.6 =
+Upgrade your plugin now for full compatibility with WordPress Version 4.0 and WP e-Commerce Version 3.8.14.3
+
+= 2.1.1.5 =
+Update your plugin now for 1 new bug fix.
+
+= 2.1.1.4 =
+Upgrade now for 3 framework code tweaks.
+
+= 2.1.1.3 =
+Update now for a bug fix - a3 Plugin Framework conflict with WP e-Commerce tax rates.
+
+= 2.1.1.2 =
+Update now for an important bug fix and full compatibility with WP e-Commerce Version 3.8.14.1 Version 2.1.9 and WordPress Version 3.9.1
 
 = 2.1.1.1 =
 Update your plugin now for 2 code tweaks and 100% compatibility with WordPress Version 3.9.

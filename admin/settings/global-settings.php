@@ -299,12 +299,13 @@ class WPSC_Predictive_Search_Global_Settings extends WPSC_Predictive_Search_Admi
 	$(document).ready(function() {
 		
 		if ( $("input.ecommerce_search_focus_enable:checked").val() == '1') {
-			$(".ecommerce_search_focus_plugin_container").show();
+			$('.ecommerce_search_focus_plugin_container').css( {'visibility': 'visible', 'height' : 'auto', 'overflow' : 'inherit'} );
 		} else {
-			$(".ecommerce_search_focus_plugin_container").hide();
+			$('.ecommerce_search_focus_plugin_container').css( {'visibility': 'hidden', 'height' : '0px', 'overflow' : 'hidden'} );
 		}
 			
 		$(document).on( "a3rev-ui-onoff_checkbox-switch", '.ecommerce_search_focus_enable', function( event, value, status ) {
+			$('.ecommerce_search_focus_plugin_container').hide().css( {'visibility': 'visible', 'height' : 'auto', 'overflow' : 'inherit'} );
 			if ( status == 'true' ) {
 				$(".ecommerce_search_focus_plugin_container").slideDown();
 			} else {
@@ -318,7 +319,6 @@ class WPSC_Predictive_Search_Global_Settings extends WPSC_Predictive_Search_Admi
 </script>
     <?php	
 	}
-	
 }
 
 global $wpsc_predictive_search_global_settings;
