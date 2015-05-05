@@ -2,8 +2,8 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP e-Commerce Predictive Search, WP e-Commerce, Predictive Search, Live Search, e-commerce,  wordpress ecommerce
 Requires at least: 3.7
-Tested up to: 4.2.0
-Stable tag: 2.1.2
+Tested up to: 4.2.1
+Stable tag: 2.1.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -191,6 +191,10 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 == Changelog ==
 
+= 2.1.3 - 2015/05/05 =
+* Tweak - Tested for full compatibility with WordPress Version 4.2.1
+* Fix - Removed check_ajax_referer() call on frontend for compatibility with PHP caching plugins. Was returning -1 to js success call-back.
+
 = 2.1.2 - 2015/04/24 =
 * Tweak - Tested and Tweaked for full compatibility with WordPress Version 4.2.0
 * Tweak - Tested and Tweaked for full compatibility with WP e-Commerce Version 3.9.3
@@ -361,6 +365,9 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 
 == Upgrade Notice ==
+
+= 2.1.3 =
+Maintenance Update. 1 Bug fix for full compatibility with PHP caching plugins and full compatibility with WordPress version 4.2.1
 
 = 2.1.2 =
 Major Maintenance Update. Code tweaks and a bug fix for full compatibility with WordPress Version 4.2.0 and WP e-Commerce Version 3.9.3
