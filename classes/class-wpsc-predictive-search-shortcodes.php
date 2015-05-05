@@ -24,7 +24,7 @@ class WPSC_Predictive_Search_Shortcodes
 {
 	public static function parse_shortcode_search_widget($attributes) {}
 	
-	function add_search_widget_icon($context){
+	public static function add_search_widget_icon($context){
 		$image_btn = WPSC_PS_IMAGES_URL . "/ps_icon.png";
 		$out = '<a href="#TB_inline?width=670&height=500&modal=false&inlineId=search_widget_shortcode" class="thickbox" title="'.__('Insert WP e-Commerce Predictive Search Shortcode', 'wpscps').'"><img class="search_widget_shortcode_icon" src="'.$image_btn.'" alt="'.__('Insert WP e-Commerce Predictive Search Shortcode', 'wpscps').'" /></a>';
 		return $context . $out;
@@ -284,7 +284,7 @@ function auto_click_more() {
 			var p_data_obj = jQuery('.rs_more_result .p_data');
 			var p_data = p_data_obj.html();
 			p_data_obj.html('');
-			var urls = '&p='+p_data+'&row=".$row."&q=".$search_keyword.$extra_parameter."&action=wpscps_get_result_search_page&security=".$wpscps_get_result_search_page."';
+			var urls = '&psp='+p_data+'&row=".$row."&q=".$search_keyword.$extra_parameter."&action=wpscps_get_result_search_page&security=".$wpscps_get_result_search_page."';
 			jQuery.post('". admin_url( 'admin-ajax.php', 'relative' ) ."', urls, function(theResponse){
 				if(theResponse != ''){
 					var num = parseInt(p_data)+1;
@@ -329,7 +329,7 @@ auto_click_more();
 		$show_price = false;
 		$show_categories = false;
 		$show_tags = false;
-		if (isset($_REQUEST['p']) && $_REQUEST['p'] > 0) $p = stripslashes( strip_tags( $_REQUEST['p'] ) );
+		if (isset($_REQUEST['psp']) && $_REQUEST['psp'] > 0) $p = stripslashes( strip_tags( $_REQUEST['psp'] ) );
 		if (isset($_REQUEST['row']) && $_REQUEST['row'] > 0) $row = stripslashes( strip_tags( $_REQUEST['row'] ) );
 		if (isset($_REQUEST['q']) && trim($_REQUEST['q']) != '') $search_keyword = stripslashes( strip_tags( $_REQUEST['q'] ) );
 		if (isset($_REQUEST['scat']) && trim($_REQUEST['scat']) != '') $cat_slug = stripslashes( strip_tags( $_REQUEST['scat'] ) );
