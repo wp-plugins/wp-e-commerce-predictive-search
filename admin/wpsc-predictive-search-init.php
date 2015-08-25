@@ -12,8 +12,8 @@ function wpsc_predictive_install() {
 	global $wpsc_predictive_search_admin_init;
 	$wpsc_predictive_search_admin_init->set_default_settings();
 	
-	update_option('wpsc_predictive_search_lite_version', '2.1.4');
-	update_option('wpsc_predictive_search_version', '2.1.4');
+	update_option('wpsc_predictive_search_lite_version', '2.1.5');
+	update_option('wpsc_predictive_search_version', '2.1.6');
 	$wp_rewrite->flush_rules();
 	
 	update_option('wpsc_predictive_search_just_installed', true);
@@ -50,6 +50,9 @@ $wpsc_predictive_search_admin_init->init();
 
 // Add upgrade notice to Dashboard pages
 add_filter( $wpsc_predictive_search_admin_init->plugin_name . '_plugin_extension', array( 'WPSC_Predictive_Search', 'plugin_extension' ) );
+
+// Add extra link on left of Deactivate link on Plugin manager page
+add_action('plugin_action_links_' . WPSC_PS_NAME, array( 'WPSC_Predictive_Search_Hook_Filter', 'settings_plugin_links' ) );
 
 // Custom Rewrite Rules
 add_action( 'init', array('WPSC_Predictive_Search_Hook_Filter', 'custom_rewrite_rule' ) );
@@ -102,8 +105,8 @@ function wpsc_predictive_search_lite_upgrade_plugin () {
 		update_option('wpsc_predictive_search_version', '2.0');
 	}
 	
-	update_option('wpsc_predictive_search_lite_version', '2.1.4');
-	update_option('wpsc_predictive_search_version', '2.1.4');
+	update_option('wpsc_predictive_search_lite_version', '2.1.5');
+	update_option('wpsc_predictive_search_version', '2.1.6');
 
 }
 ?>

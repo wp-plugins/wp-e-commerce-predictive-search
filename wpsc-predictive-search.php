@@ -3,11 +3,11 @@
 Plugin Name: WP e-Commerce Predictive Search LITE
 Plugin URI: http://a3rev.com/shop/wp-e-commerce-predictive-search-pro/
 Description: Super charge you site with WP e-Commerce Predictive Products Search. Delivers stunning results as you type. Searches your entire WP e-Commerce product database
-Version: 2.1.4
+Version: 2.1.5
 Author: A3 Revolution
 Author URI: http://www.a3rev.com/
 Requires at least: 3.7
-Tested up to: 4.2.2
+Tested up to: 4.3
 License: GPLv2 or later
 
 	WP e-Commerce Predictive Search LITE. Plugin for the WP e-Commerce plugin.
@@ -24,6 +24,7 @@ License: GPLv2 or later
 define( 'WPSC_PS_FILE_PATH', dirname(__FILE__) );
 define( 'WPSC_PS_DIR_NAME', basename(WPSC_PS_FILE_PATH) );
 define( 'WPSC_PS_FOLDER', dirname(plugin_basename(__FILE__)) );
+define( 'WPSC_PS_DIR', WP_PLUGIN_DIR . '/' . WPSC_PS_FOLDER);
 define( 'WPSC_PS_NAME', plugin_basename(__FILE__) );
 define( 'WPSC_PS_URL', untrailingslashit( plugins_url( '/', __FILE__ ) ) );
 define( 'WPSC_PS_JS_URL',  WPSC_PS_URL . '/assets/js' );
@@ -57,50 +58,5 @@ include 'admin/wpsc-predictive-search-init.php';
 */
 register_activation_hook(__FILE__,'wpsc_predictive_install');
 
-function wpsc_predictive_uninstall() {
-	if ( get_option('ecommerce_search_lite_clean_on_deletion') == 1 ) {
-		delete_option('ecommerce_search_text_lenght');
-		delete_option('ecommerce_search_result_items');
-		delete_option('ecommerce_search_sku_enable');
-		delete_option('ecommerce_search_price_enable');
-		delete_option('ecommerce_search_addtocart_enable');
-		delete_option('ecommerce_search_categories_enable');
-		delete_option('ecommerce_search_tags_enable');
-		delete_option('ecommerce_search_box_text');
-		delete_option('ecommerce_search_page_id');
-		delete_option('ecommerce_search_exclude_products');
-		
-		delete_option('ecommerce_search_exclude_p_categories');
-		delete_option('ecommerce_search_exclude_p_tags');
-		delete_option('ecommerce_search_exclude_posts');
-		delete_option('ecommerce_search_exclude_pages');
-		delete_option('ecommerce_search_focus_enable');
-		delete_option('ecommerce_search_focus_plugin');
-		delete_option('ecommerce_search_product_items');
-		delete_option('ecommerce_search_p_sku_items');
-		delete_option('ecommerce_search_p_cat_items');
-		delete_option('ecommerce_search_p_tag_items');
-		delete_option('ecommerce_search_post_items');
-		delete_option('ecommerce_search_page_items');
-		delete_option('ecommerce_search_character_max');
-		delete_option('ecommerce_search_width');
-		delete_option('ecommerce_search_padding_top');
-		delete_option('ecommerce_search_padding_bottom');
-		delete_option('ecommerce_search_padding_left');
-		delete_option('ecommerce_search_padding_right');
-		delete_option('ecommerce_search_custom_style');
-		delete_option('ecommerce_search_global_search');
-		
-		delete_option('ecommerce_search_enable_google_analytic');
-		delete_option('ecommerce_search_google_analytic_id');
-		delete_option('ecommerce_search_google_analytic_query_parameter');
-		
-		delete_option('ecommerce_search_lite_clean_on_deletion');
-		
-		delete_post_meta_by_key('_predictive_search_focuskw');
-	}
-}
-if ( get_option('ecommerce_search_lite_clean_on_deletion') == 1 ) {
-	register_uninstall_hook( __FILE__, 'wpsc_predictive_uninstall' );
-}
+
 ?>

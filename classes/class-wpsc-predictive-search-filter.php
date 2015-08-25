@@ -203,5 +203,11 @@ class WPSC_Predictive_Search_Hook_Filter
 		$links[] = '<a href="http://wordpress.org/support/plugin/wp-e-commerce-predictive-search/" target="_blank">'.__('Support', 'wpscps').'</a>';
 		return $links;
 	}
+
+	public static function settings_plugin_links($actions) {
+		$actions = array_merge( array( 'settings' => '<a href="edit.php?post_type=wpsc-product&page=wpsc-predictive-search">' . __( 'Settings', 'wpscps' ) . '</a>' ), $actions );
+
+		return $actions;
+	}
 }
 ?>
